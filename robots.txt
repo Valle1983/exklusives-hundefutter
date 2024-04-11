@@ -1,0 +1,4 @@
+User-agent: *
+Disallow:
+
+Sitemap: https://laisy-malteser.de/sitemap.xml
