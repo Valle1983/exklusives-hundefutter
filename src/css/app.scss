@@ -1,0 +1,14 @@
+// app global css in SCSS form
+// app global css in Stylus form
+q-btn:active {
+  background-color: red !important;
+}
+q-btn:hover {
+  background-color: red !important;
+}
+.carousel-cards {
+  border-radius: 25px;
+}
+.contrast {
+  text-shadow: -1px 0 #48610b, 0 1px #48610b, 1px 0 #48610b, 0 -1px #48610b;
+}
