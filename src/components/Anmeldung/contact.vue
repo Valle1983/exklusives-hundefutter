@@ -272,10 +272,7 @@
               <p>
                 Hinweis: Sie können Ihre Einwilligung jederzeit für die Zukunft
                 per E-Mail an
-                <a
-                  class="text-dark"
-                  href="mailto:kontakt@exklusives-hundefutter.de"
-                >
+                <a class="text-dark" :href="emailContact">
                   kontakt@exklusives-hundefutter.de</a
                 >
                 widerrufen. Detaillierte Informationen zum Umgang mit
@@ -336,6 +333,7 @@
 <script>
 import emailjs from '@emailjs/browser';
 import contactInfo from 'components/Kontakt/contactInfo';
+import { emailContact } from '../../../appConfig';
 
 console.log('process.env.EMAIL_JS_ID', process.env.EMAIL_JS_ID);
 emailjs.init('user_3j7fixvUbKpSj7GrpOzZA');
@@ -368,6 +366,7 @@ export default {
         (this.$refs.email !== undefined && this.$refs.email.hasError) ||
         (this.$refs.text !== undefined && this.$refs.text.hasError),
     };
+    emailContact;
   },
   methods: {
     isValidEmail() {

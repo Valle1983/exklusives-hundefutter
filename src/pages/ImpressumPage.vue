@@ -1,7 +1,4 @@
 <template>
-  <div class="row bg-grey-2">
-    <q-img alt="laisy-malteser" class="laisy" :src="haikei" fit="cover" />
-  </div>
   <div class="bg-grey-2 row q-pa-md q-pb-xl justify-center">
     <div class="text-h4 text-primary text-weight-bold">Impressum</div>
   </div>
@@ -12,9 +9,12 @@
       </div>
       <div class="text-body1 text-grey-8">
         <br />
-        <strong>Exklusives Katzenfutter</strong><br />
-        <strong>Familie Apolinarev</strong><br />
-        <strong>33100 Paderborn</strong><br />
+        <strong>{{ website }}</strong
+        ><br />
+        <strong>{{ name }}</strong
+        ><br />
+        <strong>{{ location }}</strong
+        ><br />
       </div>
     </div>
   </div>
@@ -23,8 +23,10 @@
       <div class="text-h4 text-primary text-weight-bold">Kontakt</div>
       <div class="text-body1 text-grey-8">
         <br />
-        <strong>Telefon: +49 (0) 179 43 580 33</strong><br />
-        <strong>E-Mail: kontakt@exklusives-katzenfutter.de</strong><br />
+        <strong>Telefon: {{ mobile }}</strong
+        ><br />
+        <strong>E-Mail: {{ email }}</strong
+        ><br />
       </div>
     </div>
   </div>
@@ -124,6 +126,7 @@
 <script lang="ts">
 import { defineComponent } from 'vue';
 import { useMeta } from 'quasar';
+import { email, mobile, location, name, website } from '../../appConfig';
 
 export default defineComponent({
   name: 'IndexPage',
@@ -162,7 +165,6 @@ export default defineComponent({
   components: {},
 
   data() {
-    const haikei = require('assets/design/blob-scene-haikei.svg');
     const logo = require('assets/icons/logo.svg');
     const metaData = {
       // sets document title
@@ -225,7 +227,7 @@ export default defineComponent({
       },
     };
     useMeta(metaData);
-    return { haikei };
+    return { email, mobile, location, name, website };
   },
 });
 </script>

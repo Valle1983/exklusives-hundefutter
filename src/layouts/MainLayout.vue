@@ -78,7 +78,7 @@
               style="height: 65px; text-shadow: 1px 1px 2px black"
               :class="
                 paintToolbar
-                  ? 'bg-white toolbar-text-color text-weight-bold shadow-2'
+                  ? 'bg-white text-dark toolbar-text-color text-weight-bold'
                   : 'q-pa-lg'
               "
               :style="{
@@ -109,6 +109,7 @@
               <div v-if="isMobile">
                 <q-btn
                   flat
+                  :class="paintToolbar ? 'text-dark' : 'text-white'"
                   round
                   icon="menu"
                   aria-label="menu"
@@ -399,6 +400,7 @@ import FooterC from 'components/footer/Footer.vue';
 import { LocalStorage, date, openURL, Platform } from 'quasar';
 import CookieBanner from 'components/cookieBanner.vue';
 import StickyButtons from 'components/stickButtons/stickyButtons.vue';
+import { link } from '../../appConfig';
 
 export default defineComponent({
   name: 'MainLayout',
@@ -585,6 +587,7 @@ export default defineComponent({
       feedList,
       adviseList,
       drawer: ref(false),
+      link,
     };
   },
   watch: {
@@ -642,7 +645,7 @@ export default defineComponent({
       }
     },
     goToHome() {
-      openURL('https://laisy-malteser.de/');
+      openURL(link);
     },
     goTo() {
       this.$router.push('/');

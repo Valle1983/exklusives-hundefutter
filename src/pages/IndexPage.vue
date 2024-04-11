@@ -1,14 +1,16 @@
 <template>
-  <div class="row" />
+  <div>
+    <partner />
+  </div>
 </template>
 
 <script lang="ts">
 import { defineComponent } from 'vue';
 import { useMeta } from 'quasar';
+import Partner from 'src/components/partner/Partner.vue';
 
 export default defineComponent({
   name: 'HomePage',
-
   props: {
     title: {
       type: String,
@@ -40,7 +42,7 @@ export default defineComponent({
     },
   },
 
-  components: {},
+  components: { Partner },
 
   data() {
     const logo = require('assets/icons/logo.svg');

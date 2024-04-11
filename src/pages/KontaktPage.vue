@@ -1,18 +1,18 @@
 <template>
   <q-page>
-    <contact-formular/>
+    <contact-formular />
     <q-page-sticky position="bottom-left" :offset="[18, 18]">
       <q-fab icon="message" direction="up" color="dark">
         <q-fab-action
           color="primary"
-          href="https://t.me/exklusivesHundefutter"
-          title="https://t.me/exklusivesHundefutter"
+          :href="telegramLink"
+          :title="telegramLink"
           icon="telegram"
         />
         <q-fab-action
           color="primary"
-          aria-label="mailto:kontakt@exklusives-hundefutter.de"
-          href="mailto:kontakt@exklusives-hundefutter.de"
+          :aria-label="emailContact"
+          :href="emailContact"
           icon="mail"
         />
       </q-fab>
@@ -29,13 +29,14 @@
 
 <script>
 import contactFormular from 'components/contakt/contact.vue';
+import { telegramLink, emailContact } from '../../appConfig';
 export default {
   name: 'KontaktPage',
   components: {
     contactFormular,
   },
   data() {
-    return {};
+    return { telegramLink, emailContact };
   },
 };
 </script>

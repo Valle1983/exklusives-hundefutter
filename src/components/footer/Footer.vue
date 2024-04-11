@@ -20,7 +20,7 @@
                   >
                 </div>
                 <div class="col-12">
-                  <a href="tel:+4917622346563"
+                  <a :href="mobileNumber"
                     ><span class="text-h6">{{ mobile }}</span></a
                   >
                 </div>
@@ -76,6 +76,7 @@ import {
   mobile,
   link,
   emailContact,
+  mobileNumber,
 } from '../../../appConfig';
 
 const timeStamp = Date.now();
@@ -84,7 +85,7 @@ export default defineComponent({
   components: { menuList, SocialMediaBar, OpenMap },
   name: 'FooterC',
   setup() {
-    const logo = require('assets/icons/laisy-min.png');
+    const logo = require('assets/icons/exklusives-katzenfutter.png');
     const instagram = require('assets/icons/instagram.svg');
     const tictoc = require('assets/icons/tiktok.png');
     const telegram = require('assets/icons/telegram.svg');
@@ -101,6 +102,7 @@ export default defineComponent({
       website,
       mobile,
       emailContact,
+      mobileNumber,
     };
   },
   methods: {

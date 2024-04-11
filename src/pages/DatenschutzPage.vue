@@ -1,7 +1,4 @@
 <template>
-  <div class="row bg-grey-2">
-    <q-img alt="laisy-malteser" class="laisy" :src="haikei" fit="cover" />
-  </div>
   <div class="bg-grey-2 row q-pa-md q-pb-xl justify-center">
     <div>
       <div class="text-h4 text-primary text-weight-bold">
@@ -1380,7 +1377,6 @@ export default defineComponent({
   components: {},
 
   data() {
-    const haikei = require('assets/design/blob-scene-haikei.svg');
     const logo = require('assets/icons/logo.svg');
     const metaData = {
       // sets document title
@@ -1443,7 +1439,7 @@ export default defineComponent({
       },
     };
     useMeta(metaData);
-    return { haikei };
+    return {};
   },
 });
 </script>

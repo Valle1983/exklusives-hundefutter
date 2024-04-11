@@ -7,13 +7,13 @@
         <div
           class="col-8 col-md-8 col-sm-12 col-xs-12 q-pa-md text-h6 text-grey-8"
         >
-          Um bei der Bestellung von Reico Hundefutter die Qualität hochzuhalten,
-          ist die Bestellung nur im Direktvertrieb über einen Reico
-          Vertriebspartner möglich, so wie wir es sind. Nachdem eine
+          Um bei der Bestellung von Reico Katzenfutter die Qualität
+          hochzuhalten, ist die Bestellung nur im Direktvertrieb über einen
+          Reico Vertriebspartner möglich, so wie wir es sind. Nachdem eine
           koordinierte Erstbestellung mit ausführlicher Beratung erfolgt ist,
           können Sie künftig das Futter für Ihr Tier ganz bequem selbst über den
-          Onlineshop bestellen. Reico legt großen Wert darauf, dass Ihr Hund
-          artgerechtes und passendes Hundefutter bekommt, weswegen wir Ihnen
+          Onlineshop bestellen. Reico legt großen Wert darauf, dass Ihre Katze
+          artgerechtes und passendes Katzenfutter bekommt, weswegen wir Ihnen
           unsere kostenlose Futterberatung vor Ihrer ersten Bestellung ans Herz
           legen.
         </div>
