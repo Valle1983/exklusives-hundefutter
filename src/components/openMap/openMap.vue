@@ -20,14 +20,14 @@ export default {
         }),
       ],
       view: new View({
-        center: [87606, 517185],
+        center: [8.8354886, 51.7587989],
         zoom: 14,
       }),
     });
   },
   setup() {
     return {
-      center: [87606, 517185],
+      center: [8.8354886, 51.7587989],
     };
   },
 };

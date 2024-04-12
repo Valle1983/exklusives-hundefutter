@@ -1,13 +1,13 @@
 <template>
   <div
     v-if="instagramData?.data.length > 0"
-    class="bg-grey-2 q-pt-xl q-pb-xl text-primary text-weight-bolder text-h4 text-center justify-center items center"
+    class="bg-dark q-pt-xl q-pb-xl text-white text-weight-bolder text-h4 text-center justify-center items center"
   >
     Unsere Instagram-Seite
   </div>
   <div
     v-if="!isLoading"
-    class="bg-grey-2 row justify-center items-center text-center q-pb-xl q-pa-md"
+    class="bg-dark row justify-center items-center text-center q-pb-xl q-pa-md"
   >
     <div
       v-if="usePagination"
@@ -45,7 +45,7 @@
         width="100%"
         height="100%"
         style="border-radius: 25px"
-        class="bg-secondary shadow-10 justify-center text-center items-center q-pa-xs"
+        class="bg-dark shadow-10 justify-center text-center items-center q-pa-xs"
         :poster="image.thumbnail_url"
       >
         <source :src="image.media_url" type="video/mp4" />

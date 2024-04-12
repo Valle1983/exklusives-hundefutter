@@ -107,7 +107,7 @@ export default {
   border-radius: 100px;
 }
 .q-img-info:hover {
-  background-color: #deaada;
+  background-color: #384747;
   border-radius: 100px;
 }
 .infos {

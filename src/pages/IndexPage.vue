@@ -1,5 +1,8 @@
 <template>
   <div>
+    <mixed-items />
+    <benefits />
+    <contact-formular />
     <partner />
   </div>
 </template>
@@ -8,6 +11,9 @@
 import { defineComponent } from 'vue';
 import { useMeta } from 'quasar';
 import Partner from 'src/components/partner/Partner.vue';
+import MixedItems from 'components/startseite/mixedItems.vue';
+import Benefits from 'components/startseite/benefits.vue';
+import ContactFormular from 'components/Kontakt/contact.vue';
 
 export default defineComponent({
   name: 'HomePage',
@@ -42,7 +48,7 @@ export default defineComponent({
     },
   },
 
-  components: { Partner },
+  components: { Partner, MixedItems, Benefits, ContactFormular },
 
   data() {
     const logo = require('assets/icons/logo.svg');

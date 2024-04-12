@@ -34,7 +34,8 @@
   </div>
 </template>
 <script>
-export default {};
+import { defineComponent } from 'vue';
+export default defineComponent({});
 </script>
 <style lang="css" scoped>
 @import url('https://fonts.googleapis.com/css?family=Montserrat:300,400,700');
