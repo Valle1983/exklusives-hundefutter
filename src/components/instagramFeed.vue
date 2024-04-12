@@ -45,7 +45,7 @@
         width="100%"
         height="100%"
         style="border-radius: 25px"
-        class="bg-dark shadow-10 justify-center text-center items-center q-pa-xs"
+        class="bg-primary shadow-10 justify-center text-center items-center q-pa-xs"
         :poster="image.thumbnail_url"
       >
         <source :src="image.media_url" type="video/mp4" />
@@ -64,7 +64,7 @@
           flat
           size="lg"
           icon="navigate_next"
-          color="secondary"
+          color="primary"
           aria-label="next"
           @click="handlePaginationNext"
         />

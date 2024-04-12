@@ -260,6 +260,7 @@ export default defineComponent({
   name: 'Benefits',
   components: { questions, bubleSeparatorClose, InstagramFeed },
   data() {
+    // TODO     Text umforlulieren
     return {
       accessToken,
     };

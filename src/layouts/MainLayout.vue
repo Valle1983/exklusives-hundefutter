@@ -26,11 +26,6 @@
             img-src="~assets/Startseite/helena-lopes-2.jpg"
           />
           <q-carousel-slide
-            v-if="isHome"
-            :name="3"
-            img-src="~assets/Startseite/skyler-ewing.jpg"
-          />
-          <q-carousel-slide
             v-else-if="isNewCustomer"
             :name="1"
             img-src="~assets/Anmeldung/anastasiya-lobanovskaya.jpg"

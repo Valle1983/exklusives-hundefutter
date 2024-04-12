@@ -12,6 +12,20 @@
 
 const { configure } = require('quasar/wrappers');
 
+const paths = [
+  { path: '/kontakt' },
+  { path: '/beratung' },
+  { path: '/nassfutter' },
+  { path: '/trockenfutter' },
+  { path: '/leckerlies' },
+  { path: '/kraeutermischung' },
+  { path: '/ergaenzungsmittel' },
+  { path: '/produkt' },
+  { path: '/neu-kunde' },
+  { path: '/impressum' },
+  { path: '/datenschutz' },
+];
+
 module.exports = configure(function (ctx) {
   return {
     // https://v2.quasar.dev/quasar-cli-webpack/supporting-ts
@@ -216,9 +230,23 @@ module.exports = configure(function (ctx) {
       },
 
       // "chain" is a webpack-chain object https://github.com/neutrinojs/webpack-chain
-      chainWebpackPreload(/* chain */) {
-        // do something with the Electron main process Webpack cfg
-        // extendWebpackPreload also available besides this chainWebpackPreload
+      extendWebpack(cfg) {
+        cfg.resolve.alias = {
+          ...cfg.resolve.alias, // This adds the existing alias
+          // Add your own alias like this
+          utils: path.resolve(__dirname, './src/utils'),
+        };
+        cfg.plugins.push(
+          new SitemapPlugin({
+            base: 'https://exklusives-katzenfutter.de',
+            paths,
+            options: {
+              filename: 'sitemap.xml',
+              lastmod: true,
+              changefreq: 'monthly',
+            },
+          })
+        );
       },
     },
   };
