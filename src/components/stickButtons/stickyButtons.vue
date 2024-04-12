@@ -4,17 +4,17 @@
       <q-fab-action
         @click="goToInstagram"
         color="primary"
-        href="https://t.me/laisy_malteser"
-        title="https://t.me/laisy_malteser"
+        :href="telegramLink"
+        :title="telegramLink"
         rel="canonical"
         icon="telegram"
       />
       <q-fab-action
         @click="writeEmail"
         color="primary"
-        aria-label="mailto:kontakt@laisy-malteser.de"
+        :aria-label="emailContact"
         rel="canonical"
-        href="mailto:kontakt@laisy-malteser.de"
+        :href="emailContact"
         icon="mail"
       />
     </q-fab>
@@ -30,18 +30,18 @@
 <script>
 import { defineComponent, ref } from 'vue';
 import { openURL } from 'quasar';
-
+import { telegramLink, emailContact } from '../../../appConfig';
 export default defineComponent({
   name: 'StickyButtons',
   setup() {
-    return { cookiesAccepted: ref(false) };
+    return { cookiesAccepted: ref(false), telegramLink, emailContact };
   },
   methods: {
     writeEmail() {
-      openURL('mailto:kontakt@laisy-malteser.de');
+      openURL(emailContact);
     },
     goToInstagram() {
-      openURL('https://t.me/laisy_malteser');
+      openURL(telegramLink);
     },
   },
 });

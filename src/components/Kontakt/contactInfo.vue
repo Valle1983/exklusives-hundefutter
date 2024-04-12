@@ -3,13 +3,13 @@
     <div class="q-pa-md row">
       <div class="col-12 col-md-12 col-sm-12 col-xs-2">
         <div class="q-pb-md row">
-          <div class="col-10 text-body1">+49 179 43 580 33</div>
+          <div class="col-10 text-body1">{{ mobile }}</div>
           <q-btn
             class=""
-            href="tel:+491794358033"
+            :href="mobileNumber"
             round
             icon="phone"
-            title="tel:+491794358033"
+            :title="mobileNumber"
             color="dark"
             size="md"
           ></q-btn>
@@ -17,9 +17,9 @@
       </div>
       <div class="col-12 col-md-12 col-sm-12 col-xs-2">
         <div class="q-pb-md row">
-          <div class="col-10 text-body1">kontakt@exklusives-hundefutter.de</div>
+          <div class="col-10 text-body1">{{ email }}</div>
           <q-btn
-            href="mailto:kontakt@exklusives-hundefutter.de"
+            :href="emailContact"
             round
             icon="mail"
             color="dark"
@@ -30,15 +30,15 @@
       <div class="col-12 col-md-12 col-sm-12 col-xs-2">
         <div class="row">
           <div class="col-10 text-body1">
-            https://t.me/exklusivesHundefutter
+            {{ telegramLink }}
           </div>
           <q-btn
-            icon="mdi-telegram"
+            icon="telegram"
             round
             class="text-white"
             color="dark"
-            href="https://t.me/exklusivesHundefutter"
-            title="https://t.me/exklusivesHundefutter"
+            :href="telegramLink"
+            :title="telegramLink"
             size="md"
           ></q-btn>
         </div>
@@ -47,7 +47,24 @@
   </div>
 </template>
 <script>
-export default {
+import { defineComponent } from 'vue';
+import {
+  mobile,
+  mobileNumber,
+  email,
+  emailContact,
+  telegramLink,
+} from '../../../appConfig';
+export default defineComponent({
   name: 'contactInfo',
-};
+  setup() {
+    return {
+      mobile,
+      mobileNumber,
+      email,
+      emailContact,
+      telegramLink,
+    };
+  },
+});
 </script>

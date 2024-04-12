@@ -45,9 +45,9 @@
                 </template>
               </q-input>
               <q-input
-                ref="email"
-                v-model="email"
-                type="email"
+                ref="inputEmail"
+                v-model="inputEmail"
+                type="inputEmail"
                 label="Emailadresse"
                 aria-label="Emailadresse"
                 class="q-ma-md"
@@ -62,9 +62,9 @@
 
                 <template v-slot:append>
                   <q-icon
-                    v-if="email !== ''"
+                    v-if="inputEmail !== ''"
                     name="close"
-                    @click="email = ''"
+                    @click="inputEmail = ''"
                     class="cursor-pointer"
                   />
                 </template>
@@ -130,12 +130,7 @@
               <p>
                 Hinweis: Sie können Ihre Einwilligung jederzeit für die Zukunft
                 per E-Mail an
-                <a
-                  class="text-dark"
-                  href="mailto:kontakt@exklusives-hundefutter.de"
-                >
-                  kontakt@exklusives-hundefutter.de</a
-                >
+                <a class="text-dark" :href="emailContact"> {{ email }}</a>
                 widerrufen. Detaillierte Informationen zum Umgang mit
                 Nutzerdaten finden Sie in unserer
                 <q-btn
@@ -218,7 +213,12 @@
 <script>
 import contactInfo from 'components/Kontakt/contactInfo';
 import emailjs from '@emailjs/browser';
-export default {
+import { defineComponent } from 'vue';
+import { email, emailContact, telegramToken, chatId } from '../../../appConfig';
+import { axios } from 'src/boot/axios';
+export default defineComponent({
+  watch: {},
+  props: {},
   name: 'KontaktComp',
   components: { contactInfo },
   data() {
@@ -226,27 +226,27 @@ export default {
       right: false,
       name: '',
       phone: '',
-      email: '',
+      inputEmail: '',
       text: '',
-      token: '5267440204:AAF0wDcWBBNFWrPhRpFTj3pYFldgWMbgJ30',
-      chatId: '-1001638137967',
       regEmail: '',
+      email,
+      emailContact,
     };
   },
   methods: {
     isValidEmail() {
       const emailPattern =
         /^(?=[a-zA-Z0-9@._%+-]{6,254}$)[a-zA-Z0-9._%+-]{1,64}@(?:[a-zA-Z0-9-]{1,63}\.){1,8}[a-zA-Z]{2,63}$/;
-      return emailPattern.test(this.regEmail) || 'Invalid email';
+      return emailPattern.test(this.regEmail) || 'Invalid inputEmail';
     },
     onSubmit() {
       this.$refs.name.validate();
-      this.$refs.email.validate();
+      this.$refs.inputEmail.validate();
       this.$refs.text.validate();
 
       if (
         this.$refs.name.hasError ||
-        this.$refs.email.hasError ||
+        this.$refs.inputEmail.hasError ||
         this.$refs.text.hasError
       ) {
         this.formHasError = true;
@@ -264,31 +264,31 @@ export default {
     },
     onReset() {
       this.name = null;
-      this.email = null;
+      this.inputEmail = null;
       this.text = null;
       this.phone = null;
       this.right = false;
 
       this.$refs.name.resetValidation();
-      this.$refs.email.resetValidation();
+      this.$refs.inputEmail.resetValidation();
       this.$refs.text.resetValidation();
     },
     sendTelegram() {
-      const fullMessage = `***Eine Kundenberatung***\nExklusives-Hundefutter.de \n\nNamen: ${this.name} \n\nEmailadresse: ${this.email} \n\nTelefon: ${this.phone} \n\n\nText:\n${this.text}`;
-      this.$http.post(
-        `https://api.telegram.org/bot${this.token}/sendMessage?chat_id=${this.chatId}&text=${fullMessage}`
+      const fullMessage = `***Eine Kundenberatung***\nExklusives-Katzenfutter.de \n\nNamen: ${this.name} \n\nEmailadresse: ${this.inputEmail} \n\nTelefon: ${this.phone} \n\n\nText:\n${this.text}`;
+      axios.post(
+        `https://api.telegram.org/bot${telegramToken}/sendMessage?chat_id=${chatId}&text=${fullMessage}`
       );
     },
     sendEmail() {
       var templateParams = {
         from_name: this.name,
-        reply_to: this.email,
+        reply_to: this.inputEmail,
         message:
           'Name: ' +
           this.name +
           ' ' +
           ' Emailadresse: ' +
-          this.email +
+          this.inputEmail +
           '  Telefon: ' +
           this.phone +
           ' Nachricht: ' +
@@ -311,9 +311,9 @@ export default {
         );
       // Reset form field
       this.name = '';
-      this.email = '';
+      this.inputEmail = '';
       this.message = '';
     },
   },
-};
+});
 </script>

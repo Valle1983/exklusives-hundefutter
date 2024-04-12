@@ -68,8 +68,8 @@
           <q-carousel-slide name="second" class="column no-wrap flex-center">
             <q-img src="~assets/reico-2019.png" width="150px" />
             <div class="q-mt-md text-center">
-              2. Die bestellen Ihr frisches und<br />artgerechtes Hundefutter in
-              hoher Qualität<br />bei Ihrem Reico Vertriebspartner
+              2. Die bestellen Ihr frisches und<br />artgerechtes Katzenfutter
+              in hoher Qualität<br />bei Ihrem Reico Vertriebspartner
             </div>
           </q-carousel-slide>
           <q-carousel-slide name="thirt" class="column no-wrap flex-center">
@@ -106,8 +106,8 @@
 </template>
 <script>
 import bubleSeparatorClose from 'components/StyleTools/bubleSeparatorClose';
-export default {
-  name: 'NewCustomer',
+import { defineComponent } from 'vue';
+export default defineComponent({
   components: { bubleSeparatorClose },
   data() {
     return {
@@ -115,5 +115,5 @@ export default {
       img: 'imgs/reico-2019.png',
     };
   },
-};
+});
 </script>

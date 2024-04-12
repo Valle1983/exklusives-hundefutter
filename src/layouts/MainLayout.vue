@@ -200,7 +200,7 @@
                     <q-item
                       clickable
                       v-close-popup
-                      to="/new-customer"
+                      to="/neu-kunde"
                       title="Neu Kunde"
                     >
                       <q-item-section>
@@ -218,7 +218,7 @@
                   flat
                   label="Kontakt"
                   title="Kontakt"
-                  to="/contact"
+                  to="/kontakt"
                   aria-label="Kotnakt"
                 />
               </div>
@@ -465,7 +465,7 @@ export default defineComponent({
       {
         id: 5,
         icon: 'alternate_email',
-        to: '/contact',
+        to: '/kontakt',
         label: 'Kontakt',
         separator: false,
       },
@@ -544,7 +544,7 @@ export default defineComponent({
       {
         id: 2,
         icon: 'team',
-        to: '/new-customer',
+        to: '/neu-kunde',
         label: 'Anmeldung als Neukunde',
         separator: false,
       },
@@ -609,8 +609,6 @@ export default defineComponent({
         this.isHome = true;
       } else if (to.fullPath === '/kontakt') {
         this.isContact = true;
-      } else if (to.fullPath === '/beratung') {
-        this.isBeratung = true;
       } else if (to.fullPath === '/neu-kunde') {
         this.isNewCustomer = true;
       } else if (to.fullPath === '/datenschutz') {

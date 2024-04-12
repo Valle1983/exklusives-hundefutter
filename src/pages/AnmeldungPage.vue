@@ -1,7 +1,5 @@
 <template>
   <div>
-    <new-customer />
-    <contact-formular></contact-formular>
     <q-page-sticky position="bottom-left" :offset="[18, 18]">
       <q-fab icon="message" direction="up" color="dark">
         <q-fab-action
@@ -28,15 +26,10 @@
   </div>
 </template>
 <script>
-import NewCustomer from 'components/Anmeldung/neuKunde';
-import ContactFormular from 'components/Anmeldung/contact';
 import { telegramLink, emailContact } from '../../appConfig';
 export default {
   name: 'CustomerPage',
-  components: {
-    NewCustomer,
-    ContactFormular,
-  },
+  components: {},
 
   data() {
     return { telegramLink, emailContact };

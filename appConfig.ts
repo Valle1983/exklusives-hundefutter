@@ -3,8 +3,8 @@ const accessToken =
   'IGQWRNa2VQczFnWDh6NVpzeXB6dUI5cnpraFNYdThXUHU3M3VFdkwxb0JlYzJULUh0UF9idEZAqeDF3NjRVamJsWGdTWVhfZAERwZA2l5MVdNaW1ITGoydjBLQXNiakNDVDhDMS1YTzhFZAmI5Nm5BU3VleW9JRlZAzdkkZD';
 
 // Telegram
-const telegramToken = '6481052067:AAE9iZ3b40Z9tk-jVvW7hpew6t0_ZHc6CV0';
-const chatId = '-1002066953332';
+const telegramToken = '6752253468:AAHkpg0Nvf84946xWmViOEnv2-mPG-AJiGI';
+const chatId = '-1002140747480';
 
 // EmailJS
 const service_id = 'service_qzl6pio';
@@ -19,7 +19,7 @@ const mobile = '+49 179 43 580 33';
 
 // Social Media
 const instagramLink = 'https://instagram.com/exklusives__katzenfutter';
-const telegramLink = 'https://t.me/exklusives__katzenfutter';
+const telegramLink = 'https://t.me/exklusivesKatzenfutter';
 const tiktokLink = 'https://www.tiktok.com/@exklusives__katzenfutter';
 
 // Kontakt Info

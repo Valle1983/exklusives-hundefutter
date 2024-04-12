@@ -333,12 +333,21 @@
 <script>
 import emailjs from '@emailjs/browser';
 import contactInfo from 'components/Kontakt/contactInfo';
-import { emailContact } from '../../../appConfig';
+import {
+  emailContact,
+  telegramToken,
+  chatId,
+  service_id,
+  template_id,
+  user_id,
+} from '../../../appConfig';
+import { defineComponent } from 'vue';
+import { axios } from 'src/boot/axios';
 
 console.log('process.env.EMAIL_JS_ID', process.env.EMAIL_JS_ID);
-emailjs.init('user_3j7fixvUbKpSj7GrpOzZA');
+emailjs.init(user_id);
 
-export default {
+export default defineComponent({
   name: 'ContactFormular',
   components: { contactInfo },
   data() {
@@ -353,8 +362,6 @@ export default {
       email: '',
       telefon: '',
       text: '',
-      token: '5267440204:AAF0wDcWBBNFWrPhRpFTj3pYFldgWMbgJ30',
-      chatId: '-1001638137967',
       errorForm: this.$refs.form !== undefined && this.$refs.form.hasError,
       isRight:
         (this.$refs.firstName !== undefined && this.$refs.firstName.hasError) ||
@@ -365,6 +372,9 @@ export default {
         (this.$refs.location !== undefined && this.$refs.location.hasError) ||
         (this.$refs.email !== undefined && this.$refs.email.hasError) ||
         (this.$refs.text !== undefined && this.$refs.text.hasError),
+      service_id,
+      template_id,
+      user_id,
     };
     emailContact;
   },
@@ -429,8 +439,8 @@ export default {
     },
     sendTelegram() {
       const fullMessage = `***Ein neues Kundenkonto anlegen*** \nExklusives-Hundefutter.de \n\nVornamen: ${this.firstName} \nNachnamen: ${this.lastName} \n\nAdresse:\nStrasse: ${this.streetNumber}  ${this.addressAdd} \nOrt: ${this.location}\nPLZ: ${this.plz} \nEmail: ${this.email} \nTelefon: ${this.telefon} \n\n\nText:\n ${this.text}`;
-      this.$http.post(
-        `https://api.telegram.org/bot${this.token}/sendMessage?chat_id=${this.chatId}&text=${fullMessage}`
+      axios.post(
+        `https://api.telegram.org/bot${telegramToken}/sendMessage?chat_id=${chatId}&text=${fullMessage}`
       );
     },
     sendEmail() {
@@ -453,26 +463,19 @@ export default {
           '  Nachricht' +
           this.text,
       };
-      emailjs
-        .send(
-          'service_6gu3omr',
-          'template_hfq2air',
-          templateParams,
-          'user_3j7fixvUbKpSj7GrpOzZA'
-        )
-        .then(
-          function (response) {
-            console.log('SUCCESS!', response.status, response.text);
-          },
-          function (error) {
-            console.log('FAILED...', error);
-          }
-        );
+      emailjs.send(service_id, template_id, templateParams, user_id).then(
+        function (response) {
+          console.log('SUCCESS!', response.status, response.text);
+        },
+        function (error) {
+          console.log('FAILED...', error);
+        }
+      );
       // Reset form field
       this.name = '';
       this.email = '';
       this.message = '';
     },
   },
-};
+});
 </script>

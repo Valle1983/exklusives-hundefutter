@@ -17,13 +17,13 @@ const routes: RouteRecordRaw[] = [
         component: () => import('pages/ImpressumPage.vue'),
       },
       {
-        name: 'Contact',
-        path: '/contact',
+        name: 'Kontakt',
+        path: '/kontakt',
         component: () => import('pages/KontaktPage.vue'),
       },
       {
-        name: 'Customer',
-        path: '/new-customer',
+        name: 'NeuKunde',
+        path: '/neu-kunde',
         component: () => import('pages/AnmeldungPage.vue'),
       },
     ],
