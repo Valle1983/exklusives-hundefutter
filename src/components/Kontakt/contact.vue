@@ -1,14 +1,12 @@
 <template>
   <div style="background-color: #87ad25">
-    <div class="q-pa-xl text-h5 justify-center text-center text-white contrast">
-      <p>Sie können uns für eine kostenlose Beratung jetzt direkt anrufen,</p>
-      <p>
-        oder auch in der Telegram Gruppe beitreten um Ihre Fragen zu stellen:
-      </p>
-    </div>
+    <div
+      class="q-pa-xl text-h5 justify-center text-center text-white contrast"
+      v-html="this.$t('kontakt.contact.contactText')"
+    ></div>
     <br /><br /><br />
     <div class="row">
-      <div class="q-pa-md col-2"></div>
+      <di class="q-pa-md col-2" />
       <div class="q-pa-md col-4 col-md-4 col-sm-12 col-xs-12">
         <q-card class="shadow-4 carousel-cards">
           <q-form
@@ -21,14 +19,14 @@
                 ref="name"
                 v-model="name"
                 type="text"
-                label="Namen"
-                aria-label="Namen"
+                :label="this.$t('kontakt.contact.firstName')"
+                :aria-label="this.$t('kontakt.contact.firstName')"
                 class="q-ma-md"
                 lazy-rules
                 :rules="[
                   (val) =>
                     (val && val.length > 0) ||
-                    'Das ist ein Pflichfeld, bitte was eintragen',
+                    this.$t('kontakt.contact.requiredField'),
                 ]"
               >
                 <template v-slot:prepend>
@@ -48,11 +46,11 @@
                 ref="inputEmail"
                 v-model="inputEmail"
                 type="inputEmail"
-                label="Emailadresse"
-                aria-label="Emailadresse"
+                :label="this.$t('kontakt.contact.email')"
+                :aria-label="this.$t('kontakt.contact.email')"
                 class="q-ma-md"
                 :rules="[
-                  (val) => !!val || 'Bitte eine Emailadresse eingeben',
+                  (val) => !!val || this.$t('kontakt.contact.reqziredEmail'),
                   isValidEmail(),
                 ]"
               >
@@ -71,9 +69,9 @@
               </q-input>
               <q-input
                 type="number"
-                aria-label="Telefonnummer"
+                :aria-label="this.$t('kontakt.contact.phone')"
                 v-model="phone"
-                label="Telefonnummer"
+                :label="this.$t('kontakt.contact.phone')"
                 class="q-ma-md"
               >
                 <template v-slot:prepend>
@@ -93,14 +91,14 @@
                 ref="text"
                 v-model="text"
                 type="textarea"
-                label="Ihre Nachricht"
-                aria-label="Ihre Nachricht"
+                :label="this.$t('kontakt.contact.text')"
+                :aria-label="this.$t('kontakt.contact.text')"
                 class="q-ma-md"
                 lazy-rules
                 :rules="[
                   (val) =>
                     (val && val.length > 0) ||
-                    'Das ist ein Pflichfeld, bitte was eintragen',
+                    this.$t('kontakt.contact.requiredField'),
                 ]"
               >
                 <template v-slot:prepend>
@@ -118,34 +116,13 @@
               </q-input>
               <q-checkbox
                 v-model="right"
-                label="Ja, ich stimme der Datenschutzbestimmung zu."
+                :label="this.$t('kontakt.contact.checkBox')"
               />
               <br /><br />
-              <p>
-                Ich stimme zu, dass meine Angaben aus dem Kontaktformular zur
-                Beantwortung meiner Anfrage erhoben und verarbeitet werden. Die
-                Daten werden nach abgeschlossener Bearbeitung Ihrer Anfrage
-                gelöscht.
-              </p>
-              <p>
-                Hinweis: Sie können Ihre Einwilligung jederzeit für die Zukunft
-                per E-Mail an
-                <a class="text-dark" :href="emailContact"> {{ email }}</a>
-                widerrufen. Detaillierte Informationen zum Umgang mit
-                Nutzerdaten finden Sie in unserer
-                <q-btn
-                  rounded
-                  flat
-                  dense
-                  no-caps
-                  class="text.dark"
-                  to="datenschutz"
-                  title="Datenschutzerklärung"
-                  aria-label="Datenschutzerklärung"
-                >
-                  Datenschutzerklärung
-                </q-btn>
-              </p>
+              <div
+                class=""
+                v-html="this.$t('kontakt.contact.contactFormularText')"
+              />
             </q-card-section>
             <q-card-actions class="q-pa-md" style="height: 120px">
               <q-btn
@@ -154,9 +131,9 @@
                 :disabled="!right"
                 type="submit"
                 no-caps
-                aria-label="Nachricht abschicken"
+                :aria-label="this.$t('kontakt.contact.submitButton')"
               >
-                Nachricht abschicken
+                {{ this.$t('kontakt.contact.submitButton') }}
               </q-btn>
             </q-card-actions>
           </q-form>
@@ -166,15 +143,14 @@
         class="q-pa-md col-4 col-md-4 col-sm-12 col-xs-12 text-white contrast"
       >
         <p class="text-h4">
-          Vereinbaren Sie einen kostenfreien Beratungstermin
+          {{ this.$t('kontakt.contact.consultingDateText') }}
         </p>
         <div class="row q-pa-md">
           <div class="col-1 text-h6">
             <q-icon name="check"></q-icon>
           </div>
           <div class="col-11 text-h6">
-            wir beraten Sie gerne zur Hundeernährung kostenlos, dabei steht
-            Ihnen ein fachlich geschulter Reico Vertriebspartner zur Seite
+            {{ this.$t('kontakt.contact.foodDogConsultingText') }}
           </div>
         </div>
         <div class="row q-pa-md">
@@ -182,8 +158,7 @@
             <q-icon name="check"></q-icon>
           </div>
           <div class="col-11 text-h6">
-            Sie haben die Möglichkeit uns jeder Zeit zu Kontaktieren, auch an
-            Wochenenden oder Feiertagen
+            {{ this.$t('kontakt.contact.contactEveryDay') }}
           </div>
         </div>
         <div class="row q-pa-md">
@@ -191,7 +166,7 @@
             <q-icon name="check"></q-icon>
           </div>
           <div class="col-11 text-h6">
-            dabei werden Sie immer den gleichen Ansprechpartnern zugeteilt
+            {{ this.$t('kontakt.contact.sameConsulterText') }}
           </div>
         </div>
         <div class="row q-pa-md">
@@ -199,8 +174,7 @@
             <q-icon name="check"></q-icon>
           </div>
           <div class="col-11 text-h6">
-            Wünschen Sie ein Gespräch? Dann füllen Sie einfach für ein
-            unverbindliches Gespräch das Kontaktformular aus
+            {{ this.$t('kontakt.contact.fillContactFormular') }}
           </div>
         </div>
         <contact-info />

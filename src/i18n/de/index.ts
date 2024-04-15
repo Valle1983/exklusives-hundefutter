@@ -1,5 +1,6 @@
 // This is just an example,
 // so you can safely delete all default props below
+import { emailContact, email } from 'app/appConfig';
 
 export default {
   anmeldung: {
@@ -17,8 +18,11 @@ export default {
       text: 'Ihre Nachricht',
       checkBox: 'Ja, ich stimme der Datenschutzbestimmung zu.',
       checkBoxText:
-        'Ich stimme zu, dass meine Angaben aus dem Kontaktformular zur Beantwortung meiner Anfrage erhoben und verarbeitet werden. Die Daten werden nach abgeschlossener Bearbeitung Ihrer Anfrage gelöscht.<br><br>   Hinweis: Sie können Ihre Einwilligung jederzeit für die Zukunft per E-Mail an <a class="text-dark" :href="emailContact">kontakt@exklusives-hundefutter.de</a>widerrufen. Detaillierte Informationen zum Umgang mit Nutzerdaten finden Sie in unserer',
-      checkBoxButton: 'Datenschutzerklärung',
+        'Ich stimme zu, dass meine Angaben aus dem Kontaktformular zur Beantwortung meiner Anfrage erhoben und verarbeitet werden. Die Daten werden nach abgeschlossener Bearbeitung Ihrer Anfrage gelöscht.<br><br>   Hinweis: Sie können Ihre Einwilligung jederzeit für die Zukunft per E-Mail an <a class="text-dark" href=' +
+        emailContact +
+        '>kontakt@exklusives-hundefutter.de</a>widerrufen. Detaillierte Informationen zum Umgang mit Nutzerdaten finden Sie in unserer  <a class="text-dark" href="' +
+        window?.location.href.split('/kontakt')[0] +
+        '/datenschutz"><b>Datenschutzerklärung</b></a>',
       submitButton: 'Nachricht abschicken',
       newReicoAccount: 'Jetzt Reico Kunde werden, schnell und unkompliziert.',
       newReicoAccountText:
@@ -40,5 +44,54 @@ export default {
         step6: ' 6. Ihr Hund freut sich über sein neues<br />Lieblingsfutter',
       },
     },
+  },
+  footer: {
+    contactSubtext: 'Kontakt:',
+    customerNumber: 'Beraternummer:',
+    importantSites: 'Wichtige Seiten:',
+  },
+  kontakt: {
+    contact: {
+      contactText:
+        'Sie können uns für eine kostenlose Beratung jetzt direkt anrufen, <br><br>  oder auch in der Telegram Gruppe beitreten um Ihre Fragen zu stellen:',
+      requiredField: 'Das ist ein Pflichfeld, bitte was eintragen',
+      reqziredEmail: 'Bitte eine Emailadresse eingeben',
+      firstName: 'Namen',
+      lastName: 'Nachname',
+      streetNumber: 'Strasse & Hausnummer',
+      addressAdd: 'zweite Adresszeile',
+      plz: 'PLZ',
+      location: 'Stadt',
+      phone: 'Telefonnummer',
+      email: 'Emailadresse',
+      text: 'Ihre Nachricht',
+      checkBox: 'Ja, ich stimme der Datenschutzbestimmung zu.',
+      contactFormularText:
+        'Ich stimme zu, dass meine Angaben aus dem Kontaktformular zur Beantwortung meiner Anfrage erhoben und verarbeitet werden. Die Daten werden nach abgeschlossener Bearbeitung Ihrer Anfrage  gelöscht. <br><br> Hinweis: Sie können Ihre Einwilligung jederzeit für die Zukunft  per E-Mail an   <a class="text-dark" href=' +
+        emailContact +
+        '>' +
+        email +
+        ' </a> widerrufen. Detaillierte Informationen zum Umgang mit  Nutzerdaten finden Sie in unserer  <a class="text-dark" href="' +
+        window?.location.href.split('/kontakt')[0] +
+        '/datenschutz"><b>Datenschutzerklärung</b></a>',
+      submitButton: 'Nachricht abschicken',
+      consultingDateText: 'Vereinbaren Sie einen kostenfreien Beratungstermin',
+      foodDogConsultingText:
+        'wir beraten Sie gerne zur Hundeernährung kostenlos, dabei steht Ihnen ein fachlich geschulter Reico Vertriebspartner zur Seite',
+      contactEveryDay:
+        'Sie haben die Möglichkeit uns jeder Zeit zu Kontaktieren, auch an Wochenenden oder Feiertagen',
+      sameConsulterText:
+        'dabei werden Sie immer den gleichen Ansprechpartnern zugeteilt',
+      fillContactFormular:
+        ' Wünschen Sie ein Gespräch? Dann füllen Sie einfach für ein unverbindliches Gespräch das Kontaktformular aus',
+    },
+  },
+  menuList: {
+    contactSite: 'Kontakt',
+    impressumSite: 'Impressum',
+    datenschutzSite: 'Datenschutz',
+  },
+  partner: {
+    title: 'Partner',
   },
 };

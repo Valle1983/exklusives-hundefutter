@@ -2,7 +2,7 @@
   <div style="background-color: #87ad25">
     <br /><br /><br />
     <div class="row">
-      <div class="q-pa-md col-2"></div>
+      <div class="q-pa-md col-2" />
       <div class="q-pa-md col-4 col-md-4 col-sm-12 col-xs-12">
         <q-card class="shadow-4 carousel-cards">
           <q-form
@@ -17,16 +17,16 @@
                   <q-input
                     ref="firstName"
                     v-model="firstName"
-                    name="Vorname"
+                    :name="$t('anmeldung.contact.firstName')"
                     type="text"
-                    label="Vorname"
-                    aria-label="Vorname"
+                    :label="$t('anmeldung.contact.firstName')"
+                    :aria-label="t('anmeldung.contact.firstName')"
                     class="q-ma-md"
                     lazy-rules
                     :rules="[
                       (val) =>
                         (val && val.length > 0) ||
-                        'Das ist ein Pflichfeld, bitte was eintragen',
+                        this.$t('anmeldung.contact.requiredField'),
                     ]"
                   >
                     <template v-slot:prepend>
@@ -48,15 +48,15 @@
                     ref="lastName"
                     v-model="lastName"
                     type="text"
-                    name="Nachname"
-                    label="Nachname"
-                    aria-label="Nachname"
+                    :name="this.$t('anmeldung.contact.lastName')"
+                    :label="this.$t('anmeldung.contact.lastName')"
+                    :aria-label="this.$t('anmeldung.contact.lastName')"
                     class="q-ma-md"
                     lazy-rules
                     :rules="[
                       (val) =>
                         (val && val.length > 0) ||
-                        'Das ist ein Pflichfeld, bitte was eintragen',
+                        this.$t('anmeldung.contact.requiredField'),
                     ]"
                   >
                     <template v-slot:prepend>
@@ -78,15 +78,15 @@
                 ref="streetNumber"
                 v-model="streetNumber"
                 type="text"
-                name="Straße_Hausnummer"
-                label="Straße & Hausnummer"
-                aria-label="Straße_Hausnummer"
+                :name="this.$t('anmeldung.contact.streetNumber')"
+                :label="this.$t('anmeldung.contact.streetNumber')"
+                :aria-label="this.$t('anmeldung.contact.streetNumber')"
                 class="q-ma-md"
                 lazy-rules
                 :rules="[
                   (val) =>
                     (val && val.length > 0) ||
-                    'Das ist ein Pflichfeld, bitte was eintragen',
+                    this.$t('anmeldung.contact.requiredField'),
                 ]"
               >
                 <template v-slot:prepend>
@@ -106,9 +106,9 @@
                 ref="addressAdd"
                 v-model="addressAdd"
                 type="text"
-                name="zweite_Adresse"
-                aria-label="zweite_Adresse"
-                label="zweite Adresszeile"
+                :name="this.$t('anmeldung.contact.streetNumber')"
+                :aria-label="this.$t('anmeldung.contact.streetNumber')"
+                :label="this.$t('anmeldung.contact.streetNumber')"
                 class="q-ma-md"
               >
                 <template v-slot:prepend>
@@ -130,15 +130,15 @@
                     ref="plz"
                     v-model="plz"
                     type="text"
-                    name="plz"
-                    label="PLZ"
-                    aria-label="PLZ"
+                    :name="this.$t('anmeldung.contact.plz')"
+                    :label="this.$t('anmeldung.contact.plz')"
+                    :aria-label="this.$t('anmeldung.contact.plz')"
                     class="q-ma-md"
                     lazy-rules
                     :rules="[
                       (val) =>
                         (val && val.length > 0) ||
-                        'Das ist ein Pflichfeld, bitte was eintragen',
+                        this.$t('anmeldung.contact.requiredField'),
                     ]"
                   >
                     <template v-slot:prepend>
@@ -159,16 +159,16 @@
                   <q-input
                     ref="location"
                     v-model="location"
-                    name="location"
+                    :name="this.$t('anmeldung.contact.location')"
                     type="text"
-                    label="Ort"
-                    aria-label="Ort"
+                    :label="this.$t('anmeldung.contact.requiredField')"
+                    :aria-label="this.$t('anmeldung.contact.location')"
                     class="q-ma-md"
                     lazy-rules
                     :rules="[
                       (val) =>
                         (val && val.length > 0) ||
-                        'Das ist ein Pflichfeld, bitte was eintragen',
+                        this.$t('anmeldung.contact.requiredField'),
                     ]"
                   >
                     <template v-slot:prepend>
@@ -190,9 +190,9 @@
                 ref="email"
                 v-model="email"
                 type="email"
-                name="email"
-                label="Emailadresse"
-                aria-label="Emailadresse"
+                :name="this.$t('anmeldung.contact.email')"
+                :label="this.$t('anmeldung.contact.email')"
+                :aria-label="this.$t('anmeldung.contact.email')"
                 class="q-ma-md"
                 :rules="[isValidEmail()]"
               >
@@ -213,8 +213,9 @@
                 ref="telefon"
                 v-model="telefon"
                 type="number"
-                label="Telefeonnummer"
-                aria-label="Telefeonnummer"
+                :name="this.$t('anmeldung.contact.phone')"
+                :label="this.$t('anmeldung.contact.phone')"
+                :aria-label="this.$t('anmeldung.contact.phone')"
                 class="q-ma-md"
               >
                 <template v-slot:prepend>
@@ -233,16 +234,16 @@
               <q-input
                 ref="text"
                 v-model="text"
-                name="message"
+                :name="this.$t('anmeldung.contact.text')"
                 type="textarea"
-                aria-label="Ihre Nachricht"
-                label="Ihre Nachricht"
+                :aria-label="this.$t('anmeldung.contact.text')"
+                :label="this.$t('anmeldung.contact.text')"
                 class="q-ma-md"
                 lazy-rules
                 :rules="[
                   (val) =>
                     (val && val.length > 0) ||
-                    'Das ist ein Pflichfeld, bitte was eintragen',
+                    this.$t('anmeldung.contact.requiredField'),
                 ]"
               >
                 <template v-slot:prepend>
@@ -260,34 +261,10 @@
               </q-input>
               <q-checkbox
                 v-model="right"
-                label="Ja, ich stimme der Datenschutzbestimmung zu."
+                :label="this.$t('anmeldung.contact.checkBox')"
               />
               <br /><br />
-              <p>
-                Ich stimme zu, dass meine Angaben aus dem Kontaktformular zur
-                Beantwortung meiner Anfrage erhoben und verarbeitet werden. Die
-                Daten werden nach abgeschlossener Bearbeitung Ihrer Anfrage
-                gelöscht.
-              </p>
-              <p>
-                Hinweis: Sie können Ihre Einwilligung jederzeit für die Zukunft
-                per E-Mail an
-                <a class="text-dark" :href="emailContact">
-                  kontakt@exklusives-hundefutter.de</a
-                >
-                widerrufen. Detaillierte Informationen zum Umgang mit
-                Nutzerdaten finden Sie in unserer
-                <q-btn
-                  flat
-                  dense
-                  no-caps
-                  aria-label="datenschutzerklaerung"
-                  class="text.dark"
-                  to="datenschutzerklaerung"
-                  title="Datenschutzerklärung"
-                  >Datenschutzerklärung</q-btn
-                >
-              </p>
+              <div v-html="this.$t('anmeldung.contact.checkBoxText')" />
             </q-card-section>
             <q-card-actions class="q-pa-md" style="height: 120px">
               <q-btn
@@ -297,7 +274,7 @@
                 type="submit"
                 no-caps
                 aria-label="Nachricht abschicken"
-                >Nachricht abschicken
+                >{{ this.$t('anmeldung.contact.submitButton') }}
               </q-btn>
             </q-card-actions>
           </q-form>
@@ -310,18 +287,13 @@
           Neues Kundenkonto anlegen
           <div class="row q-pa-md">
             <div class="col-11 text-h6">
-              Jetzt Reico Kunde werden, schnell und unkompliziert.
+              {{ this.$t('anmeldung.contact.newReicoAccount') }}
             </div>
           </div>
         </div>
         <div class="row q-pa-md">
           <div class="col-11 text-h6">
-            Ihr neues Kundenkonto wird von uns umgehend erstellt. Sobald Ihre
-            Zugangsdaten angelegt wurden, senden wir Ihnen eine Mail zu Ihrem
-            neuen Reico Kundenlogin. Zudem erhalten Sie einen „offenen
-            Warenkorb“ mit den Gratisartikeln (Produkthandbuch, Preisliste,
-            Messbecher, Dosendeckel) und Sie können Ihre erste Bestellung
-            aufgeben bzw. abschließen.
+            {{ this.$t('anmeldung.contact.newReicoAccountText') }}
           </div>
         </div>
         <contact-info />

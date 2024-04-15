@@ -3,7 +3,7 @@
     <div
       class="text-h4 text-dark text-center q-pt-xl text-weight-bolder text-h4"
     >
-      Partner
+      {{ this.$t('partner.title') }}
     </div>
     <div
       class="row q-pt-lg q-pb-xl justify-center justify-center text-center bott"

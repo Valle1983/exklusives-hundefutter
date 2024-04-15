@@ -1,21 +1,16 @@
 <template>
   <div class="bg-grey-2">
     <div class="q-pa-sm q-pt-xl row justify-center text-center">
-      <div class="col-auto text-h4 text-dark">So werden Sie Reico Neukunde</div>
+      <div
+        class="col-auto text-h4 text-dark"
+        v-html="this.$t('anmeldung.neuKunde.newCustomer')"
+      />
       <div class="row justify-center">
         <div class="col2"></div>
         <div
           class="col-8 col-md-8 col-sm-12 col-xs-12 q-pa-md text-h6 text-grey-8"
         >
-          Um bei der Bestellung von Reico Katzenfutter die Qualität
-          hochzuhalten, ist die Bestellung nur im Direktvertrieb über einen
-          Reico Vertriebspartner möglich, so wie wir es sind. Nachdem eine
-          koordinierte Erstbestellung mit ausführlicher Beratung erfolgt ist,
-          können Sie künftig das Futter für Ihr Tier ganz bequem selbst über den
-          Onlineshop bestellen. Reico legt großen Wert darauf, dass Ihre Katze
-          artgerechtes und passendes Katzenfutter bekommt, weswegen wir Ihnen
-          unsere kostenlose Futterberatung vor Ihrer ersten Bestellung ans Herz
-          legen.
+          {{ this.$t('anmeldung.neuKunde.newCustomerText') }}
         </div>
         <div class="col2"></div>
       </div>
@@ -61,41 +56,37 @@
           <q-carousel-slide name="first" class="column no-wrap flex-center">
             <q-img src="~assets/reico-2019.png" width="150px" />
             <div class="q-mt-md text-center">
-              1. Sie erhalten eine kompetente<br />Futterberatung, einen
-              Futterplan und auf<br />Wunsch eine Aufstellung der Futterkosten
+              {{ this.$t('anmeldung.neuKunde.carousel.step1') }}
             </div>
           </q-carousel-slide>
           <q-carousel-slide name="second" class="column no-wrap flex-center">
             <q-img src="~assets/reico-2019.png" width="150px" />
             <div class="q-mt-md text-center">
-              2. Die bestellen Ihr frisches und<br />artgerechtes Katzenfutter
-              in hoher Qualität<br />bei Ihrem Reico Vertriebspartner
+              {{ this.$t('anmeldung.neuKunde.carousel.step2') }}
             </div>
           </q-carousel-slide>
           <q-carousel-slide name="thirt" class="column no-wrap flex-center">
             <q-img src="~assets/reico-2019.png" width="150px" />
             <div class="q-mt-md text-center">
-              3. Nie wieder lästiges Schleppen von<br />schweren Säcken oder
-              Dosen
+              {{ this.$t('anmeldung.neuKunde.carousel.step3') }}
             </div>
           </q-carousel-slide>
           <q-carousel-slide name="fourth" class="column no-wrap flex-center">
             <q-img src="~assets/reico-2019.png" width="150px" />
             <div class="q-mt-md text-center">
-              4. Die Lieferung erfolgt direkt an Ihre<br />Wunschadresse
+              {{ this.$t('anmeldung.neuKunde.carousel.step4') }}
             </div>
           </q-carousel-slide>
           <q-carousel-slide name="fifth" class="column no-wrap flex-center">
             <q-img src="~assets/reico-2019.png" width="150px" />
             <div class="q-mt-md text-center">
-              5. Sie erhalten eine Versandbestätigung<br />per E-Mail
-              inklusive<br />Sendungsverfolgungslink mit<br />Zustellabstimmung
+              {{ this.$t('anmeldung.neuKunde.carousel.step5') }}
             </div>
           </q-carousel-slide>
           <q-carousel-slide name="sixth" class="column no-wrap flex-center">
             <q-img src="~assets/reico-2019.png" width="150px" />
             <div class="q-mt-md text-center">
-              6. Ihr Hund freut sich über sein neues<br />Lieblingsfutter
+              {{ this.$t('anmeldung.neuKunde.carousel.step6') }}
             </div>
           </q-carousel-slide>
         </q-carousel>

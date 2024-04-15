@@ -25,6 +25,8 @@ export default boot(({ app }) => {
   const i18n = createI18n<{ message: MessageSchema }, MessageLanguages>({
     locale: 'de',
     legacy: false,
+    // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+    // @ts-ignore
     messages,
   });
 
