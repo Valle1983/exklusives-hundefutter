@@ -12,17 +12,32 @@
             <q-card-section>
               <div class="row text-left">
                 <div class="col-12 text-h5">Kontakt:</div>
-                <div class="col-12 text-h6">{{ name }}</div>
-                <div class="col-12 text-h6">{{ location }}</div>
-                <div class="col-12 cursor text-left">
-                  <a :href="emailContact"
-                    ><span class="text-h6">{{ email }}</span></a
-                  >
+                <div class="col-12 text-body1">{{ name }}</div>
+                <div class="col-12 text-body1">{{ location }}</div>
+                <div class="row q-pt-xs q-pb-xs">
+                  <div class="q-pr-md">
+                    <q-btn
+                      :href="emailContact"
+                      round
+                      icon="mail"
+                      color="dark"
+                      size="xs"
+                    ></q-btn>
+                  </div>
+                  <q-btn
+                    :href="mobileNumber"
+                    round
+                    icon="phone"
+                    :title="mobileNumber"
+                    color="dark"
+                    size="xs"
+                  ></q-btn>
                 </div>
-                <div class="col-12">
-                  <a :href="mobileNumber"
-                    ><span class="text-h6">{{ mobile }}</span></a
-                  >
+                <div class="col-12 text-white q-pa-xs cursor text-weight-bold">
+                  <div class="col-12 text-body1">
+                    Reico & Partner Vertriebs GmbH
+                  </div>
+                  <div class="col-12 text-body1">Beraternummer: 6096921</div>
                 </div>
               </div>
             </q-card-section>
@@ -33,7 +48,7 @@
             <q-card-section>
               <div class="row text-left">
                 <div class="col-12 text-h5 text-left">Wichtige Seiten:</div>
-                <div class="col-12 text-left">
+                <div class="col-12 text-left text-body1">
                   <menu-list :showHome="false" />
                 </div>
               </div>

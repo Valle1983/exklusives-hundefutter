@@ -41,21 +41,4 @@ export default {
       },
     },
   },
-  footer: {
-    contactSubtext: 'Kontakt:',
-    customerNumber: 'Beraternummer:',
-    importantSites: 'Wichtige Seiten:',
-  },
-  kontakt: {
-    contact: {
-      // TODO: übeesetzung für Kontakt einfügen
-    },
-    contactInfo: {
-      // TODO: übeesetzung für KontaktInfo einfügen
-    },
-  },
-  partner: {
-    title: 'Partner',
-  },
-  socialMediaBar: {},
 };

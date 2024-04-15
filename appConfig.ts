@@ -24,6 +24,7 @@ const tiktokLink = 'https://www.tiktok.com/@exklusives__katzenfutter';
 
 // Kontakt Info
 const name = 'Familie Apolinariv';
+const street = 'Uhdenstr. 3';
 const location = '33100 Paderborn';
 
 // Website name

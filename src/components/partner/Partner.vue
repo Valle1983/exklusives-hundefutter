@@ -93,6 +93,7 @@ export default {
       openURL('https://exklusives-hundefutter.de');
     },
     goToEmmy() {
+      // TODO: übeesetzung für Kontakt einfügen
       openURL('https://emmy-toypoodle.de');
     },
     goToBoxer() {

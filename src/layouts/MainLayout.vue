@@ -453,21 +453,21 @@ export default defineComponent({
       {
         id: 4,
         icon: 'alternate_email',
-        to: '/kontakt',
+        to: 'kontakt',
         label: 'Kontakt',
         separator: false,
       },
       {
         id: 5,
         icon: 'assignment',
-        to: '/Impressum',
+        to: 'impressum',
         label: 'Impressum',
         separator: false,
       },
       {
         id: 6,
         icon: 'assignment',
-        to: '/datenschutz',
+        to: 'datenschutz',
         label: 'Datenschutz',
         separator: false,
       },
@@ -615,6 +615,8 @@ export default defineComponent({
         this.isErgaenzung = true;
       } else if (to.fullPath === '/impressum') {
         this.isImpressum = true;
+      } else {
+        this.isHome = true;
       }
     },
   },

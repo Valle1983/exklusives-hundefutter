@@ -348,8 +348,7 @@ console.log('process.env.EMAIL_JS_ID', process.env.EMAIL_JS_ID);
 emailjs.init(user_id);
 
 export default defineComponent({
-  props: {
-  },
+  props: {},
   name: 'ContactFormular',
   components: { contactInfo },
   data() {
