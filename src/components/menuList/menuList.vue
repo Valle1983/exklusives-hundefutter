@@ -28,21 +28,21 @@ export default defineComponent({
       default: true,
     },
   },
-  setup() {
+  data() {
     const navigationList = [
       {
         id: 2,
-        name: 'Kontakt',
+        name: this.$t('menuList.contactSite'),
         to: 'Contact',
       },
       {
         id: 3,
-        name: 'Impressum',
+        name: this.$t('menuList.impressumSite'),
         to: 'Impressum',
       },
       {
         id: 4,
-        name: 'Datenschutz',
+        name: this.$t('menuList.datenschutzSite'),
         to: 'Datenschutz',
       },
     ];

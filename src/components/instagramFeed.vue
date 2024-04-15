@@ -1,9 +1,9 @@
 <template>
   <div
     v-if="instagramData?.data.length > 0"
-    class="bg-dark q-pt-xl q-pb-xl text-white text-weight-bolder text-h4 text-center justify-center items center"
+    class="bg-dark q-pt-xl q-pb-xl text-white text-h4 text-center justify-center items center"
   >
-    Unsere Instagram-Seite
+    {{ this.$t('instagramFeed.title') }}
   </div>
   <div
     v-if="!isLoading"

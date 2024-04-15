@@ -94,4 +94,7 @@ export default {
   partner: {
     title: 'Partner',
   },
+  instagramFeed: {
+    title: 'Unsere Instagram-Seite',
+  },
 };
