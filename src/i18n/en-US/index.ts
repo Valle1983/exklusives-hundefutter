@@ -1,57 +1,53 @@
-// This is just an example,
-// so you can safely delete all default props below
-
 export default {
   anmeldung: {
     contact: {
-      requiredField: 'Das ist ein Pflichfeld, bitte was eintragen',
-      reqziredEmail: 'Falsche Emailadresse',
-      firstName: 'Vorname',
-      lastName: 'Nachname',
-      streetNumber: 'Strasse & Hausnummer',
-      addressAdd: 'zweite Adresszeile',
-      plz: 'PLZ',
-      location: 'Stadt',
-      phone: 'Telefon',
-      email: 'Emailadresse',
-      text: 'Ihre Nachricht',
-      checkBox: 'Ja, ich stimme der Datenschutzbestimmung zu.',
+      requiredField: 'This is a required field, please enter something',
+      requiredEmail: 'Invalid email address',
+      firstName: 'First Name',
+      lastName: 'Last Name',
+      streetNumber: 'Street & House Number',
+      addressAdd: 'Second Address Line',
+      plz: 'ZIP',
+      location: 'City',
+      phone: 'Phone',
+      email: 'Email Address',
+      text: 'Your Message',
+      checkBox: 'Yes, I agree to the privacy policy.',
       checkBoxText:
-        'Ich stimme zu, dass meine Angaben aus dem Kontaktformular zur Beantwortung meiner Anfrage erhoben und verarbeitet werden. Die Daten werden nach abgeschlossener Bearbeitung Ihrer Anfrage gelöscht.<br><br>   Hinweis: Sie können Ihre Einwilligung jederzeit für die Zukunft per E-Mail an <a class="text-dark" :href="emailContact">kontakt@exklusives-hundefutter.de</a>widerrufen. Detaillierte Informationen zum Umgang mit Nutzerdaten finden Sie in unserer',
-      checkBoxButton: 'Datenschutzerklärung',
-      submitButton: 'Nachricht abschicken',
-      newReicoAccount: 'Jetzt Reico Kunde werden, schnell und unkompliziert.',
+        'I agree that my details from the contact form will be collected and processed to answer my request. The data will be deleted after your request has been processed.<br><br>   Note: You can revoke your consent at any time for the future by email to <a class="text-dark" :href="emailContact">kontakt@exklusives-hundefutter.de</a>. Detailed information on handling user data can be found in our',
+      checkBoxButton: 'Privacy Policy',
+      submitButton: 'Send Message',
+      newReicoAccount: 'Become a Reico customer now, quickly and easily.',
       newReicoAccountText:
-        'Ihr neues Kundenkonto wird von uns umgehend erstellt. Sobald Ihre Zugangsdaten angelegt wurden, senden wir Ihnen eine Mail zu Ihrem neuen Reico Kundenlogin. Zudem erhalten Sie einen „offenen Warenkorb“ mit den Gratisartikeln (Produkthandbuch, Preisliste, Messbecher, Dosendeckel) und Sie können Ihre erste Bestellung aufgeben bzw. abschließen.',
+        'Your new customer account will be created immediately by us. As soon as your access data has been set up, we will send you an email about your new Reico customer login. In addition, you will receive an "open shopping cart" with free items (product manual, price list, measuring cup, can lid) and you can place or complete your first order.',
     },
     neuKunde: {
-      newCustomer: 'So werden Sie Reico Neukunde',
+      newCustomer: 'How to become a new Reico customer',
       newCustomerText:
-        'Um bei der Bestellung von Reico Katzenfutter die Qualität hochzuhalten, ist die Bestellung nur im Direktvertrieb über einen Reico Vertriebspartner möglich, so wie wir es sind. Nachdem eine koordinierte Erstbestellung mit ausführlicher Beratung erfolgt ist, können Sie künftig das Futter für Ihr Tier ganz bequem selbst über den Onlineshop bestellen. Reico legt großen Wert darauf, dass Ihre Katze artgerechtes und passendes Katzenfutter bekommt, weswegen wir Ihnen unsere kostenlose Futterberatung vor Ihrer ersten Bestellung ans Herz legen.',
+        'To maintain the quality of Reico cat food ordering, it is only possible to order through direct sales via a Reico sales partner, as we are. After a coordinated initial order with detailed consultation has taken place, you can conveniently order the food for your pet yourself through the online shop in the future. Reico places great importance on your cat receiving species-appropriate and suitable cat food, which is why we strongly recommend our free food consultation before your first order.',
       carousel: {
         step1:
-          '1. Sie erhalten eine kompetente<br />Futterberatung, einen Futterplan und auf<br />Wunsch eine Aufstellung der Futterkosten',
+          '1. You receive competent<br />food consultation, a feeding plan, and upon<br />request, an estimate of the food costs',
         step2:
-          '2. Die bestellen Ihr frisches und<br />artgerechtes Katzenfutter in hoher Qualität<br />bei Ihrem Reico Vertriebspartner',
-        step3:
-          '3. Nie wieder lästiges Schleppen von<br />schweren Säcken oder Dosen',
-        step4: '4. Die Lieferung erfolgt direkt an Ihre<br />Wunschadresse',
-        step5: '5. Sie erhalten eine Versandbestätigung<br />per E-Mail',
-        step6: ' 6. Ihr Hund freut sich über sein neues<br />Lieblingsfutter',
+          '2. You order your fresh and<br />species-appropriate cat food of high quality<br />from your Reico sales partner',
+        step3: '3. No more tedious carrying of<br />heavy bags or cans',
+        step4: '4. Delivery is made directly to your<br />desired address',
+        step5: '5. You will receive a shipping confirmation<br />by email',
+        step6: ' 6. Your dog will enjoy its new<br />favorite food',
       },
     },
   },
   footer: {
-    contactSubtext: 'Kontakt:',
-    customerNumber: 'Beraternummer:',
-    importantSites: 'Wichtige Seiten:',
+    contactSubtext: 'Contact:',
+    customerNumber: 'Advisor Number:',
+    importantSites: 'Important Pages:',
   },
   kontakt: {
     contact: {
-      // TODO: übeesetzung für Kontakt einfügen
+      // TODO: insert translation for Contact
     },
     contactInfo: {
-      // TODO: übeesetzung für KontaktInfo einfügen
+      // TODO: insert translation for Contact Info
     },
   },
   partner: {
