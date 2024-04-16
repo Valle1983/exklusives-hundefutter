@@ -97,11 +97,11 @@ export default {
   startseite: {
     benefits: {
       titleText:
-        ' Warum sollten Sie sich gerade für das Reico Hundefutter entscheiden?',
+        ' Warum sollten Sie sich gerade für das Reico Hundefutter entscheiden? <br>Die entscheidenden Vorteile',
       sublineText:
-        'Hunde können leider nicht selbst entscheiden was sie essen,<br><br>ganz im Gegenteil zu uns Menschen.',
+        'Hunde können leider nicht selbst entscheiden was sie essen,<br>ganz im Gegenteil zu uns Menschen.',
       card1: {
-        title: ' natürliche Zutaten',
+        title: 'natürliche Zutaten',
         point1: 'nährstoffschonende Verarbeitung',
         point2:
           'besonders hoher Fleischgehalt an Innereien sowie Muskelfleisch',
@@ -123,12 +123,14 @@ export default {
       },
     },
     mixedItems: {
-      title: 'Reico Hundefutter – das gesunde Futter für Ihren Hund',
+      title: 'Reico Katzenfutter – das gesunde Futter für Ihre Katze <br><br>',
       subTitle:
-        'Gesundheit ist kein Zufall – Eine gesunde & artgerechte Ernährung ändert Alles!',
+        'Gesundheit ist kein Zufall – Eine gesunde & artgerechte Ernährung ändert Alles!<br><br>',
       text: 'Reico hat das Hundefutter nach dem Vorbild der Natur entwickelt und mit den Kräutermischungen & Ergänzungsfuttermitteln, das Reico Vital-System erschaffen.<br><br>Damit wird jeder Hund, ob Welpe, erwachsener Hund oder ältere Hunde, optimal und artgerecht versorgt.<br><br>Das steckt im Hundefutter: Naturbelassene Rohstoffe ohne unnötige Zusätze, moderne Wissenschaft und über 30 Jahre Erfahrung.<br><br>Reico ist mehr als nur ein Hundefutter. Lernen Sie das Reico Vital-System kennen und lassen Sie sich jetzt kostenlos beraten.',
     },
     questions: {
+      title: 'Die wichtigsten Fragen rund um das Futter',
+      subText: 'Hier erhalten Sie Antworten auf die am häufigsten gestellten Fragen.',
       left: {
         question1: {
           headline: 'Kann ich Reico Produkte auch im Supermarkt kaufen?',
