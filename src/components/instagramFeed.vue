@@ -3,7 +3,7 @@
     v-if="instagramData?.data.length > 0"
     class="bg-dark q-pt-xl q-pb-xl text-white text-h4 text-center justify-center items center"
   >
-    {{ this.$t('instagramFeed.title') }}
+    {{ $t('instagramFeed.title') }}
   </div>
   <div
     v-if="!isLoading"

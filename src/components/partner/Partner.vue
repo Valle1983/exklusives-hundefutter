@@ -1,8 +1,6 @@
 <template>
   <div class="q-pb-xl">
-    <div
-      class="text-h4 text-dark text-center q-pt-xl text-weight-bolder text-h4"
-    >
+    <div class="text-h4 text-dark text-center q-pt-xl text-h4">
       {{ this.$t('partner.title') }}
     </div>
     <div

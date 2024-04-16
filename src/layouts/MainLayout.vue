@@ -70,7 +70,7 @@
           <q-page-sticky expand position="top">
             <q-toolbar
               class="q-pa-xl"
-              style="height: 65px; text-shadow: 1px 1px 2px black"
+              style="height: 65px"
               :class="
                 paintToolbar
                   ? 'bg-white text-dark toolbar-text-color text-weight-bold'
@@ -122,7 +122,6 @@
                   aria-label="Startseite"
                 />
                 <q-btn-dropdown
-                  style="text-shadow: 1px 1px 2px black"
                   no-caps
                   size="lg"
                   rounded
@@ -147,7 +146,6 @@
                   </q-list>
                 </q-btn-dropdown>
                 <q-btn-dropdown
-                  style="text-shadow: 1px 1px 2px black"
                   no-caps
                   size="lg"
                   rounded
@@ -175,7 +173,6 @@
                   </q-list>
                 </q-btn-dropdown>
                 <q-btn-dropdown
-                  style="text-shadow: 1px 1px 2px black"
                   no-caps
                   size="lg"
                   rounded

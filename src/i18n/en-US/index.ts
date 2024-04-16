@@ -1,3 +1,5 @@
+import { emailContact, email } from 'app/appConfig';
+
 export default {
   anmeldung: {
     contact: {
@@ -14,8 +16,11 @@ export default {
       text: 'Your Message',
       checkBox: 'Yes, I agree to the privacy policy.',
       checkBoxText:
-        'I agree that my details from the contact form will be collected and processed to answer my request. The data will be deleted after your request has been processed.<br><br>   Note: You can revoke your consent at any time for the future by email to <a class="text-dark" :href="emailContact">kontakt@exklusives-hundefutter.de</a>. Detailed information on handling user data can be found in our',
-      checkBoxButton: 'Privacy Policy',
+        'I agree that my details from the contact form will be collected and processed to answer my request. The data will be deleted after your request has been processed.<br><br>   Note: You can revoke your consent at any time for the future by email to <a class="text-dark" href=' +
+        emailContact +
+        '>kontakt@exklusives-hundefutter.de</a>. Detailed information on handling user data can be found in our <a class="text-dark" href="' +
+        window?.location.href.split('/kontakt')[0] +
+        '/datenschutz"><b>Privacy Policy</b></a>',
       submitButton: 'Send Message',
       newReicoAccount: 'Become a Reico customer now, quickly and easily.',
       newReicoAccountText:
@@ -33,7 +38,7 @@ export default {
         step3: '3. No more tedious carrying of<br />heavy bags or cans',
         step4: '4. Delivery is made directly to your<br />desired address',
         step5: '5. You will receive a shipping confirmation<br />by email',
-        step6: ' 6. Your dog will enjoy its new<br />favorite food',
+        step6: '6. Your dog will enjoy its new<br />favorite food',
       },
     },
   },
@@ -44,14 +49,48 @@ export default {
   },
   kontakt: {
     contact: {
-      // TODO: insert translation for Contact
+      contactText:
+        'You can now call us directly for a free consultation, <br><br> or join the Telegram group to ask your questions:',
+      requiredField: 'This is a required field, please enter something',
+      requiredEmail: 'Please enter an email address',
+      firstName: 'First Name',
+      lastName: 'Last Name',
+      streetNumber: 'Street & House Number',
+      addressAdd: 'Second Address Line',
+      plz: 'ZIP',
+      location: 'City',
+      phone: 'Phone Number',
+      email: 'Email Address',
+      text: 'Your Message',
+      checkBox: 'Yes, I agree to the privacy policy.',
+      contactFormularText:
+        'I agree that my details from the contact form will be collected and processed to answer my request. The data will be deleted after your request has been processed. <br><br> Note: You can revoke your consent at any time for the future by email to <a class="text-dark" href=' +
+        emailContact +
+        '>' +
+        email +
+        '</a>. Detailed information on handling user data can be found in our <a class="text-dark" href="' +
+        window?.location.href.split('/kontakt')[0] +
+        '/datenschutz"><b>Privacy Policy</b></a>',
+      submitButton: 'Send Message',
+      consultingDateText: 'Schedule a free consultation appointment',
+      foodDogConsultingText:
+        'We are happy to provide free advice on dog nutrition, with a professionally trained Reico sales partner at your side',
+      contactEveryDay:
+        'You have the opportunity to contact us at any time, including weekends or holidays',
+      sameConsulterText: 'You will always be assigned the same contact persons',
+      fillContactFormular:
+        'Would you like a conversation? Just fill out the contact form for a non-binding discussion',
     },
-    contactInfo: {
-      // TODO: insert translation for Contact Info
-    },
+  },
+  menuList: {
+    contactSite: 'Contact',
+    impressumSite: 'Legal Notice',
+    datenschutzSite: 'Privacy Policy',
   },
   partner: {
     title: 'Partner',
   },
-  socialMediaBar: {},
+  instagramFeed: {
+    title: 'Our Instagram Page',
+  },
 };

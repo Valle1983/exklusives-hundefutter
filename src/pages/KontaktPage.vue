@@ -3,12 +3,12 @@
 </template>
 
 <script>
-import contactFormular from 'components/Kontakt/contact.vue';
+import ContactFormular from 'components/Kontakt/contact.vue';
 import { telegramLink, emailContact } from '../../appConfig';
 export default {
   name: 'KontaktPage',
   components: {
-    contactFormular,
+    ContactFormular,
   },
   data() {
     return { telegramLink, emailContact };

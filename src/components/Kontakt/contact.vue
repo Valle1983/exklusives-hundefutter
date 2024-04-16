@@ -193,7 +193,7 @@ import { axios } from 'src/boot/axios';
 export default defineComponent({
   watch: {},
   props: {},
-  name: 'KontaktComp',
+  name: 'ContactFormular',
   components: { contactInfo },
   data() {
     return {
