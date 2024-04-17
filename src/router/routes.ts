@@ -30,6 +30,28 @@ const routes: RouteRecordRaw[] = [
         path: '/neu-kunde',
         component: () => import('pages/AnmeldungPage.vue'),
       },
+      {
+        path: '/nassfutter',
+        component: () => import('pages/Food/NassFutter.vue'),
+      },
+      {
+        path: '/trockenfutter',
+        component: () => import('pages/Food/TrockenFutter.vue'),
+      },
+      {
+        path: '/meatzie',
+        component: () => import('pages/Food/mEATzie.vue'),
+      },
+      {
+        path: '/kraeutermischung',
+        component: () => import('pages/Kraeuter/Kraeutermischung.vue'),
+      },
+      {
+        path: '/produkt/:id',
+        component: () => import('pages/Produkt.vue'),
+        name: 'produkt',
+        props: true,
+      },
     ],
   },
 

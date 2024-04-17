@@ -26,13 +26,14 @@
   </div>
 </template>
 <script>
+import { defineComponent } from 'vue';
 import { telegramLink, emailContact } from '../../appConfig';
-export default {
+export default defineComponent({
   name: 'CustomerPage',
   components: {},
 
   data() {
     return { telegramLink, emailContact };
   },
-};
+});
 </script>

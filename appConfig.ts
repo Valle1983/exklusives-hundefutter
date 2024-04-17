@@ -26,10 +26,16 @@ const tiktokLink = 'https://www.tiktok.com/@exklusives__katzenfutter';
 const name = 'Familie Apolinariv';
 const street = 'Uhdenstr. 3';
 const location = '33100 Paderborn';
+const beraterNummer = 6096921;
 
 // Website name
 const website = 'Exklusives Katzenfutter';
-const link = 'https://exklusives-katzenfutter.de/';
+const link = 'https://exklusives-katzenfutter.de';
+
+// Parner
+const partner1Link = 'https://emmy-toypoodle.de';
+const partner2Link = 'https://pader-boxer.com';
+const partner3Link = 'https://exklusives-hundefutter.de';
 
 export {
   accessToken,
@@ -47,6 +53,10 @@ export {
   tiktokLink,
   name,
   location,
+  beraterNummer,
   website,
   link,
+  partner1Link,
+  partner2Link,
+  partner3Link,
 };

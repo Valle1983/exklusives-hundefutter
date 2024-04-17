@@ -44,6 +44,7 @@
 </template>
 <script>
 import { openURL } from 'quasar';
+import { partner1Link, partner2Link, partner3Link } from '../../../appConfig';
 export default {
   name: 'PartnerC',
   setup() {
@@ -59,8 +60,7 @@ export default {
         metaTags: [
           {
             name: 'description',
-            content:
-              'https://emmy-toypoodle.de , https://pader-boxer.com/ , https://exklusives-hundefutter.de/  ',
+            content: `${partner1Link} , ${partner2Link} , ${partner3Link} `,
           },
           { name: 'viewport', content: 'width=device-width, initial-scale=1' },
           { name: 'robots', content: 'follow' },
@@ -68,8 +68,7 @@ export default {
           { property: 'og:title', content: 'Partner' },
           {
             property: 'og:description',
-            content:
-              'https://emmy-toypoodle.de , https://pader-boxer.com/ , https://exklusives-hundefutter.de/  ',
+            content: `${partner1Link} , ${partner2Link} , ${partner3Link} `,
           },
           { property: 'og:image', content: exkluusivesHundefutter },
           { property: 'og:url', content: window.location.href },
@@ -78,8 +77,7 @@ export default {
           { property: 'og:title', content: exkluusivesHundefutter },
           {
             property: 'og:description',
-            content:
-              'https://emmy-toypoodle.de , https://pader-boxer.com/ , https://exklusives-hundefutter.de/  ',
+            content: `${partner1Link} , ${partner2Link} , ${partner3Link} `,
           },
           { property: 'og:image', content: exkluusivesHundefutter },
         ],
@@ -88,14 +86,13 @@ export default {
   },
   methods: {
     gotToLoExclusviesHundefutter() {
-      openURL('https://exklusives-hundefutter.de');
+      openURL(partner3Link);
     },
     goToEmmy() {
-      // TODO: übeesetzung für Kontakt einfügen
-      openURL('https://emmy-toypoodle.de');
+      openURL(partner1Link);
     },
     goToBoxer() {
-      openURL('https://pader-boxer.com');
+      openURL(partner2Link);
     },
   },
 };
@@ -106,7 +103,7 @@ export default {
   border-radius: 100px;
 }
 .q-img-info:hover {
-  background-color: #384747;
+  background-color: rgb(56, 71, 71, 0.2);
   border-radius: 100px;
 }
 .infos {

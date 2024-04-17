@@ -478,13 +478,6 @@ export default defineComponent({
         label: 'Kräutermischung',
         separator: false,
       },
-      {
-        id: 2,
-        icon: '',
-        to: '/ergaenzungsmittel',
-        label: 'Ergänzungsmittel',
-        separator: false,
-      },
     ];
 
     const feedList = [
@@ -503,17 +496,10 @@ export default defineComponent({
         separator: true,
       },
       {
-        id: 3,
-        icon: '',
-        to: '/welpenfutter',
-        label: 'Welpenfutter',
-        separator: false,
-      },
-      {
         id: 4,
         icon: 'contact',
-        to: '/leckerlies',
-        label: 'Leckerlies',
+        to: '/meatzie',
+        label: 'mEATzie',
         separator: false,
       },
     ];
@@ -606,7 +592,7 @@ export default defineComponent({
         this.isNAssFutter = true;
       } else if (to.fullPath === '/welpenfutter') {
         this.isWelpenFutter = true;
-      } else if (to.fullPath === '/leckerlies') {
+      } else if (to.fullPath === '/meatzie') {
         this.isLeckerlies = true;
       } else if (to.fullPath === '/ergaenzungsmittel') {
         this.isErgaenzung = true;

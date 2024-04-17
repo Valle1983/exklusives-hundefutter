@@ -121,7 +121,9 @@
               <br /><br />
               <div
                 class=""
-                v-html="this.$t('kontakt.contact.contactFormularText')"
+                v-html="
+                  this.$t('kontakt.contact.contactFormularText', { link: link })
+                "
               />
             </q-card-section>
             <q-card-actions class="q-pa-md" style="height: 120px">
@@ -190,9 +192,8 @@ import emailjs from '@emailjs/browser';
 import { defineComponent } from 'vue';
 import { email, emailContact, telegramToken, chatId } from '../../../appConfig';
 import { axios } from 'src/boot/axios';
+import { service_id, template_id, user_id, link } from '../../../appConfig';
 export default defineComponent({
-  watch: {},
-  props: {},
   name: 'ContactFormular',
   components: { contactInfo },
   data() {
@@ -205,13 +206,17 @@ export default defineComponent({
       regEmail: '',
       email,
       emailContact,
+      link,
     };
   },
   methods: {
     isValidEmail() {
       const emailPattern =
         /^(?=[a-zA-Z0-9@._%+-]{6,254}$)[a-zA-Z0-9._%+-]{1,64}@(?:[a-zA-Z0-9-]{1,63}\.){1,8}[a-zA-Z]{2,63}$/;
-      return emailPattern.test(this.regEmail) || 'Invalid inputEmail';
+      return (
+        emailPattern.test(this.regEmail) ||
+        this.$t('kontakt.contact.reqziredEmail')
+      );
     },
     onSubmit() {
       this.$refs.name.validate();
@@ -248,7 +253,7 @@ export default defineComponent({
       this.$refs.text.resetValidation();
     },
     sendTelegram() {
-      const fullMessage = `***Eine Kundenberatung***\nExklusives-Katzenfutter.de \n\nNamen: ${this.name} \n\nEmailadresse: ${this.inputEmail} \n\nTelefon: ${this.phone} \n\n\nText:\n${this.text}`;
+      const fullMessage = `***Eine Kundenberatung***\n${link} \n\nNamen: ${this.name} \n\nEmailadresse: ${this.inputEmail} \n\nTelefon: ${this.phone} \n\n\nText:\n${this.text}`;
       axios.post(
         `https://api.telegram.org/bot${telegramToken}/sendMessage?chat_id=${chatId}&text=${fullMessage}`
       );
@@ -258,31 +263,28 @@ export default defineComponent({
         from_name: this.name,
         reply_to: this.inputEmail,
         message:
-          'Name: ' +
+          this.$t('kontakt.contact.firstName') +
+          ':' +
           this.name +
           ' ' +
-          ' Emailadresse: ' +
+          this.$t('kontakt.contact.email') +
+          ':' +
           this.inputEmail +
-          '  Telefon: ' +
+          this.$t('kontakt.contact.phone') +
+          ':' +
           this.phone +
-          ' Nachricht: ' +
+          this.$t('kontakt.contact.message') +
+          ':' +
           this.text,
       };
-      emailjs
-        .send(
-          'service_6gu3omr',
-          'template_hfq2air',
-          templateParams,
-          'user_3j7fixvUbKpSj7GrpOzZA'
-        )
-        .then(
-          function (response) {
-            console.log('SUCCESS!', response.status, response.text);
-          },
-          function (error) {
-            console.log('FAILED...', error);
-          }
-        );
+      emailjs.send(service_id, template_id, templateParams, user_id).then(
+        function (response) {
+          console.log('SUCCESS!', response.status, response.text);
+        },
+        function (error) {
+          console.log('FAILED...', error);
+        }
+      );
       // Reset form field
       this.name = '';
       this.inputEmail = '';

@@ -11,7 +11,10 @@
           <q-card class="bg-dark no-shadow">
             <q-card-section>
               <div class="row text-left">
-                <div class="col-12 text-h5">Kontakt:</div>
+                <div
+                  class="col-12 text-h5"
+                  v-html="this.$t('footer.contactSubtext')"
+                />
                 <div class="col-12 text-body1">{{ name }}</div>
                 <div class="col-12 text-body1">{{ location }}</div>
                 <div class="row q-pt-xs q-pb-xs">
@@ -37,7 +40,7 @@
                   <div class="col-12 text-body1">
                     Reico & Partner Vertriebs GmbH
                   </div>
-                  <div class="col-12 text-body1">Beraternummer: 6096921</div>
+                  <div class="col-12 text-body1">{{ this.$t('footer.contactSubtext') }} {{beraterNummer}}</div>
                 </div>
               </div>
             </q-card-section>
@@ -92,6 +95,7 @@ import {
   link,
   emailContact,
   mobileNumber,
+  beraterNummer,
 } from '../../../appConfig';
 
 const timeStamp = Date.now();
@@ -99,7 +103,7 @@ const currentYear = date.formatDate(timeStamp, 'YYYY');
 export default defineComponent({
   components: { menuList, SocialMediaBar, OpenMap },
   name: 'FooterC',
-  setup() {
+  data() {
     const logo = require('assets/icons/exklusives-katzenfutter.png');
     const instagram = require('assets/icons/instagram.svg');
     const tictoc = require('assets/icons/tiktok.png');
@@ -118,6 +122,7 @@ export default defineComponent({
       mobile,
       emailContact,
       mobileNumber,
+      beraterNummer
     };
   },
   methods: {

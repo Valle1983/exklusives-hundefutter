@@ -9,16 +9,16 @@
       v-html="this.$t('startseite.questions.subText')"
     />
     <div class="row">
-      <div class="col-1"></div>
+      <div class="col-1" />
       <div class="q-pa-sm col-5 col-md-5 col-sm-12 col-xs-12">
         <q-list
           v-for="questions in leftQuestions"
           :key="questions.id"
-          class="q-pt-xs"
+          class="q-pt-xs my-dropdown"
         >
           <q-expansion-item
             :id="questions.id"
-            class="bg-white text-body1 text-weight-bold carousel-cards"
+            class="bg-white text-body1 text-weight-bold carousel-cards my-dropdown"
             group="somegroup1"
             :label="questions.headline"
             header-class="text-dark"
@@ -113,3 +113,9 @@ export default defineComponent({
   },
 });
 </script>
+<style lang="scss" scoped>
+.my-dropdown:hover {
+  background-color: rgb(56, 71, 71, 0.2);
+  border-radius: 25px;
+}
+</style>

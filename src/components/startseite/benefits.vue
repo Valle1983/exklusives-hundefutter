@@ -17,7 +17,7 @@
       >
         <q-card
           class="my-card carousel-cards rounded-borders no-box-shadow no-border"
-          style="min-height: 405px; max-height: 420px"
+          style="min-height: 405px; max-height: 620px"
         >
           <q-img
             :src="card.imageTitle"
@@ -153,6 +153,6 @@ export default defineComponent({
 
 <style lang="scss" scoped>
 .my-card:hover {
-  background-color: rgba(135, 173, 37, 0.04);
+  background-color: rgb(56, 71, 71, 0.2);
 }
 </style>

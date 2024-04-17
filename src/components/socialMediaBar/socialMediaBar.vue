@@ -52,8 +52,7 @@ export default defineComponent({
         metaTags: [
           {
             name: 'description',
-            content:
-              'https://www.instagram.com/laisy_malteser/ , https://www.tiktok.com/@laisy_malteser , https://t.me/laisy_malteser    ',
+            content: `${instagramLink}, ${tiktokLink}, ${telegramLink}`,
           },
           { name: 'viewport', content: 'width=device-width, initial-scale=1' },
           { name: 'robots', content: 'follow' },
@@ -61,8 +60,7 @@ export default defineComponent({
           { property: 'og:title', content: 'Social Media' },
           {
             property: 'og:description',
-            content:
-              'https://www.instagram.com/laisy_malteser/ , https://www.tiktok.com/@laisy_malteser , https://t.me/laisy_malteser    ',
+            content: `${instagramLink}, ${tiktokLink}, ${telegramLink}`,
           },
           { property: 'og:image', content: instagram },
           { property: 'og:url', content: window.location.href },
@@ -71,8 +69,7 @@ export default defineComponent({
           { property: 'og:title', content: instagram },
           {
             property: 'og:description',
-            content:
-              'https://www.instagram.com/laisy_malteser/ , https://www.tiktok.com/@laisy_malteser , https://t.me/laisy_malteser    ',
+            content: `${instagramLink}, ${tiktokLink}, ${telegramLink}`,
           },
           { property: 'og:image', content: instagram },
         ],

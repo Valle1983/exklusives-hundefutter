@@ -1,12 +1,12 @@
 // This is just an example,
 // so you can safely delete all default props below
-import { emailContact, email } from 'app/appConfig';
+import { emailContact, email, link } from 'app/appConfig';
 
 export default {
   anmeldung: {
     contact: {
       requiredField: 'Das ist ein Pflichfeld, bitte was eintragen',
-      reqziredEmail: 'Falsche Emailadresse',
+      reqziredEmail: 'Bitte eine Emailadresse eingeben',
       firstName: 'Vorname',
       lastName: 'Nachname',
       streetNumber: 'Strasse & Hausnummer',
@@ -18,10 +18,10 @@ export default {
       text: 'Ihre Nachricht',
       checkBox: 'Ja, ich stimme der Datenschutzbestimmung zu.',
       checkBoxText:
-        'Ich stimme zu, dass meine Angaben aus dem Kontaktformular zur Beantwortung meiner Anfrage erhoben und verarbeitet werden. Die Daten werden nach abgeschlossener Bearbeitung Ihrer Anfrage gelöscht.<br><br>   Hinweis: Sie können Ihre Einwilligung jederzeit für die Zukunft per E-Mail an <a class="text-dark" href=' +
+        'Ich stimme zu, dass meine Angaben aus dem Kontaktformular zur Beantwortung meiner Anfrage erhoben und verarbeitet werden. Die Daten werden nach abgeschlossener Bearbeitung Ihrer Anfrage gelöscht.<br><br>   Hinweis: Sie können Ihre Einwilligung jederzeit für die Zukunft per E-Mail an <a class="text-dark" href="' +
         emailContact +
-        '>kontakt@exklusives-hundefutter.de</a>widerrufen. Detaillierte Informationen zum Umgang mit Nutzerdaten finden Sie in unserer  <a class="text-dark" href="' +
-        window?.location.href.split('/kontakt')[0] +
+        '">kontakt@exklusives-hundefutter.de</a>widerrufen. Detaillierte Informationen zum Umgang mit Nutzerdaten finden Sie in unserer  <a class="text-dark" href="' +
+        link +
         '/datenschutz"><b>Datenschutzerklärung</b></a>',
       submitButton: 'Nachricht abschicken',
       newReicoAccount: 'Jetzt Reico Kunde werden, schnell und unkompliziert.',
@@ -65,14 +65,15 @@ export default {
       phone: 'Telefonnummer',
       email: 'Emailadresse',
       text: 'Ihre Nachricht',
+      message: 'Nachricht',
       checkBox: 'Ja, ich stimme der Datenschutzbestimmung zu.',
       contactFormularText:
         'Ich stimme zu, dass meine Angaben aus dem Kontaktformular zur Beantwortung meiner Anfrage erhoben und verarbeitet werden. Die Daten werden nach abgeschlossener Bearbeitung Ihrer Anfrage  gelöscht. <br><br> Hinweis: Sie können Ihre Einwilligung jederzeit für die Zukunft  per E-Mail an   <a class="text-dark" href=' +
         emailContact +
         '>' +
         email +
-        ' </a> widerrufen. Detaillierte Informationen zum Umgang mit  Nutzerdaten finden Sie in unserer  <a class="text-dark" href="' +
-        window?.location.href.split('/kontakt')[0] +
+        ' </a> widerrufen. Detaillierte Informationen zum Umgang mit  Nutzerdaten finden Sie in unserer <a class="text-dark" href="' +
+        link +
         '/datenschutz"><b>Datenschutzerklärung</b></a>',
       submitButton: 'Nachricht abschicken',
       consultingDateText: 'Vereinbaren Sie einen kostenfreien Beratungstermin',
@@ -130,7 +131,8 @@ export default {
     },
     questions: {
       title: 'Die wichtigsten Fragen rund um das Futter',
-      subText: 'Hier erhalten Sie Antworten auf die am häufigsten gestellten Fragen.',
+      subText:
+        'Hier erhalten Sie Antworten auf die am häufigsten gestellten Fragen.',
       left: {
         question1: {
           headline: 'Kann ich Reico Produkte auch im Supermarkt kaufen?',
