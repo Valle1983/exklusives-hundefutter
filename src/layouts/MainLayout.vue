@@ -58,7 +58,7 @@
           <q-carousel-slide
             v-else
             :name="1"
-            img-src="~assets/Futter/Leckerlies/bill-emrich.jpg"
+            img-src="~assets/Startseite/BackgroundLogo.jpg"
           />
         </q-carousel>
       </template>
@@ -91,7 +91,7 @@
                 @click="drawer = !drawer"
               />
               <q-toolbar-title
-                @click="goToHome"
+                @click="this.$router.push('/')"
                 class="justify-center cursor-pointer"
               >
                 <q-toolbar-title>

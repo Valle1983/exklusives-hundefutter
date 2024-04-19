@@ -7,7 +7,7 @@ const routes: RouteRecordRaw[] = [
     children: [
       {
         path: '',
-        name: 'Home',
+        name: 'HomePage',
         component: () => import('pages/IndexPage.vue'),
       },
       {
@@ -40,17 +40,17 @@ const routes: RouteRecordRaw[] = [
       },
       {
         path: '/meatzie',
-        component: () => import('pages/Food/mEATzie.vue'),
+        component: () => import('pages/Food/Meatzie.vue'),
       },
       {
         path: '/kraeutermischung',
         component: () => import('pages/Kraeuter/Kraeutermischung.vue'),
       },
       {
-        path: '/produkt/:id',
+        path: '/produkt/:type',
         component: () => import('pages/Produkt.vue'),
         name: 'produkt',
-        props: true,
+
       },
     ],
   },

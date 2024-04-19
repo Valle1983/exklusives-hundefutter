@@ -1,31 +1,29 @@
 <template>
-  <q-page>
+  <div>
     <inhalts-stoffe />
-    <m-e-a-tzie />
-    <contact-formular></contact-formular>
-  </q-page>
+    <infos />
+    <products :products="Meatzie" />
+  </div>
 </template>
 
 <script>
 import { defineComponent } from 'vue';
 import inhaltsStoffe from 'components/food/inhaltsStoffe';
-import mEATzie from 'components/food/mEATzie';
-import contactFormular from 'components/Kontakt/contact';
+import infos from 'components/food/infos';
+import Products from 'components/Produkte/Products';
+import { Meatzie } from 'src/pages/products';
 export default defineComponent({
   watch: {},
-  name: 'mEATzie',
+  name: 'Meatzie',
   components: {
     inhaltsStoffe,
-    contactFormular,
-    mEATzie,
+    infos,
+    Products,
   },
   data() {
-    return {};
+    return {
+      Meatzie,
+    };
   },
 });
 </script>
-
-<style type="scss">
-.q-layout {
-}
-</style>

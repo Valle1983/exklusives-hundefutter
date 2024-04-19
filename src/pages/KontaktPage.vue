@@ -3,9 +3,10 @@
 </template>
 
 <script>
+import { defineComponent } from 'vue';
 import ContactFormular from 'components/Kontakt/contact.vue';
 import { telegramLink, emailContact } from '../../appConfig';
-export default {
+export default defineComponent({
   name: 'KontaktPage',
   components: {
     ContactFormular,
@@ -13,7 +14,7 @@ export default {
   data() {
     return { telegramLink, emailContact };
   },
-};
+});
 </script>
 
 <style type="scss">

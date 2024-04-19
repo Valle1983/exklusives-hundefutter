@@ -121,9 +121,7 @@
               <br /><br />
               <div
                 class=""
-                v-html="
-                  this.$t('kontakt.contact.contactFormularText', { link: link })
-                "
+                v-html="this.$t('kontakt.contact.contactFormularText')"
               />
             </q-card-section>
             <q-card-actions class="q-pa-md" style="height: 120px">

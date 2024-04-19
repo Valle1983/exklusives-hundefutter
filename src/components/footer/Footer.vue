@@ -40,7 +40,9 @@
                   <div class="col-12 text-body1">
                     Reico & Partner Vertriebs GmbH
                   </div>
-                  <div class="col-12 text-body1">{{ this.$t('footer.contactSubtext') }} {{beraterNummer}}</div>
+                  <div class="col-12 text-body1">
+                    {{ this.$t('footer.contactSubtext') }} {{ beraterNummer }}
+                  </div>
                 </div>
               </div>
             </q-card-section>
@@ -122,7 +124,7 @@ export default defineComponent({
       mobile,
       emailContact,
       mobileNumber,
-      beraterNummer
+      beraterNummer,
     };
   },
   methods: {

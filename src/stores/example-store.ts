@@ -1,15 +1,24 @@
 import { defineStore } from 'pinia';
 
-export const useCounterStore = defineStore('counter', {
+export const useProductStore = defineStore('product', {
   state: () => ({
-    counter: 0,
+    selectedProduct: {
+      id: '',
+      image: '',
+      type: '',
+      headline: '',
+      text: '',
+      description: '',
+    },
   }),
   getters: {
-    doubleCount: (state) => state.counter * 2,
+    getSelectedProduct(state) {
+      return state.selectedProduct;
+    },
   },
   actions: {
-    increment() {
-      this.counter++;
+    setSelectedProduct(product: any) {
+      this.selectedProduct = product;
     },
   },
 });

@@ -2,8 +2,7 @@
   <div>
     <inhalts-stoffe />
     <infos />
-    <trocken-futter />
-    <contact-formular></contact-formular>
+    <products :products="DryFood" />
   </div>
 </template>
 
@@ -11,20 +10,19 @@
 import { defineComponent } from 'vue';
 import inhaltsStoffe from 'components/food/inhaltsStoffe';
 import infos from 'components/food/infos';
-import trockenFutter from 'components/food/Trockenfutter';
-import ContactFormular from 'components/Kontakt/contact';
-
+import Products from 'components/Produkte/Products';
+import { DryFood } from 'src/pages/products';
 export default defineComponent({
+  methods: {},
   watch: {},
-  name: 'TrockenFutter',
+  name: 'Nassfutter',
   components: {
     inhaltsStoffe,
     infos,
-    trockenFutter,
-    ContactFormular,
+    Products,
   },
   data() {
-    return {};
+    return { DryFood };
   },
 });
 </script>
