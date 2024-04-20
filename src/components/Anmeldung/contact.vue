@@ -311,16 +311,85 @@ import {
   service_id,
   template_id,
   user_id,
+  website,
 } from '../../../appConfig';
 import { defineComponent } from 'vue';
 import { axios } from 'src/boot/axios';
 import contactInfo from '../Kontakt/contactInfo.vue';
+import { useMeta } from 'quasar';
 
 export default defineComponent({
-  props: {},
   name: 'ContactFormular',
   components: { contactInfo },
   data() {
+    const logo = require('assets/Anmeldung/anastasiya-lobanovskaya.jpg');
+    const metaData = {
+      // sets document title
+      title: this.$t('anmeldung.contact.newReicoAccount'),
+      // optional; sets final title as "Index Page - My Website", useful for multiple level meta
+      titleTemplate: (title) => `${title}`,
+
+      // meta tags
+      meta: {
+        description: {
+          name: this.$t('anmeldung.contact.newReicoAccount'),
+          content: this.$t('anmeldung.contact.newReicoAccountText'),
+        },
+        keywords: {
+          name: this.$t('anmeldung.contact.newReicoAccountText'),
+          content: this.$t('anmeldung.contact.newReicoAccount'),
+        },
+        ogTitle: {
+          property: 'og:title',
+          content: this.$t('anmeldung.contact.newReicoAccount'),
+        },
+        ogDescription: {
+          property: 'og:description',
+          content: this.desctiptionContent,
+        },
+        ogType: { property: 'og:type', content: 'website' },
+        ogImage: { property: 'og:image', content: logo },
+        ogUrl: { property: 'og:url', content: window.location.href },
+        equiv: {
+          'http-equiv': 'Content-Type',
+          content: 'text/html; charset=UTF-8',
+        },
+      },
+
+      // CSS tags
+      link: {
+        material: {
+          rel: 'stylesheet',
+          href: 'https://fonts.googleapis.com/icon?family=Material+Icons',
+        },
+      },
+
+      // JS tags
+      script: {
+        ldJson: {
+          type: 'application/ld+json',
+          innerHTML: '{ "@context": "http://schema.org" }',
+        },
+      },
+
+      // <html> attributes
+      htmlAttr: {
+        'xmlns:cc': 'http://creativecommons.org/ns#', // generates <html xmlns:cc="http://creativecommons.org/ns#">,
+        empty: undefined, // generates <html empty>
+      },
+
+      // <body> attributes
+      bodyAttr: {
+        'action-scope': 'xyz', // generates <body action-scope="xyz">
+        empty: undefined, // generates <body empty>
+      },
+
+      // <noscript> tags
+      noscript: {
+        default: 'This is content for browsers with no JS (or disabled JS)',
+      },
+    };
+    useMeta(metaData);
     return {
       right: false,
       firstName: '',
@@ -345,6 +414,7 @@ export default defineComponent({
       service_id,
       template_id,
       user_id,
+      website,
     };
     emailContact;
   },
@@ -408,7 +478,7 @@ export default defineComponent({
       this.$refs.text.resetValidation();
     },
     sendTelegram() {
-      const fullMessage = `***Ein neues Kundenkonto anlegen*** \nExklusives-Hundefutter.de \n\nVornamen: ${this.firstName} \nNachnamen: ${this.lastName} \n\nAdresse:\nStrasse: ${this.streetNumber}  ${this.addressAdd} \nOrt: ${this.location}\nPLZ: ${this.plz} \nEmail: ${this.email} \nTelefon: ${this.telefon} \n\n\nText:\n ${this.text}`;
+      const fullMessage = `***Ein neues Kundenkonto anlegen*** \n${website}\n\nVornamen: ${this.firstName} \nNachnamen: ${this.lastName} \n\nAdresse:\nStrasse: ${this.streetNumber}  ${this.addressAdd} \nOrt: ${this.location}\nPLZ: ${this.plz} \nEmail: ${this.email} \nTelefon: ${this.telefon} \n\n\nText:\n ${this.text}`;
       axios.post(
         `https://api.telegram.org/bot${telegramToken}/sendMessage?chat_id=${chatId}&text=${fullMessage}`
       );

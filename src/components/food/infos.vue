@@ -34,8 +34,92 @@
 <script>
 import bubleSeparatorOpen from 'components/StyleTools/bubleSeparatorOpen';
 import { defineComponent } from 'vue';
+import { useMeta } from 'quasar';
 export default defineComponent({
   components: { bubleSeparatorOpen },
+  data() {
+    const logo = require('../../assets/Startseite/BackgroundLogo.jpg');
+    const metaData = {
+      // sets document title
+      title:
+        this.$t('food.infos.glutenFree') +
+        ' ' +
+        this.$t('food.infos.lactoseFree') +
+        ' ' +
+        this.$t('food.infos.mineralBalance'),
+      // optional; sets final title as "Index Page - My Website", useful for multiple level meta
+      titleTemplate: (title) => `${title}`,
+
+      // meta tags
+      meta: {
+        description: {
+          name: 'Gesund',
+          content:
+            this.$t('food.infos.glutenFree') +
+            ' ' +
+            this.$t('food.infos.lactoseFree') +
+            ' ' +
+            this.$t('food.infos.mineralBalance'),
+        },
+        keywords: {
+          name:
+            this.$t('food.infos.glutenFree') +
+            ' ' +
+            this.$t('food.infos.lactoseFree') +
+            ' ' +
+            this.$t('food.infos.mineralBalance'),
+          content: this.content,
+        },
+        ogTitle: { property: 'og:title', content: 'Gesund' },
+        ogDescription: {
+          property: 'og:description',
+          content: this.desctiptionContent,
+        },
+        ogType: { property: 'og:type', content: window.location.href },
+        ogImage: { property: 'og:image', content: logo },
+        ogUrl: { property: 'og:url', content: window.location.href },
+        equiv: {
+          'http-equiv': 'Content-Type',
+          content: 'text/html; charset=UTF-8',
+        },
+      },
+
+      // CSS tags
+      link: {
+        material: {
+          rel: 'stylesheet',
+          href: 'https://fonts.googleapis.com/icon?family=Material+Icons',
+        },
+      },
+
+      // JS tags
+      script: {
+        ldJson: {
+          type: 'application/ld+json',
+          innerHTML: '{ "@context": "http://schema.org" }',
+        },
+      },
+
+      // <html> attributes
+      htmlAttr: {
+        'xmlns:cc': 'http://creativecommons.org/ns#', // generates <html xmlns:cc="http://creativecommons.org/ns#">,
+        empty: undefined, // generates <html empty>
+      },
+
+      // <body> attributes
+      bodyAttr: {
+        'action-scope': 'xyz', // generates <body action-scope="xyz">
+        empty: undefined, // generates <body empty>
+      },
+
+      // <noscript> tags
+      noscript: {
+        default: 'This is content for browsers with no JS (or disabled JS)',
+      },
+    };
+    useMeta(metaData);
+    return {};
+  },
 });
 </script>
 <style lang="css">

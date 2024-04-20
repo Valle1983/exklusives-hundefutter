@@ -37,9 +37,10 @@
                   ></q-btn>
                 </div>
                 <div class="col-12 text-white q-pa-xs cursor text-weight-bold">
-                  <div class="col-12 text-body1">
-                    Reico & Partner Vertriebs GmbH
-                  </div>
+                  <div
+                    class="col-12 text-body1"
+                    v-html="this.$t('footer.partnerReico')"
+                  />
                   <div class="col-12 text-body1">
                     {{ this.$t('footer.contactSubtext') }} {{ beraterNummer }}
                   </div>
@@ -52,7 +53,10 @@
           <q-card class="bg-dark no-shadow">
             <q-card-section>
               <div class="row text-left">
-                <div class="col-12 text-h5 text-left">Wichtige Seiten:</div>
+                <div
+                  class="col-12 text-h5 text-left"
+                  v-html="this.$t('footer.contactSubtext')"
+                />
                 <div class="col-12 text-left text-body1">
                   <menu-list :showHome="false" />
                 </div>
@@ -82,7 +86,7 @@
     </div>
   </q-footer>
 </template>
-<script lang="ts">
+<script>
 import { defineComponent } from 'vue';
 import { date, openURL } from 'quasar';
 import menuList from '../menuList/menuList.vue';
@@ -99,6 +103,7 @@ import {
   mobileNumber,
   beraterNummer,
 } from '../../../appConfig';
+import { useMeta } from 'quasar';
 
 const timeStamp = Date.now();
 const currentYear = date.formatDate(timeStamp, 'YYYY');
@@ -110,6 +115,66 @@ export default defineComponent({
     const instagram = require('assets/icons/instagram.svg');
     const tictoc = require('assets/icons/tiktok.png');
     const telegram = require('assets/icons/telegram.svg');
+    const metaData = {
+      // sets document title
+      title: this.$t('footer.contactSubtext'),
+      // optional; sets final title as "Index Page - My Website", useful for multiple level meta
+      titleTemplate: (title) => `${title}`,
+      // meta tags
+      meta: {
+        description: {
+          name: this.$t('footer.contactSubtext'),
+          content: name,
+        },
+        keywords: { name: website, content: website },
+        ogTitle: { property: 'og:title', content: website },
+        ogDescription: {
+          property: 'og:description',
+          content: this.desctiptionContent,
+        },
+        ogType: { property: 'og:type', content: window.location.href },
+        ogImage: { property: 'og:image', content: logo },
+        ogUrl: { property: 'og:url', content: window.location.href },
+        equiv: {
+          'http-equiv': 'Content-Type',
+          content: 'text/html; charset=UTF-8',
+        },
+      },
+
+      // CSS tags
+      link: {
+        material: {
+          rel: 'stylesheet',
+          href: 'https://fonts.googleapis.com/icon?family=Material+Icons',
+        },
+      },
+
+      // JS tags
+      script: {
+        ldJson: {
+          type: 'application/ld+json',
+          innerHTML: '{ "@context": "http://schema.org" }',
+        },
+      },
+
+      // <html> attributes
+      htmlAttr: {
+        'xmlns:cc': 'http://creativecommons.org/ns#', // generates <html xmlns:cc="http://creativecommons.org/ns#">,
+        empty: undefined, // generates <html empty>
+      },
+
+      // <body> attributes
+      bodyAttr: {
+        'action-scope': 'xyz', // generates <body action-scope="xyz">
+        empty: undefined, // generates <body empty>
+      },
+
+      // <noscript> tags
+      noscript: {
+        default: 'This is content for browsers with no JS (or disabled JS)',
+      },
+    };
+    useMeta(metaData);
     return {
       logo,
       instagram,

@@ -52,6 +52,7 @@ export default {
       mineralBalance: 'Mineralisches <br>   Gleichgewicht',
     },
     inhalsStoffe: {
+      title: ' So viel Naturkraft steckt wirklich in Reico',
       highFreshMeatContent: 'hoher<br>Frischfleischanteil',
       noGenecticIngredients: 'keine genetischen<br>Zutaten',
       nonePreservatives: 'keine<br>Konservierungsstoffe',
@@ -64,6 +65,7 @@ export default {
     contactSubtext: 'Kontakt:',
     customerNumber: 'Beraternummer:',
     importantSites: 'Wichtige Seiten:',
+    partnerReico: 'Reico & Partner Vertriebs GmbH',
   },
   kontakt: {
     contact: {
@@ -101,6 +103,13 @@ export default {
       fillContactFormular:
         ' Wünschen Sie ein Gespräch? Dann füllen Sie einfach für ein unverbindliches Gespräch das Kontaktformular aus',
     },
+    contactInfo: {
+      title: 'Kontakt',
+    },
+  },
+  krauter_co: {
+    headline: ' Die Naturkraft - Kräutermischung für den Hund',
+    text: 'Um bei der Bestellung von Reico Hundefutter die Qualität hochzuhalten, ist die Bestellung nur im Direktvertrieb über einen Reico Vertriebspartner möglich, so wie wir es sind. Nachdem eine koordinierte Erstbestellung mit ausführlicher Beratung erfolgt ist, können Sie künftig das Futter für Ihr Tier ganz bequem selbst über den Onlineshop bestellen. Reico legt großen Wert darauf, dass Ihr Hund artgerechtes und passendes Hundefutter bekommt, weswegen wir Ihnen unsere kostenlose Futterberatung vor Ihrer ersten Bestellung ans Herz legen.',
   },
   menuList: {
     contactSite: 'Kontakt',

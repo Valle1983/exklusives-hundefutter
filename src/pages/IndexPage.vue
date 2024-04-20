@@ -20,7 +20,7 @@ export default defineComponent({
   props: {
     title: {
       type: String,
-      default: 'Index Page',
+      default: '',
     },
     content: {
       type: String,
@@ -54,25 +54,31 @@ export default defineComponent({
     const logo = require('assets/icons/logo.svg');
     const metaData = {
       // sets document title
-      title: this.title,
+      title: this.$t('startseite.mixedItems.title'),
       // optional; sets final title as "Index Page - My Website", useful for multiple level meta
       titleTemplate: (title: string) => `${title}`,
 
       // meta tags
       meta: {
         description: {
-          name: this.desctiption,
-          content: this.desctiptionContent,
+          name: this.$t('startseite.mixedItems.title'),
+          content: this.$t('startseite.mixedItems.subTitle'),
         },
-        keywords: { name: this.keywords, content: this.content },
-        ogTitle: { property: 'og:title', content: this.content },
+        keywords: {
+          name: this.keywords,
+          content: this.$t('startseite.mixedItems.subTitle'),
+        },
+        ogTitle: {
+          property: 'og:title',
+          content: this.$t('startseite.mixedItems.subTitle'),
+        },
         ogDescription: {
           property: 'og:description',
           content: this.desctiptionContent,
         },
-        ogType: { property: 'og:type', content: 'website' },
+        ogType: { property: 'og:type', content: window.location.href },
         ogImage: { property: 'og:image', content: logo },
-        ogUrl: { property: 'og:url', content: this.ogUrl },
+        ogUrl: { property: 'og:url', content: window.location.href },
         equiv: {
           'http-equiv': 'Content-Type',
           content: 'text/html; charset=UTF-8',

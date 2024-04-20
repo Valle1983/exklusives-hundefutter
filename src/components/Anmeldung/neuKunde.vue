@@ -104,9 +104,78 @@
 <script>
 import bubleSeparatorClose from 'components/StyleTools/bubleSeparatorClose';
 import { defineComponent } from 'vue';
+import { useMeta } from 'quasar';
 export default defineComponent({
   components: { bubleSeparatorClose },
   data() {
+    const logo = require('assets/Anmeldung/anastasiya-lobanovskaya.jpg');
+    const metaData = {
+      // sets document title
+      title: this.$t('anmeldung.neuKunde.newCustomer'),
+      // optional; sets final title as "Index Page - My Website", useful for multiple level meta
+      titleTemplate: (title) => `${title}`,
+
+      // meta tags
+      meta: {
+        description: {
+          name: this.$t('anmeldung.neuKunde.newCustomer'),
+          content: this.$t('anmeldung.neuKunde.newCustomerText'),
+        },
+        keywords: {
+          name: this.$t('anmeldung.neuKunde.newCustomerText'),
+          content: this.$t('anmeldung.neuKunde.newCustomer'),
+        },
+        ogTitle: {
+          property: 'og:title',
+          content: this.$t('anmeldung.neuKunde.newCustomer'),
+        },
+        ogDescription: {
+          property: 'og:description',
+          content: this.$t('anmeldung.neuKunde.newCustomerText'),
+        },
+        ogType: { property: 'og:type', content: 'website' },
+        ogImage: { property: 'og:image', content: logo },
+        ogUrl: { property: 'og:url', content: window.location.href },
+        equiv: {
+          'http-equiv': 'Content-Type',
+          content: 'text/html; charset=UTF-8',
+        },
+      },
+
+      // CSS tags
+      link: {
+        material: {
+          rel: 'stylesheet',
+          href: 'https://fonts.googleapis.com/icon?family=Material+Icons',
+        },
+      },
+
+      // JS tags
+      script: {
+        ldJson: {
+          type: 'application/ld+json',
+          innerHTML: '{ "@context": "http://schema.org" }',
+        },
+      },
+
+      // <html> attributes
+      htmlAttr: {
+        'xmlns:cc': 'http://creativecommons.org/ns#', // generates <html xmlns:cc="http://creativecommons.org/ns#">,
+        empty: undefined, // generates <html empty>
+      },
+
+      // <body> attributes
+      bodyAttr: {
+        'action-scope': 'xyz', // generates <body action-scope="xyz">
+        empty: undefined, // generates <body empty>
+      },
+
+      // <noscript> tags
+      noscript: {
+        default: 'This is content for browsers with no JS (or disabled JS)',
+      },
+    };
+    useMeta(metaData);
     return {
       slide: 'first',
       img: 'imgs/reico-2019.png',

@@ -134,11 +134,11 @@ export default defineComponent({
   props: {
     title: {
       type: String,
-      default: 'Index Page',
+      default: 'Impressum',
     },
     content: {
       type: String,
-      default: 'Page 1',
+      default: 'Impressum',
     },
     desctiption: {
       type: String,
