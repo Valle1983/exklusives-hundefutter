@@ -50,7 +50,6 @@ const routes: RouteRecordRaw[] = [
         path: '/produkt/:type',
         component: () => import('pages/Produkt.vue'),
         name: 'produkt',
-
       },
     ],
   },

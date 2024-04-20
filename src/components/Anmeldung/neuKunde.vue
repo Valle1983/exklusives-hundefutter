@@ -6,13 +6,13 @@
         v-html="this.$t('anmeldung.neuKunde.newCustomer')"
       />
       <div class="row justify-center">
-        <div class="col2"></div>
+        <div class="col2" />
         <div
           class="col-8 col-md-8 col-sm-12 col-xs-12 q-pa-md text-h6 text-grey-8"
         >
           {{ this.$t('anmeldung.neuKunde.newCustomerText') }}
         </div>
-        <div class="col2"></div>
+        <div class="col2" />
       </div>
     </div>
     <div class="row q-pt-md justify-center">
@@ -23,7 +23,7 @@
           transition-next="scale"
           swipeable
           animated
-          control-color="primary"
+          control-color="dark"
           navigation
           padding
           arrows
@@ -35,7 +35,7 @@
               v-if="active"
               size="lg"
               icon="pets"
-              color="primary"
+              color="dark"
               flat
               round
               dense
@@ -55,39 +55,45 @@
 
           <q-carousel-slide name="first" class="column no-wrap flex-center">
             <q-img src="~assets/reico-2019.png" width="150px" />
-            <div class="q-mt-md text-center">
-              {{ this.$t('anmeldung.neuKunde.carousel.step1') }}
-            </div>
+            <div
+              class="q-mt-md text-center"
+              v-html="this.$t('anmeldung.neuKunde.carousel.step1')"
+            ></div>
           </q-carousel-slide>
           <q-carousel-slide name="second" class="column no-wrap flex-center">
             <q-img src="~assets/reico-2019.png" width="150px" />
-            <div class="q-mt-md text-center">
-              {{ this.$t('anmeldung.neuKunde.carousel.step2') }}
-            </div>
+            <div
+              class="q-mt-md text-center"
+              v-html="this.$t('anmeldung.neuKunde.carousel.step2')"
+            ></div>
           </q-carousel-slide>
           <q-carousel-slide name="thirt" class="column no-wrap flex-center">
             <q-img src="~assets/reico-2019.png" width="150px" />
-            <div class="q-mt-md text-center">
-              {{ this.$t('anmeldung.neuKunde.carousel.step3') }}
-            </div>
+            <div
+              class="q-mt-md text-center"
+              v-html="this.$t('anmeldung.neuKunde.carousel.step3')"
+            ></div>
           </q-carousel-slide>
           <q-carousel-slide name="fourth" class="column no-wrap flex-center">
             <q-img src="~assets/reico-2019.png" width="150px" />
-            <div class="q-mt-md text-center">
-              {{ this.$t('anmeldung.neuKunde.carousel.step4') }}
-            </div>
+            <div
+              class="q-mt-md text-center"
+              v-html="this.$t('anmeldung.neuKunde.carousel.step4')"
+            ></div>
           </q-carousel-slide>
           <q-carousel-slide name="fifth" class="column no-wrap flex-center">
             <q-img src="~assets/reico-2019.png" width="150px" />
-            <div class="q-mt-md text-center">
-              {{ this.$t('anmeldung.neuKunde.carousel.step5') }}
-            </div>
+            <div
+              class="q-mt-md text-center"
+              v-html="this.$t('anmeldung.neuKunde.carousel.step5')"
+            ></div>
           </q-carousel-slide>
           <q-carousel-slide name="sixth" class="column no-wrap flex-center">
             <q-img src="~assets/reico-2019.png" width="150px" />
-            <div class="q-mt-md text-center">
-              {{ this.$t('anmeldung.neuKunde.carousel.step6') }}
-            </div>
+            <div
+              class="q-mt-md text-center"
+              v-html="this.$t('anmeldung.neuKunde.carousel.step6')"
+            ></div>
           </q-carousel-slide>
         </q-carousel>
       </div>

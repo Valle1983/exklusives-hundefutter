@@ -15,6 +15,7 @@
   "dependencies": {
     "@emailjs/browser": "^4.3.3",
     "@quasar/extras": "^1.16.4",
+    "dotenv": "^14.2.0",
     "axios": "^1.2.1",
     "core-js": "^3.31.1",
     "ol": "^9.1.0",

@@ -34,16 +34,19 @@
               <q-card-section class="bg-primary rounded-borders">
                 <div class="row q-gutter-sm">
                   <img
+                    v-if="prod.lactoseFree"
                     class="icons"
                     src="~assets/chips/Lactosefrei.png"
                     alt="Lactosefrei"
                   />
                   <img
+                    v-if="prod.mineralBalance"
                     class="icons"
                     src="~assets/chips/Mineralisches_Gleichgewicht.png"
                     alt="Mineralisches_Gleichgewicht"
                   />
                   <img
+                    v-if="prod.glutenFree"
                     class="icons"
                     src="~assets/chips/Glutenfrei.png"
                     alt="Glutenfrei"
@@ -97,16 +100,19 @@
               <q-card-section class="bg-primary rounded-borders">
                 <div class="row q-gutter-sm">
                   <img
+                    v-if="prod.lactoseFree"
                     class="icons"
                     src="~assets/chips/Lactosefrei.png"
                     alt="Lactosefrei"
                   />
                   <img
+                    v-if="prod.mineralBalance"
                     class="icons"
                     src="~assets/chips/Mineralisches_Gleichgewicht.png"
                     alt="Mineralisches_Gleichgewicht"
                   />
                   <img
+                    v-if="prod.glutenFree"
                     class="icons"
                     src="~assets/chips/Glutenfrei.png"
                     alt="Glutenfrei"
@@ -160,16 +166,19 @@
               <q-card-section class="bg-primary rounded-borders">
                 <div class="row q-gutter-sm">
                   <img
+                    v-if="prod.lactoseFree"
                     class="icons"
                     src="~assets/chips/Lactosefrei.png"
                     alt="Lactosefrei"
                   />
                   <img
+                    v-if="prod.mineralBalance"
                     class="icons"
                     src="~assets/chips/Mineralisches_Gleichgewicht.png"
                     alt="Mineralisches_Gleichgewicht"
                   />
                   <img
+                    v-if="prod.glutenFree"
                     class="icons"
                     src="~assets/chips/Glutenfrei.png"
                     alt="Glutenfrei"
@@ -223,16 +232,19 @@
               <q-card-section class="bg-primary rounded-borders">
                 <div class="row q-gutter-sm">
                   <img
+                    v-if="prod.lactoseFree"
                     class="icons"
                     src="~assets/chips/Lactosefrei.png"
                     alt="Lactosefrei"
                   />
                   <img
+                    v-if="prod.mineralBalance"
                     class="icons"
                     src="~assets/chips/Mineralisches_Gleichgewicht.png"
                     alt="Mineralisches_Gleichgewicht"
                   />
                   <img
+                    v-if="prod.glutenFree"
                     class="icons"
                     src="~assets/chips/Glutenfrei.png"
                     alt="Glutenfrei"
@@ -262,25 +274,25 @@
         </div>
       </q-carousel-slide>
     </q-carousel>
-    <buble-separator-close />
+    <buble-separator-close-dark />
   </div>
 </template>
 
 <script>
 import { defineComponent } from 'vue';
 import { Platform } from 'quasar';
-import bubleSeparatorClose from 'components/StyleTools/bubleSeparatorClose';
+import bubleSeparatorCloseDark from 'components/StyleTools/bubleSeparatorCloseDark';
 import { useProductStore } from 'src/stores/example-store';
 
 export default defineComponent({
-  name: 'TrockenFutter',
+  name: 'Products',
   props: {
     products: {
       type: Object,
     },
   },
   components: {
-    bubleSeparatorClose,
+    bubleSeparatorCloseDark,
   },
   mounted() {
     this.onResize();

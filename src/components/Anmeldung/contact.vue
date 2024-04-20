@@ -17,16 +17,16 @@
                   <q-input
                     ref="firstName"
                     v-model="firstName"
-                    :name="$t('anmeldung.contact.firstName')"
+                    name="firstName"
                     type="text"
-                    :label="$t('anmeldung.contact.firstName')"
-                    :aria-label="t('anmeldung.contact.firstName')"
+                    :label="this.$t('anmeldung.contact.firstName')"
+                    :aria-label="this.$t('anmeldung.contact.firstName')"
                     class="q-ma-md"
                     lazy-rules
                     :rules="[
                       (val) =>
                         (val && val.length > 0) ||
-                        this.$t('anmeldung.contact.requiredField'),
+                        this.$t('this.anmeldung.contact.requiredField'),
                     ]"
                   >
                     <template v-slot:prepend>
@@ -48,7 +48,7 @@
                     ref="lastName"
                     v-model="lastName"
                     type="text"
-                    :name="this.$t('anmeldung.contact.lastName')"
+                    name="lastName"
                     :label="this.$t('anmeldung.contact.lastName')"
                     :aria-label="this.$t('anmeldung.contact.lastName')"
                     class="q-ma-md"
@@ -78,7 +78,7 @@
                 ref="streetNumber"
                 v-model="streetNumber"
                 type="text"
-                :name="this.$t('anmeldung.contact.streetNumber')"
+                name="text"
                 :label="this.$t('anmeldung.contact.streetNumber')"
                 :aria-label="this.$t('anmeldung.contact.streetNumber')"
                 class="q-ma-md"
@@ -106,7 +106,7 @@
                 ref="addressAdd"
                 v-model="addressAdd"
                 type="text"
-                :name="this.$t('anmeldung.contact.streetNumber')"
+                name="addressAdd"
                 :aria-label="this.$t('anmeldung.contact.streetNumber')"
                 :label="this.$t('anmeldung.contact.streetNumber')"
                 class="q-ma-md"
@@ -130,7 +130,7 @@
                     ref="plz"
                     v-model="plz"
                     type="text"
-                    :name="this.$t('anmeldung.contact.plz')"
+                    name="text"
                     :label="this.$t('anmeldung.contact.plz')"
                     :aria-label="this.$t('anmeldung.contact.plz')"
                     class="q-ma-md"
@@ -159,7 +159,7 @@
                   <q-input
                     ref="location"
                     v-model="location"
-                    :name="this.$t('anmeldung.contact.location')"
+                    name="location"
                     type="text"
                     :label="this.$t('anmeldung.contact.requiredField')"
                     :aria-label="this.$t('anmeldung.contact.location')"
@@ -190,7 +190,7 @@
                 ref="email"
                 v-model="email"
                 type="email"
-                :name="this.$t('anmeldung.contact.email')"
+                name="email"
                 :label="this.$t('anmeldung.contact.email')"
                 :aria-label="this.$t('anmeldung.contact.email')"
                 class="q-ma-md"
@@ -213,7 +213,7 @@
                 ref="telefon"
                 v-model="telefon"
                 type="number"
-                :name="this.$t('anmeldung.contact.phone')"
+                name="telefon"
                 :label="this.$t('anmeldung.contact.phone')"
                 :aria-label="this.$t('anmeldung.contact.phone')"
                 class="q-ma-md"
@@ -234,7 +234,7 @@
               <q-input
                 ref="text"
                 v-model="text"
-                :name="this.$t('anmeldung.contact.text')"
+                name="text"
                 type="textarea"
                 :aria-label="this.$t('anmeldung.contact.text')"
                 :label="this.$t('anmeldung.contact.text')"
@@ -273,7 +273,7 @@
                 color="primary"
                 type="submit"
                 no-caps
-                aria-label="Nachricht abschicken"
+                :aria-label="this.$t('anmeldung.contact.submitButton')"
                 >{{ this.$t('anmeldung.contact.submitButton') }}
               </q-btn>
             </q-card-actions>
@@ -304,7 +304,6 @@
 </template>
 <script>
 import emailjs from '@emailjs/browser';
-import contactInfo from 'components/Kontakt/contactInfo';
 import {
   emailContact,
   telegramToken,
@@ -315,9 +314,7 @@ import {
 } from '../../../appConfig';
 import { defineComponent } from 'vue';
 import { axios } from 'src/boot/axios';
-
-console.log('process.env.EMAIL_JS_ID', process.env.EMAIL_JS_ID);
-emailjs.init(user_id);
+import contactInfo from '../Kontakt/contactInfo.vue';
 
 export default defineComponent({
   props: {},

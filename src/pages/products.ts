@@ -3,6 +3,9 @@ const WeetFood = [
     id: '2010-2011-2012',
     image: require('assets/Futter/Nassfutter/1.jpg'),
     type: 'MaxicatVit',
+    mineralBalance: true,
+    lactoseFree: true,
+    glutenFree: false,
     headline: 'MaxicatVit Wild',
     text: 'MaxicatVit Wild enthält alles, was kleine Jäger lieben: köstliches Wildfleisch, schmackhaftes Geflügelfleisch, leckere Nudeln, knackige Zucchini, goldgelben Kürbis und unsere einzigartige Algenmischung, die den Körper in sein mineralisches Gleichgewicht bringt...',
     description:
@@ -12,6 +15,9 @@ const WeetFood = [
     id: '2002-2006-2027',
     image: require('assets/Futter/Nassfutter/2.jpg'),
     type: 'MaxicatVit',
+    mineralBalance: true,
+    lactoseFree: false,
+    glutenFree: false,
     headline: 'MaxicatVit Herz Leber',
     text: 'Unser MaxicatVit Herz Leber wird auch die wählerischste Katze der Welt überzeugen. Mit saftigem Rindfleisch, köstlichem Rinderherz, schmackhafter Geflügelleber, nahrhaften Nudeln und unserer einzigartigen Algenmischung...',
     description:
@@ -21,6 +27,9 @@ const WeetFood = [
     id: '2001-2005-2026',
     image: require('assets/Futter/Nassfutter/3.jpg'),
     type: 'MaxicatVit',
+    mineralBalance: true,
+    lactoseFree: false,
+    glutenFree: true,
     headline: 'MaxicatVit Geflügel',
     text: 'Stubentiger können es sich mit unserem MaxicatVit Geflügel mit köstlichem Geflügelfleisch, saftigem Rindfleisch, leckerem Reis und unserer einzigartigen Algenmischung, die den Körper in sein mineralisches Gleichgewicht bringt, so richtig gut gehen lassen.',
     description:
@@ -30,6 +39,9 @@ const WeetFood = [
     id: '2000-2004-2025',
     image: require('assets/Futter/Nassfutter/4.jpg'),
     type: 'MaxicatVit',
+    mineralBalance: true,
+    lactoseFree: false,
+    glutenFree: true,
     headline: 'MaxicatVit Rind',
     text: 'Abenteuerlustige Katzen lieben unser MaxicatVit Rind: viel saftiges Rindfleisch, leckerer Reis und unsere einzigartige Algenmischung, die den Körper in sein mineralisches Gleichgewicht bringt. Damit bleibt Ihre Katze fit und wird optimal ernährt.',
     description:
@@ -42,6 +54,9 @@ const DryFood = [
     id: '2030-2031',
     image: require('assets/Futter/Trockenfutter/1.png'),
     type: 'MaxiCat',
+    mineralBalance: false,
+    lactoseFree: true,
+    glutenFree: true,
     headline: 'MaxiCat Sterne Menü',
     text: 'MaxicatVit Wild enthält alles, was kleine Jäger lieben: köstliches Wildfleisch, schmackhaftes Geflügelfleisch, leckere Nudeln, knackige Zucchini, goldgelben Kürbis und unsere einzigartige Algenmischung, die den Körper in sein mineralisches Gleichgewicht bringt...',
     description:
@@ -51,6 +66,9 @@ const DryFood = [
     id: '2022-2023',
     image: require('assets/Futter/Trockenfutter/2.png'),
     type: 'MaxiCat',
+    mineralBalance: false,
+    lactoseFree: false,
+    glutenFree: false,
     headline: 'MaxiCat Premium',
     text: 'Unser MaxicatVit Herz Leber wird auch die wählerischste Katze der Welt überzeugen. Mit saftigem Rindfleisch, köstlichem Rinderherz, schmackhafter Geflügelleber, nahrhaften Nudeln und unserer einzigartigen Algenmischung...',
     description:
@@ -60,6 +78,9 @@ const DryFood = [
     id: '2029',
     image: require('assets/Futter/Trockenfutter/3.png'),
     type: 'mEATzie',
+    mineralBalance: false,
+    lactoseFree: false,
+    glutenFree: true,
     headline: 'mEATzie Schmaus Huhn 3 kg',
     text: 'Stubentiger können es sich mit unserem MaxicatVit Geflügel mit köstlichem Geflügelfleisch, saftigem Rindfleisch, leckerem Reis und unserer einzigartigen Algenmischung, die den Körper in sein mineralisches Gleichgewicht bringt, so richtig gut gehen lassen.',
     description:
@@ -69,6 +90,9 @@ const DryFood = [
     id: '2009-2018',
     image: require('assets/Futter/Trockenfutter/4.png'),
     type: 'Katzenleckerli',
+    mineralBalance: false,
+    lactoseFree: false,
+    glutenFree: false,
     headline: 'Katzenleckerli',
     text: 'Abenteuerlustige Katzen lieben unser MaxicatVit Rind: viel saftiges Rindfleisch, leckerer Reis und unsere einzigartige Algenmischung, die den Körper in sein mineralisches Gleichgewicht bringt. Damit bleibt Ihre Katze fit und wird optimal ernährt.',
     description:
@@ -81,6 +105,9 @@ const Meatzie = [
     id: '2029',
     image: require('assets/Futter/Meatzie/1.png'),
     type: 'Meatzie',
+    mineralBalance: false,
+    lactoseFree: false,
+    glutenFree: true,
     headline: 'mEATzie Schmaus Huhn 3 kg',
     text: 'MaxicatVit Wild enthält alles, was kleine Jäger lieben: köstliches Wildfleisch, schmackhaftes Geflügelfleisch, leckere Nudeln, knackige Zucchini, goldgelben Kürbis und unsere einzigartige Algenmischung, die den Körper in sein mineralisches Gleichgewicht bringt...',
     description:
@@ -90,6 +117,9 @@ const Meatzie = [
     id: '2020',
     image: require('assets/Futter/Meatzie/2.png'),
     type: 'Meatzie',
+    mineralBalance: false,
+    lactoseFree: false,
+    glutenFree: false,
     headline: 'mEATzie Katzenmilch (80g)',
     text: 'Unser MaxicatVit Herz Leber wird auch die wählerischste Katze der Welt überzeugen. Mit saftigem Rindfleisch, köstlichem Rinderherz, schmackhafter Geflügelleber, nahrhaften Nudeln und unserer einzigartigen Algenmischung...',
     description:
@@ -99,6 +129,9 @@ const Meatzie = [
     id: '2037-2053',
     image: require('assets/Futter/Meatzie/3.jpg'),
     type: 'Meatzie',
+    mineralBalance: true,
+    lactoseFree: true,
+    glutenFree: true,
     headline: 'mEATzie Lachs & Shrimps',
     text: 'Stubentiger können es sich mit unserem MaxicatVit Geflügel mit köstlichem Geflügelfleisch, saftigem Rindfleisch, leckerem Reis und unserer einzigartigen Algenmischung, die den Körper in sein mineralisches Gleichgewicht bringt, so richtig gut gehen lassen.',
     description:
@@ -108,6 +141,9 @@ const Meatzie = [
     id: '2035-2051',
     image: require('assets/Futter/Meatzie/4.jpg'),
     type: 'Meatzie',
+    mineralBalance: true,
+    lactoseFree: false,
+    glutenFree: true,
     headline: 'mEATzie Ente & Käse',
     text: 'Abenteuerlustige Katzen lieben unser MaxicatVit Rind: viel saftiges Rindfleisch, leckerer Reis und unsere einzigartige Algenmischung, die den Körper in sein mineralisches Gleichgewicht bringt. Damit bleibt Ihre Katze fit und wird optimal ernährt.',
     description:
@@ -117,6 +153,9 @@ const Meatzie = [
     id: '2034-2050',
     image: require('assets/Futter/Meatzie/5.jpg'),
     type: 'Meatzie',
+    mineralBalance: true,
+    lactoseFree: true,
+    glutenFree: true,
     headline: 'mEATzie Geflügel & Ei',
     text: 'Abenteuerlustige Katzen lieben unser MaxicatVit Rind: viel saftiges Rindfleisch, leckerer Reis und unsere einzigartige Algenmischung, die den Körper in sein mineralisches Gleichgewicht bringt. Damit bleibt Ihre Katze fit und wird optimal ernährt.',
     description:
@@ -129,6 +168,9 @@ const Herbs = [
     id: '3000-3027-3020',
     image: require('assets/Kraeuter/Kraeuter/1.png'),
     type: 'Herbs',
+    mineralBalance: false,
+    lactoseFree: false,
+    glutenFree: false,
     headline: 'Naturkraft Pro-1',
     text: 'Pro-1 ist eine Mischung aus Kräutern, die zur Blutverbesserung und zur Regulierung der Darmtätigkeit gefüttert wird. Die Mischung kann die Bildung von Darmparasiten verhindern und dient gleichzeitig der inneren Reinigung.',
     description:
@@ -138,6 +180,9 @@ const Herbs = [
     id: '3001-3028-3023',
     image: require('assets/Kraeuter/Kraeuter/2.png'),
     type: 'Herbs',
+    mineralBalance: false,
+    lactoseFree: false,
+    glutenFree: false,
     headline: 'Naturkraft Pro-2',
     text: 'Pro-2 ist eine Mischung aus Kräutern, Hefen, Spurenelementen, Algen, B-Vitaminen, Mineralien und Aminosäuren, speziell für den Knochenaufbau und die Zahnentwicklung sowie eine gute Milchleistung bei säugenden Tieren...',
     description:
@@ -147,6 +192,9 @@ const Herbs = [
     id: '3002-3024-3017',
     image: require('assets/Kraeuter/Kraeuter/3.jpg'),
     type: 'Herbs',
+    mineralBalance: false,
+    lactoseFree: false,
+    glutenFree: false,
     headline: 'Naturkraft Pro-3',
     text: 'Pro-3 ist eine Mischung aus Kräutern, Hefen, Spurenelementen und Aminosäuren, speziell abgestimmt auf Haut- und Fellprobleme. Es wurde zur Anwendung bei Juckreiz entwickelt. Pro-3 beruhigt und stärkt die Haut und das Fell und kann die Regeneration fördern.',
     description:
@@ -156,6 +204,9 @@ const Herbs = [
     id: '3003-3021-3016',
     image: require('assets/Kraeuter/Kraeuter/4.png'),
     type: 'Herbs',
+    mineralBalance: false,
+    lactoseFree: false,
+    glutenFree: false,
     headline: 'Naturkraft Pro-4',
     text: 'Pro-4 ist eine Mischung aus Kräutern, Vitaminen der B-Gruppe und Aminosäuren, die speziell zum Schutz der inneren Organe entwickelt wurde, wie z. B. Leber, Bauchspeicheldrüse, Niere, Galle. Es kann Darmprobleme...',
     description:
@@ -165,6 +216,9 @@ const Herbs = [
     id: '3019',
     image: require('assets/Kraeuter/Kraeuter/5.png'),
     type: 'Herbs',
+    mineralBalance: false,
+    lactoseFree: false,
+    glutenFree: false,
     headline: 'Naturkraft Pro-5',
     text: 'Pro-5 ist eine Mischung aus fermentierten Kräutern, probiotischen Kulturen, Ballaststoffen und Darmflora- Stabilisatoren, die zur Unterstützung einer normalen Magen- Darm-Funktion gefüttert wird. Pro-5 kann bei Verdauungsstörungen..',
     description:
@@ -174,6 +228,9 @@ const Herbs = [
     id: '3005-3022-3018',
     image: require('assets/Kraeuter/Kraeuter/6.png'),
     type: 'Herbs',
+    mineralBalance: false,
+    lactoseFree: false,
+    glutenFree: false,
     headline: 'Naturkraft Pro-6',
     text: 'Pro-6 ist eine Mischung aus Kräutern mit Hefen, Spurenelementen und Vitaminen der B-Gruppe für einen gut entwickelten und störungsfreien Bewegungsapparat. Pro-6 unterstützt das Tier beim Aufbau der körpereigenen...',
     description:
@@ -183,6 +240,9 @@ const Herbs = [
     id: '3025-3038',
     image: require('assets/Kraeuter/Kraeuter/7.png'),
     type: 'Herbs',
+    mineralBalance: false,
+    lactoseFree: false,
+    glutenFree: false,
     headline: 'Naturkraft Pro-7',
     text: 'Pro-7 ist eine Mischung aus Kräutern, Spurenelementen und Aromasubstanzen, die speziell zur Erleichterung der Atmung entwickelt wurde. Die Mischung eignet sich für Tiere jedes Alters. Sie kann nach Anstrengung durch...',
     description:
@@ -192,6 +252,9 @@ const Herbs = [
     id: '3026-3039',
     image: require('assets/Kraeuter/Kraeuter/8.png'),
     type: 'Herbs',
+    mineralBalance: false,
+    lactoseFree: false,
+    glutenFree: false,
     headline: 'Naturkraft Pro-8',
     text: 'Pro-8 ist eine Mischung aus Kräutern, Hefen, Meeresalgen und Aromasubstanzen, die vor und nach Stresssituationen, sowie zur sanften Unterstützung bei Ruhelosigkeit und Panik eingesetzt werden kann.',
     description:
@@ -201,6 +264,9 @@ const Herbs = [
     id: '3031',
     image: require('assets/Kraeuter/Kraeuter/9.png'),
     type: 'Herbs',
+    mineralBalance: false,
+    lactoseFree: false,
+    glutenFree: false,
     headline: 'Aufbau-Vital Plus',
     text: 'Ergänzungsfuttermittel für Hunde Aufbau-Vital Plus eignet sich optimal für die Aufzucht von Welpen, aber auch für Hunde jeden Alters und jeder Größe. Aufbau-Vital Plus kann zur Stabilität bis ins hohe Alter beitragen.',
     description:

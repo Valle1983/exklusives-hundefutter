@@ -45,6 +45,21 @@ export default {
       },
     },
   },
+  food: {
+    infos: {
+      glutenFree: 'Glutenfrei',
+      lactoseFree: 'Laktosefrei',
+      mineralBalance: 'Mineralisches <br>   Gleichgewicht',
+    },
+    inhalsStoffe: {
+      highFreshMeatContent: 'hoher<br>Frischfleischanteil',
+      noGenecticIngredients: 'keine genetischen<br>Zutaten',
+      nonePreservatives: 'keine<br>Konservierungsstoffe',
+      complettelyWihoutSlaugterhouseWaste: 'ganz ohne<br />Schlachtabfälle',
+      naturalRawMaterials: 'naturbelassene<br />Rohstoffe',
+      nutrientPreservingProcessing: ' nährstoffschonende<br />Verarbeitung',
+    },
+  },
   footer: {
     contactSubtext: 'Kontakt:',
     customerNumber: 'Beraternummer:',

@@ -34,6 +34,26 @@
             >
               <div class="col-4 col-4 col-md-4 col-sm-12 col-xs-12">
                 <q-img :src="produkt.image" />
+                <div class="row q-gutter-sm">
+                  <img
+                    v-if="produkt.lactoseFree"
+                    class="icons"
+                    src="~assets/chips/Lactosefrei.png"
+                    alt="Lactosefrei"
+                  />
+                  <img
+                    v-if="produkt.mineralBalance"
+                    class="icons"
+                    src="~assets/chips/Mineralisches_Gleichgewicht.png"
+                    alt="Mineralisches_Gleichgewicht"
+                  />
+                  <img
+                    v-if="produkt.glutenFree"
+                    class="icons"
+                    src="~assets/chips/Glutenfrei.png"
+                    alt="Glutenfrei"
+                  />
+                </div>
               </div>
               <div class="q-pa-md col-8 col-md-8 col-sm-12 col-xs-12">
                 <div class="row">
@@ -163,6 +183,7 @@ import {
   DryFood,
   WeetFood,
   Meatzie,
+  Herbs,
 } from './products';
 import { useProductStore } from 'src/stores/example-store';
 import { ref } from 'vue';
@@ -193,6 +214,12 @@ export default {
         this.currentProducts = this.DryFood;
       }
     });
+
+    this.Herbs.forEach((h) => {
+      if (h.id === this.currentNumber.id) {
+        this.currentProducts = this.Herbs;
+      }
+    });
   },
   data() {
     const productStore = useProductStore();
@@ -213,6 +240,7 @@ export default {
       DryFood,
       Meatzie,
       WeetFood,
+      Herbs,
       currentProducts: [],
     };
   },

@@ -10,7 +10,7 @@ const chatId = '-1002140747480';
 const service_id = 'service_qzl6pio';
 const template_id = 'template_3ozizdh';
 const user_id = 'YoDwSlcZN_OvNp-YL';
-
+const EMAIL_JS_ID = 'user_3j7fixvUbKpSj7GrpOzZA';
 //
 const emailContact = 'mailto:kontakt@exklusives-katzenfutter.de';
 const email = 'kontakt@exklusives-katzenfutter.de';
@@ -44,6 +44,7 @@ export {
   service_id,
   template_id,
   user_id,
+  EMAIL_JS_ID,
   emailContact,
   email,
   mobileNumber,

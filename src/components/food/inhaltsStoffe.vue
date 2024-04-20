@@ -1,8 +1,6 @@
 <template>
-  <div class="q-pa-sm q-pt-xl bg-primary">
-    <div
-      class="text-h4 text-weight-bold text-white justify-center text-center contrast"
-    >
+  <div class="q-pa-sm q-pt-xl bg-dark">
+    <div class="text-h4 text-white justify-center text-center contrast">
       So viel Naturkraft steckt wirklich in Reico
     </div>
     <div class="q-pa-md q-pt-xl q-gutter-md row justify-center">
@@ -14,10 +12,13 @@
               round
               icon="done"
               size="xl"
-              color="dark"
+              color="primary"
               class="non-selectable no-pointer-events"
             ></q-btn>
-            <p class="text-h5 text-dark">hoher<br />Frischfleischanteil</p>
+            <div
+              class="text-h6 text-primary"
+              v-html="this.$t('food.inhalsStoffe.highFreshMeatContent')"
+            />
           </q-card-section>
         </q-card>
       </div>
@@ -29,10 +30,13 @@
               round
               icon="pets"
               size="xl"
-              color="dark"
+              color="primary"
               class="non-selectable no-pointer-events"
             ></q-btn>
-            <p class="text-h5 text-dark">keine genetischen<br />Zutaten</p>
+            <div
+              class="text-h6 text-primary"
+              v-html="this.$t('food.inhalsStoffe.noGenecticIngredients')"
+            />
           </q-card-section>
         </q-card>
       </div>
@@ -44,10 +48,13 @@
               round
               icon="done"
               size="xl"
-              color="dark"
+              color="primary"
               class="non-selectable no-pointer-events"
             ></q-btn>
-            <p class="text-h5 text-dark">keine<br />Konservierungsstoffe</p>
+            <div
+              class="text-h6 text-primary"
+              v-html="this.$t('food.inhalsStoffe.nonePreservatives')"
+            />
           </q-card-section>
         </q-card>
       </div>
@@ -61,10 +68,15 @@
               round
               icon="pets"
               size="xl"
-              color="dark"
+              color="primary"
               class="non-selectable no-pointer-events"
             ></q-btn>
-            <p class="text-h5 text-dark">ganz ohne<br />Schlachtabfälle</p>
+            <div
+              class="text-h6 text-primary"
+              v-html="
+                this.$t('food.inhalsStoffe.complettelyWihoutSlaugterhouseWaste')
+              "
+            />
           </q-card-section>
         </q-card>
       </div>
@@ -76,10 +88,13 @@
               round
               icon="done"
               size="xl"
-              color="dark"
+              color="primary"
               class="non-selectable no-pointer-events"
             ></q-btn>
-            <p class="text-h5 text-dark">naturbelassene<br />Rohstoffe</p>
+            <div
+              class="text-h6 text-primary"
+              v-html="this.$t('food.inhalsStoffe.naturalRawMaterials')"
+            />
           </q-card-section>
         </q-card>
       </div>
@@ -91,12 +106,13 @@
               round
               icon="pets"
               size="xl"
-              color="dark"
+              color="primary"
               class="non-selectable no-pointer-events"
             ></q-btn>
-            <p class="text-h5 text-dark">
-              nährstoffschonende<br />Verarbeitung
-            </p>
+            <div
+              class="text-h6 text-primary"
+              v-html="this.$t('food.inhalsStoffe.nutrientPreservingProcessing')"
+            />
           </q-card-section>
         </q-card>
       </div>
