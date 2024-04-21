@@ -135,7 +135,7 @@ export default defineComponent({
       {
         id: 3,
         title: 'direkte Lieferung',
-        ponit1: 'das Hundefutter kommt pünktlich nach Hause',
+        ponit1: 'das Katzenfutter kommt pünktlich nach Hause',
         ponit2:
           'Sie können Einzellieferungen bekommen oder auf Wunsch auch einen Lieferrhythmus vereinbaren',
         ponit3: 'transport bis vor die Haustür',
