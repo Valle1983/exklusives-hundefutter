@@ -8,6 +8,8 @@
         <q-carousel
           v-model="slide"
           :autoplay="autoplay"
+          @mouseenter="autoplay = false"
+          @mouseleave="autoplay = true"
           navigation
           infinite
           animated
@@ -481,7 +483,7 @@ export default defineComponent({
       slide: 1,
       isHome: ref(false),
       homeImage: require('assets/Startseite/imageBackground.jpg'),
-      homeImage2: require('assets/Startseite/imageBackground.jpg'),
+      homeImage2: require('assets/Startseite/imageBackground2.jpg'),
       isContact: ref(false),
       contactImage: require('assets/Kontakt/imageBackground.jpg'),
       isBeratung: ref(false),

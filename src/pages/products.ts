@@ -7,7 +7,7 @@ const WeetFood = [
     lactoseFree: true,
     glutenFree: false,
     headline: 'MaxicatVit Wild',
-    text: 'MaxicatVit Wild enthält alles, was kleine Jäger lieben: köstliches Wildfleisch, schmackhaftes Geflügelfleisch, leckere Nudeln, knackige Zucchini, goldgelben Kürbis und unsere einzigartige Algenmischung, die den Körper in sein mineralisches Gleichgewicht bringt...',
+    text: 'MaxicatVit Wild enthält alles, was kleine Jäger lieben: köstliches Wildfleisch, schmackhaftes Geflügelfleisch, leckere Nudeln, knackige Zucchini, goldgelben Kürbis und unsere einzigartige Algenmischung, die den Körper...',
     description:
       '<strong>Alleinfuttermittel:</strong><br>MaxicatVit Wild enthält alles, was kleine Jäger lieben: köstliches Wildfleisch, schmackhaftes Geflügelfleisch, leckere Nudeln, knackige Zucchini, goldgelben Kürbis und unsere einzigartige Algenmischung, die den Körper in sein mineralisches Gleichgewicht bringt. Und das Beste: für diesen Genuss muss Ihre Katze nicht einmal auf die Pirsch gehen!<br><br><strong>Alle Rohstoffe sind naturbelassen.</strong><br><br><strong>Zubereitung und Verwendung:</strong><br>Schonende Zubereitung durch Kaltabfüllung. MaxicatVit Wild ist ein Alleinfuttermittel mit ausschließlich hochwertigen Zutaten, das in Deutschland hergestellt und schonend kalt abgefüllt wird. Es enthält keine Aroma- und Konservierungsstoffe und keinen Zuckerzusatz. Probieren Sie auch unsere anderen Sorten für mehr Abwechslung. Fütterungsempfehlung: Eine Dose (200g) deckt den Tagesbedarf einer Katze bis 3 kg Gewicht. Bitte füttern Sie immer zimmerwarm und passen die Futtermenge an Rasse, Alter und Aktivität an.',
   },
@@ -31,7 +31,7 @@ const WeetFood = [
     lactoseFree: false,
     glutenFree: true,
     headline: 'MaxicatVit Geflügel',
-    text: 'Stubentiger können es sich mit unserem MaxicatVit Geflügel mit köstlichem Geflügelfleisch, saftigem Rindfleisch, leckerem Reis und unserer einzigartigen Algenmischung, die den Körper in sein mineralisches Gleichgewicht bringt, so richtig gut gehen lassen.',
+    text: 'Stubentiger können es sich mit unserem MaxicatVit Geflügel mit köstlichem Geflügelfleisch, saftigem Rindfleisch, leckerem Reis und unserer einzigartigen Algenmischung, die den Körper in sein mineralisches Gleichgewicht...',
     description:
       '<strong>Alleinfuttermittel:</strong><br>Stubentiger können es sich mit unserem MaxicatVit Geflügel mit köstlichem Geflügelfleisch, saftigem Rindfleisch, leckerem Reis und unserer einzigartigen Algenmischung, die den Körper in sein mineralisches Gleichgewicht bringt, so richtig gut gehen lassen.<br><br><strong>Alle Rohstoffe sind naturbelassen.</strong><br><br><strong>Alle Rohstoffe sind naturbelassen.</strong><br>Schonende Zubereitung durch Kaltabfüllung. MaxicatVit Geflügel ist ein Alleinfuttermittel mit ausschließlich hochwertigen Zutaten, das in Deutschland hergestellt und schonend kalt abgefüllt wird. Es enthält keine Aroma- und Konservierungsstoffe und keinen Zuckerzusatz. Probieren Sie auch unsere anderen Sorten für mehr Abwechslung. Fütterungsempfehlung: Eine Dose (200g) deckt den Tagesbedarf einer Katze bis 3 kg Gewicht. Bitte füttern Sie immer zimmerwarm und passen die Futtermenge an Rasse, Alter und Aktivität an.',
   },
@@ -43,7 +43,7 @@ const WeetFood = [
     lactoseFree: false,
     glutenFree: true,
     headline: 'MaxicatVit Rind',
-    text: 'Abenteuerlustige Katzen lieben unser MaxicatVit Rind: viel saftiges Rindfleisch, leckerer Reis und unsere einzigartige Algenmischung, die den Körper in sein mineralisches Gleichgewicht bringt. Damit bleibt Ihre Katze fit und wird optimal ernährt.',
+    text: 'Abenteuerlustige Katzen lieben unser MaxicatVit Rind: viel saftiges Rindfleisch, leckerer Reis und unsere einzigartige Algenmischung, die den Körper in sein mineralisches Gleichgewicht bringt. Damit bleibt Ihre Katze...',
     description:
       '<strong>Alleinfuttermittel:</strong><br>Abenteuerlustige Katzen lieben unser MaxicatVit Rind: viel saftiges Rindfleisch, leckerer Reis und unsere einzigartige Algenmischung, die den Körper in sein mineralisches Gleichgewicht bringt. Damit bleibt Ihre Katze fit und wird optimal ernährt.<br><br><strong>Alle Rohstoffe sind naturbelassen.</strong><br><br><strong>Zubereitung und Verwendung:</strong><br>Schonende Zubereitung durch Kaltabfüllung MaxicatVit Rind ist ein Alleinfuttermittel mit ausschließlich hochwertigen Zutaten, das in Deutschland hergestellt und schonend kalt abgefüllt wird. Es enthält keine Aroma- und Konservierungsstoffe und keinen Zuckerzusatz. Probieren Sie auch unsere anderen Sorten für mehr Abwechslung. Fütterungsempfehlung: Eine Dose (200g) deckt den Tagesbedarf einer Katze bis 3 kg Gewicht. Bitte füttern Sie immer zimmerwarm und passen die Futtermenge an Rasse, Alter und Aktivität an.',
   },
@@ -58,7 +58,7 @@ const DryFood = [
     lactoseFree: true,
     glutenFree: true,
     headline: 'MaxiCat Sterne Menü',
-    text: 'MaxicatVit Wild enthält alles, was kleine Jäger lieben: köstliches Wildfleisch, schmackhaftes Geflügelfleisch, leckere Nudeln, knackige Zucchini, goldgelben Kürbis und unsere einzigartige Algenmischung, die den Körper in sein mineralisches Gleichgewicht bringt...',
+    text: 'MaxicatVit Wild enthält alles, was kleine Jäger lieben: köstliches Wildfleisch, schmackhaftes Geflügelfleisch, leckere Nudeln, knackige Zucchini, goldgelben Kürbis und unsere einzigartige Algenmischung---',
     description:
       '<strong>Alleinfuttermittel:</strong><br>MaxicatVit Wild enthält alles, was kleine Jäger lieben: köstliches Wildfleisch, schmackhaftes Geflügelfleisch, leckere Nudeln, knackige Zucchini, goldgelben Kürbis und unsere einzigartige Algenmischung, die den Körper in sein mineralisches Gleichgewicht bringt. Und das Beste: für diesen Genuss muss Ihre Katze nicht einmal auf die Pirsch gehen!<br><br><strong>Alle Rohstoffe sind naturbelassen.</strong><br><br><strong>Zubereitung und Verwendung:</strong><br>Schonende Zubereitung durch Kaltabfüllung. MaxicatVit Wild ist ein Alleinfuttermittel mit ausschließlich hochwertigen Zutaten, das in Deutschland hergestellt und schonend kalt abgefüllt wird. Es enthält keine Aroma- und Konservierungsstoffe und keinen Zuckerzusatz. Probieren Sie auch unsere anderen Sorten für mehr Abwechslung. Fütterungsempfehlung: Eine Dose (200g) deckt den Tagesbedarf einer Katze bis 3 kg Gewicht. Bitte füttern Sie immer zimmerwarm und passen die Futtermenge an Rasse, Alter und Aktivität an.',
   },
@@ -81,8 +81,8 @@ const DryFood = [
     mineralBalance: false,
     lactoseFree: false,
     glutenFree: true,
-    headline: 'mEATzie Schmaus Huhn 3 kg',
-    text: 'Stubentiger können es sich mit unserem MaxicatVit Geflügel mit köstlichem Geflügelfleisch, saftigem Rindfleisch, leckerem Reis und unserer einzigartigen Algenmischung, die den Körper in sein mineralisches Gleichgewicht bringt, so richtig gut gehen lassen.',
+    headline: 'mEATzie Schmaus Huhn',
+    text: 'Stubentiger können es sich mit unserem MaxicatVit Geflügel mit köstlichem Geflügelfleisch, saftigem Rindfleisch, leckerem Reis und unserer einzigartigen Algenmischung, die den Körper in sein mineralisches Gleichgewicht bringt...',
     description:
       '<strong>Alleinfuttermittel:</strong><br>Stubentiger können es sich mit unserem MaxicatVit Geflügel mit köstlichem Geflügelfleisch, saftigem Rindfleisch, leckerem Reis und unserer einzigartigen Algenmischung, die den Körper in sein mineralisches Gleichgewicht bringt, so richtig gut gehen lassen.<br><br><strong>Alle Rohstoffe sind naturbelassen.</strong><br><br><strong>Alle Rohstoffe sind naturbelassen.</strong><br>Schonende Zubereitung durch Kaltabfüllung. MaxicatVit Geflügel ist ein Alleinfuttermittel mit ausschließlich hochwertigen Zutaten, das in Deutschland hergestellt und schonend kalt abgefüllt wird. Es enthält keine Aroma- und Konservierungsstoffe und keinen Zuckerzusatz. Probieren Sie auch unsere anderen Sorten für mehr Abwechslung. Fütterungsempfehlung: Eine Dose (200g) deckt den Tagesbedarf einer Katze bis 3 kg Gewicht. Bitte füttern Sie immer zimmerwarm und passen die Futtermenge an Rasse, Alter und Aktivität an.',
   },
@@ -190,13 +190,13 @@ const Herbs = [
   },
   {
     id: '3002-3024-3017',
-    image: require('assets/Kraeuter/Kraeuter/3.jpg'),
+    image: require('assets/Kraeuter/Kraeuter/3.png'),
     type: 'Herbs',
     mineralBalance: false,
     lactoseFree: false,
     glutenFree: false,
     headline: 'Naturkraft Pro-3',
-    text: 'Pro-3 ist eine Mischung aus Kräutern, Hefen, Spurenelementen und Aminosäuren, speziell abgestimmt auf Haut- und Fellprobleme. Es wurde zur Anwendung bei Juckreiz entwickelt. Pro-3 beruhigt und stärkt die Haut und das Fell und kann die Regeneration fördern.',
+    text: 'Pro-3 ist eine Mischung aus Kräutern, Hefen, Spurenelementen und Aminosäuren, speziell abgestimmt auf Haut- und Fellprobleme. Es wurde zur Anwendung bei Juckreiz entwickelt. Pro-3 beruhigt und stärkt die Haut und das...',
     description:
       '<strong>Pro-3 </strong>ist eine Mischung aus Kräutern, Hefen, Spurenelementen und Aminosäuren, speziell abgestimmt auf Haut- und Fellprobleme. Es wurde zur Anwendung bei Juckreiz entwickelt. Pro-3 beruhigt und stärkt die Haut und das Fell und kann die Regeneration fördern<br><br><strong>Naturkraft</strong>wurde von Pharmazeuten, Biologen und Physiotherapeuten entwickelt und wird mit modernsten Produktionsanlagen äußerst schonend hergestellt.<br><br><strong>Die Hauptziele von Naturkraft für Ihre Tiere:</strong><li><ul>Schutz vor Anfälligkeit und Umwelteinflüssen</ul><ul>Unterstützung tierärztlicher Arbeit über die Ernährung</ul><ul>Verbesserung der Widerstandskraft</ul></li>',
   },
