@@ -264,7 +264,25 @@
                 :label="this.$t('anmeldung.contact.checkBox')"
               />
               <br /><br />
-              <div v-html="this.$t('anmeldung.contact.checkBoxText')" />
+              <div>
+                <p>
+                  Ich erkläre mich einverstanden, dass meine Daten aus dem
+                  Anmeldeformular zur Bearbeitung meiner Anfrage gesammelt und
+                  verarbeitet werden. Die Informationen werden nach der
+                  Bearbeitung meiner Anfrage gelöscht. Beachten Sie: Ihre
+                  Zustimmung kann jederzeit per E-Mail an
+                </p>
+                <p>
+                  <a class="text-dark" :href="`${emailContact}`"
+                    >kontakt@exklusives-katzenfutter.de</a
+                  >
+                  für die Zukunft widerrufen werden. Weitere Informationen zum
+                  Umgang mit Nutzerdaten finden Sie in unserer
+                  <a class="text-dark" :href="`${link}/datenschutz`"
+                    ><b>Datenschutzerklärung</b></a
+                  >
+                </p>
+              </div>
             </q-card-section>
             <q-card-actions class="q-pa-md" style="height: 120px">
               <q-btn
@@ -312,12 +330,12 @@ import {
   template_id,
   user_id,
   website,
+  link,
 } from '../../../appConfig';
 import { defineComponent } from 'vue';
 import { axios } from 'src/boot/axios';
 import contactInfo from '../Kontakt/contactInfo.vue';
 import { useMeta } from 'quasar';
-
 export default defineComponent({
   name: 'ContactFormular',
   components: { contactInfo },
@@ -415,6 +433,8 @@ export default defineComponent({
       template_id,
       user_id,
       website,
+      emailContact,
+      link,
     };
     emailContact;
   },

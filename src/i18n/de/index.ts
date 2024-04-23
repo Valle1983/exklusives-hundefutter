@@ -3,43 +3,42 @@ import { emailContact, email, link } from 'app/appConfig';
 export default {
   anmeldung: {
     contact: {
-      requiredField: 'Das ist ein Pflichtfeld, bitte etwas eintragen',
-      requiredEmail: 'Bitte eine E-Mail-Adresse eingeben',
+      requiredField: 'Bitte füllen Sie dieses Feld aus, es ist verpflichtend',
+      requiredEmail: 'Geben Sie bitte eine gültige E-Mail-Adresse an',
       firstName: 'Vorname',
       lastName: 'Nachname',
-      streetNumber: 'Straße & Hausnummer',
-      addressAdd: 'zweite Adresszeile',
-      plz: 'PLZ',
-      location: 'Stadt',
-      phone: 'Telefonnummer',
-      email: 'E-Mail-Adresse',
-      text: 'Ihre Nachricht',
-      checkBox: 'Ja, ich stimme der Datenschutzbestimmung zu.',
+      streetNumber: 'Straße und Hausnummer',
+      addressAdd: 'Adresszusatz',
+      plz: 'Postleitzahl',
+      location: 'Ort',
+      phone: 'Telefon',
+      email: 'E-Mail',
+      text: 'Nachricht',
+      checkBox: 'Ja, ich akzeptiere die Datenschutzrichtlinien.',
       checkBoxText:
-        'Ich stimme zu, dass meine Angaben aus dem Kontaktformular zur Beantwortung meiner Anfrage erhoben und verarbeitet werden. Die Daten werden nach abgeschlossener Bearbeitung Ihrer Anfrage gelöscht. Hinweis: Sie können Ihre Einwilligung jederzeit für die Zukunft per E-Mail an <a class="text-dark" href="' +
+        'Ich erkläre mich einverstanden, dass meine Daten aus dem Anmeldeformular zur Bearbeitung meiner Anfrage gesammelt und verarbeitet werden. Die Informationen werden nach der Bearbeitung meiner Anfrage gelöscht. Beachten Sie: Ihre Zustimmung kann jederzeit per E-Mail an <a class="text-dark" href="' +
         emailContact +
-        '">kontakt@exklusives-katzenfutter.de</a> widerrufen. Detaillierte Informationen zum Umgang mit Nutzerdaten finden Sie in unserer  <a class="text-dark" href="' +
+        '">kontakt@exklusives-katzenfutter.de</a> für die Zukunft widerrufen werden. Weitere Informationen zum Umgang mit Nutzerdaten finden Sie in unserer <a class="text-dark" href="' +
         link +
         '/datenschutz"><b>Datenschutzerklärung</b></a>',
-      submitButton: 'Nachricht abschicken',
-      newReicoAccount: 'Jetzt Reico Kunde werden, schnell und unkompliziert.',
+      submitButton: 'Nachricht senden',
+      newReicoAccount: 'Werden Sie jetzt einfach und schnell Reico-Kunde.',
       newReicoAccountText:
-        'Ihr neues Kundenkonto wird von uns umgehend erstellt. Sobald Ihre Zugangsdaten angelegt wurden, senden wir Ihnen eine Mail zu Ihrem neuen Reico Kundenlogin. Zudem erhalten Sie einen „offenen Warenkorb“ mit den Gratisartikeln (Produkthandbuch, Preisliste, Messbecher, Dosendeckel) und Sie können Ihre erste Bestellung aufgeben bzw. abschließen.',
+        'Wir erstellen Ihr neues Kundenkonto umgehend. Sobald Ihre Zugangsdaten bereit sind, informieren wir Sie per E-Mail über Ihr neues Reico Kundenlogin. Zusätzlich erhalten Sie einen „offenen Warenkorb“ mit Gratisprodukten (Produkthandbuch, Preisliste, Messbecher, Dosendeckel) und können Ihre erste Bestellung tätigen.',
     },
     neuKunde: {
-      newCustomer: 'So werden Sie Reico Neukunde',
+      newCustomer: 'So werden Sie ein neuer Reico-Kunde',
       newCustomerText:
-        'Um bei der Bestellung von Reico Katzenfutter die Qualität hochzuhalten, ist die Bestellung nur im Direktvertrieb über einen Reico Vertriebspartner möglich, so wie wir es sind. Nachdem eine koordinierte Erstbestellung mit ausführlicher Beratung erfolgt ist, können Sie künftig das Futter für Ihr Tier ganz bequem selbst über den Onlineshop bestellen. Reico legt großen Wert darauf, dass Ihre Katze artgerechtes und passendes Katzenfutter bekommt, weswegen wir Ihnen unsere kostenlose Futterberatung vor Ihrer ersten Bestellung ans Herz legen.',
+        'Die Bestellung von Reico Katzenfutter setzt eine Direktvertrieb-Bestellung bei einem Reico-Vertriebspartner voraus, so wie wir es anbieten. Nach einer koordinierten Erstbestellung und ausführlicher Beratung, können Sie zukünftig das Futter über unseren Onlineshop selbstständig bestellen. Es ist uns wichtig, dass Ihre Katze das artgerechte und passende Futter erhält, deshalb empfehlen wir Ihnen vorab unsere kostenlose Futterberatung.',
       carousel: {
         step1:
-          '1. Sie erhalten eine kompetente Futterberatung, einen Futterplan und auf Wunsch eine Aufstellung der Futterkosten',
+          '1. Sie bekommen eine umfassende Futterberatung und bei Bedarf eine Kostenaufstellung',
         step2:
-          '2. Sie bestellen Ihr frisches und artgerechtes Katzenfutter in hoher Qualität bei Ihrem Reico Vertriebspartner',
-        step3:
-          '3. Nie wieder lästiges Schleppen von schweren Säcken oder Dosen',
-        step4: '4. Die Lieferung erfolgt direkt an Ihre Wunschadresse',
-        step5: '5. Sie erhalten eine Versandbestätigung per E-Mail',
-        step6: '6. Ihre Katze freut sich über ihr neues Lieblingsfutter',
+          '2. Bestellen Sie Ihr qualitativ hochwertiges und artgerechtes Katzenfutter über Ihren Reico-Vertriebspartner',
+        step3: '3. Kein mühsames Tragen von schweren Säcken oder Dosen mehr',
+        step4: '4. Die Lieferung erfolgt direkt zu Ihnen nach Hause',
+        step5: '5. Eine Versandbestätigung wird Ihnen per E-Mail zugesandt',
+        step6: '6. Ihre Katze wird sich über ihr neues Lieblingsfutter freuen',
       },
     },
   },
@@ -50,64 +49,64 @@ export default {
       mineralBalance: 'Mineralisches <br> Gleichgewicht',
     },
     inhalsStoffe: {
-      title: 'So viel Naturkraft steckt wirklich in Reico',
-      highFreshMeatContent: 'hoher Frischfleischanteil',
-      noGeneticIngredients: 'keine genetischen Zutaten',
-      noPreservatives: 'keine Konservierungsstoffe',
-      completelyWithoutSlaughterhouseWaste: 'ganz ohne Schlachtabfälle',
-      naturalRawMaterials: 'naturbelassene Rohstoffe',
-      nutrientPreservingProcessing: 'nährstoffschonende Verarbeitung',
+      title: 'Die verborgene Naturkraft in Reico entdecken',
+      highFreshMeatContent: 'hoher Anteil an Frischfleisch',
+      noGeneticIngredients: 'freI von genetisch veränderten Zutaten',
+      noPreservatives: 'ohne Konservierungsstoffe',
+      completelyWithoutSlaughterhouseWaste:
+        'komplett ohne Schlachtnebenprodukte',
+      naturalRawMaterials: 'natürlich belassene Rohstoffe',
+      nutrientPreservingProcessing: 'nährstoffbewahrende Verarbeitung',
     },
   },
   footer: {
-    contactSubtext: 'Kontakt:',
-    customerNumber: 'Beraternummer:',
-    importantSites: 'Wichtige Seiten:',
+    contactSubtext: 'Kontaktieren Sie uns:',
+    customerNumber: 'Beratungsnummer:',
+    importantSites: 'Wichtige Links:',
     partnerReico: 'Reico & Partner Vertriebs GmbH',
   },
   kontakt: {
     contact: {
       contactText:
-        'Sie können uns für eine kostenlose Beratung jetzt direkt anrufen, <br>oder auch in der Telegram Gruppe beitreten, um Ihre Fragen zu stellen:',
-      requiredField: 'Das ist ein Pflichtfeld, bitte etwas eintragen',
-      requiredEmail: 'Bitte eine E-Mail-Adresse eingeben',
+        'Kontaktieren Sie uns jederzeit für eine unverbindliche Beratung,<br> treten Sie unserer Telegram-Gruppe bei, um Fragen zu stellen:',
+      requiredField: 'Bitte füllen Sie dieses Feld aus, es ist verpflichtend',
+      requiredEmail: 'Geben Sie bitte eine gültige E-Mail-Adresse an',
       firstName: 'Vorname',
       lastName: 'Nachname',
-      streetNumber: 'Straße & Hausnummer',
-      addressAdd: 'zweite Adresszeile',
-      plz: 'PLZ',
-      location: 'Stadt',
-      phone: 'Telefonnummer',
-      email: 'E-Mail-Adresse',
-      text: 'Ihre Nachricht',
-      message: 'Nachricht',
-      checkBox: 'Ja, ich stimme der Datenschutzbestimmung zu.',
+      streetNumber: 'Straße und Hausnummer',
+      addressAdd: 'Adresszusatz',
+      plz: 'Postleitzahl',
+      location: 'Ort',
+      phone: 'Telefon',
+      email: 'E-Mail',
+      text: 'Nachricht',
+      message: 'Ihre Nachricht',
+      checkBox: 'Ja, ich akzeptiere die Datenschutzrichtlinien.',
       contactFormularText:
-        'Ich stimme zu, dass meine Angaben aus dem Kontaktformular zur Beantwortung meiner Anfrage erhoben und verarbeitet werden. Die Daten werden nach abgeschlossener Bearbeitung Ihrer Anfrage gelöscht. Hinweis: Sie können Ihre Einwilligung jederzeit für die Zukunft per E-Mail an <a class="text-dark" href="' +
+        'Ich erkläre mich einverstanden, dass meine Daten aus dem Kontaktformular zur Bearbeitung meiner Anfrage gesammelt und verarbeitet werden. Die Informationen werden nach der Bearbeitung meiner Anfrage gelöscht. Beachten Sie: Ihre Zustimmung kann jederzeit per E-Mail an <a class="text-dark" href="' +
         emailContact +
         '">' +
         email +
-        '</a> widerrufen. Detaillierte Informationen zum Umgang mit Nutzerdaten finden Sie in unserer <a class="text-dark" href="' +
+        '</a> für die Zukunft widerrufen werden. Weitere Informationen zum Umgang mit Nutzerdaten finden Sie in unserer <a class="text-dark" href="' +
         link +
         '/datenschutz"><b>Datenschutzerklärung</b></a>',
-      submitButton: 'Nachricht abschicken',
+      submitButton: 'Nachricht senden',
       consultingDateText: 'Vereinbaren Sie einen kostenfreien Beratungstermin',
       foodDogConsultingText:
-        'Wir beraten Sie gerne zur Katzenernährung kostenlos, dabei steht Ihnen ein fachlich geschulter Reico Vertriebspartner zur Seite',
+        'Wir beraten Sie gerne kostenlos zur Katzenernährung, unterstützt durch einen fachkundigen Reico-Vertriebspartner',
       contactEveryDay:
-        'Sie haben die Möglichkeit uns jederzeit zu kontaktieren, auch an Wochenenden oder Feiertagen',
-      sameConsulterText:
-        'Dabei werden Sie immer den gleichen Ansprechpartner zugeteilt',
+        'Sie können uns jederzeit kontaktieren, auch an Wochenenden und Feiertagen',
+      sameConsulterText: 'Sie werden stets denselben Berater haben',
       fillContactFormular:
-        'Wünschen Sie ein Gespräch? Dann füllen Sie einfach für ein unverbindliches Gespräch das Kontaktformular aus',
+        'Möchten Sie ein Gespräch führen? Füllen Sie unser Kontaktformular für ein unverbindliches Gespräch aus',
     },
     contactInfo: {
-      title: 'Kontakt',
+      title: 'Kontaktinformation',
     },
   },
   krauter_co: {
-    headline: 'Die Naturkraft - Kräutermischung für die Katze',
-    text: 'Um bei der Bestellung von Reico Katzenfutter die Qualität hochzuhalten, ist die Bestellung nur im Direktvertrieb über einen Reico Vertriebspartner möglich, so wie wir es sind. Nachdem eine koordinierte Erstbestellung mit ausführlicher Beratung erfolgt ist, können Sie künftig das Futter für Ihr Tier ganz bequem selbst über den Onlineshop bestellen. Reico legt großen Wert darauf, dass Ihre Katze artgerechtes und passendes Katzenfutter bekommt, weswegen wir Ihnen unsere kostenlose Futterberatung vor Ihrer ersten Bestellung ans Herz legen.',
+    headline: 'Die Naturkraft - Kräutermischung für Katzen',
+    text: 'Um die Qualität von Reico Katzenfutter zu gewährleisten, erfolgt die Bestellung ausschließlich über einen Reico-Vertriebspartner. Nach einer geplanten Erstbestellung und umfassenden Beratung können Sie das Futter zukünftig selbst über unseren Onlineshop bestellen. Es ist uns ein Anliegen, dass Ihre Katze das artgerechte und passende Futter erhält, deshalb empfehlen wir Ihnen vorab unsere kostenlose Futterberatung.',
   },
   menuList: {
     contactSite: 'Kontakt',
@@ -120,72 +119,70 @@ export default {
   startseite: {
     benefits: {
       titleText:
-        'Warum sollten Sie sich gerade für das Reico Katzenfutter entscheiden? Die entscheidenden Vorteile',
+        'Warum Sie sich für das Reico Katzenfutter entscheiden sollten? <br> Hier sind die Vorteile <br>',
       sublineText:
-        'Katzen können leider nicht selbst entscheiden, was sie essen, ganz im Gegenteil zu uns Menschen.',
+        'Im Gegensatz zu Menschen können Katzen leider nicht selbst entscheiden, was sie essen möchten.',
       card1: {
-        title: 'natürliche Zutaten',
-        point1: 'nährstoffschonende Verarbeitung',
-        point2:
-          'besonders hoher Fleischgehalt an Innereien sowie Muskelfleisch',
+        title: 'Natürliche Inhaltsstoffe',
+        point1: 'Nährstoffschonende Verarbeitung',
+        point2: 'Hoher Anteil an Innereien und Muskelfleisch',
         point3:
-          'mineralisches Gleichgewicht, mit Mineralien auf natürlicher Basis',
+          'Mineralisches Gleichgewicht, basierend auf natürlichen Mineralien',
       },
       card2: {
-        title: 'individuelle Beratung',
-        point1: 'Persönliche Beratung speziell auf Ihre Katze zugeschnitten',
-        point2: 'stets der gleiche Ansprechpartner',
-        point3: 'täglich erreichbar, auch am Wochenende sowie Feiertagen',
+        title: 'Individuelle Beratung',
+        point1: 'Persönliche, auf Ihre Katze zugeschnittene Beratung',
+        point2: 'Immer derselbe Ansprechpartner',
+        point3: 'Tägliche Erreichbarkeit, auch an Wochenenden und Feiertagen',
       },
       card3: {
-        title: 'direkte Lieferung',
-        point1: 'das Katzenfutter kommt pünktlich nach Hause',
-        point2:
-          'Sie können Einzellieferungen bekommen oder auf Wunsch auch einen Lieferrhythmus vereinbaren',
-        point3: 'Transport bis vor die Haustür',
+        title: 'Direkte Anlieferung',
+        point1: 'Pünktliche Lieferung direkt zu Ihnen nach Hause',
+        point2: 'Einzelne Lieferungen oder auf Wunsch ein Lieferplan',
+        point3: 'Lieferung bis vor Ihre Haustür',
       },
     },
     mixedItems: {
-      title: 'Reico Katzenfutter – das gesunde Futter für Ihre Katze',
+      title: 'Reico Katzenfutter – gesunde Ernährung für Ihre Katze',
       subTitle:
-        'Gesundheit ist kein Zufall – Eine gesunde & artgerechte Ernährung ändert Alles!<br><br>',
-      text: 'Reico hat das Katzenfutter nach dem Vorbild der Natur entwickelt und mit den Kräutermischungen & Ergänzungsfuttermitteln,<br> das Reico Vital-System erschaffen. Damit wird jede Katze, ob Kitten, erwachsene Katze oder ältere Katzen, <br>  optimal und artgerecht versorgt. Das steckt im Katzenfutter: Naturbelassene Rohstoffe ohne unnötige Zusätze,<br> moderne Wissenschaft und über 30 Jahre Erfahrung. Reico ist mehr als nur ein Katzenfutter.<br> Lernen Sie das Reico Vital-System kennen und lassen Sie sich jetzt kostenlos beraten.',
+        'Gesundheit ist kein Zufall – Eine artgerechte Ernährung ändert alles!<br><br>',
+      text: 'Reico entwickelt das Katzenfutter nach dem Vorbild der Natur und hat mit den Kräutermischungen und Ergänzungsfuttermitteln das Reico Vital-System kreiert. So wird jede Katze, ob jung oder alt, optimal und artgerecht versorgt. Das bietet das Futter: Natürliche Rohstoffe ohne überflüssige Zusätze, moderne Wissenschaft und mehr als 30 Jahre Erfahrung. Reico ist mehr als nur ein Katzenfutter. Erfahren Sie mehr über das Reico Vital-System und lassen Sie sich jetzt kostenlos beraten.',
     },
     questions: {
-      title: 'Die wichtigsten Fragen rund um das Futter',
+      title: 'Häufig gestellte Fragen zum Futter',
       subText:
-        'Hier erhalten Sie Antworten auf die am häufigsten gestellten Fragen.',
+        'Antworten auf die am häufigsten gestellten Fragen finden Sie hier.',
       left: {
         question1: {
-          headline: 'Kann ich Reico Produkte auch im Supermarkt kaufen?',
-          text: 'Das Reico Futter kann man nicht im Supermarkt kaufen. Einer der wichtigsten Grundsteine Reicos Philosophie ist die Individualität eines jeden Tieres. Jedes Tier ist einzigartig und hat seine eigenen Vorlieben, die bei der Auswahl des Futters berücksichtigt werden sollten. Wir bieten Ihnen eine individuelle Beratung, um das bestmögliche für Ihren Vierbeiner zusammenzustellen, außerdem können Sie uns zu jeder Zeit gerne über Telegram oder E-Mail anschreiben, wir antworten schnellstmöglich und individuell. Sie sind an keine Geschäftszeiten gebunden und können zu jeder Zeit bequem von zu Hause aus bestellen, dabei stehen wir Ihnen zur Seite.',
+          headline: 'Kann ich Reico Produkte auch im Supermarkt erwerben?',
+          text: 'Reico Futter ist nicht im Supermarkt erhältlich. Die Individualität jedes Tieres ist ein zentraler Bestandteil der Philosophie von Reico. Jedes Tier hat seine eigenen Vorlieben, die bei der Futterauswahl berücksichtigt werden müssen. Wir bieten individuelle Beratungen an, um das Beste für Ihr Haustier zusammenzustellen. Sie können uns jederzeit per Telegram oder E-Mail kontaktieren, wir antworten so schnell wie möglich und individuell. Sie sind nicht an Geschäftszeiten gebunden und können jederzeit bequem von zu Hause aus bestellen.',
         },
         question2: {
-          headline: 'Wie kann ich bei Reico als Neukunde bestellen?',
-          text: 'Uns ist der direkte Kundenkontakt sehr wichtig, denn wir wollen für Ihr Tier die bestmögliche Ernährung zusammenstellen. Nachdem Sie das Kontaktformular ausgefüllt und wir gemeinsam das optimale Produkt für Ihre Katze gefunden haben, erhalten Sie eine E-Mail mit dem gewünschten Angebot. Hier können Sie noch einmal Ihre Daten kontrollieren und sofern Ihnen der Warenkorb so gefällt eine Zahlungsart und Versandoption auswählen und eine Bestellung abschließen.',
+          headline: 'Wie kann ich als Neukunde bei Reico bestellen?',
+          text: 'Der direkte Kundenkontakt ist uns sehr wichtig, um die bestmögliche Ernährung für Ihr Tier zusammenzustellen. Nachdem Sie das Kontaktformular ausgefüllt haben und wir gemeinsam das optimale Produkt für Ihre Katze ausgewählt haben, erhalten Sie ein Angebot per E-Mail. Überprüfen Sie Ihre Daten und wenn Ihnen der Warenkorb zusagt, wählen Sie eine Zahlungs- und Versandoption und schließen Sie die Bestellung ab.',
         },
         question3: {
           headline: 'Wo kann ich Reico Katzenfutter kaufen?',
-          text: 'Die Reico Produkte gibt es nur direkt bei Reico. Eine direkte Erstbestellung über das Internet ist nicht möglich! Sie können gerne einen unverbindlichen & kostenlosen Beratungstermin mit uns vereinbaren oder sich auch ohne eine Beratung einen Zugang für den Reico Online-Shop über uns freischalten lassen. Danach erhalten Sie eine Kundennummer und die Zugangsdaten für den Reico Onlineshop. Das Team "exclusives Katzenfutter" bleibt weiterhin ihr persönlicher Ansprechpartner zu allen Fragen rund um die Katze.',
+          text: 'Reico Produkte sind ausschließlich direkt bei Reico erhältlich. Eine direkte Erstbestellung über das Internet ist nicht möglich! Gerne können Sie einen unverbindlichen und kostenlosen Beratungstermin mit uns vereinbaren oder sich ohne Beratung einen Zugang für den Reico Online-Shop über uns freischalten lassen. Danach erhalten Sie eine Kundennummer und die Zugangsdaten für den Reico-Onlineshop. Das Team "exklusives Katzenfutter" bleibt weiterhin Ihr persönlicher Ansprechpartner zu allen Fragen rund um Ihre Katze.',
         },
         question4: {
           headline: 'Wo kann ich mich beraten lassen?',
-          text: 'Nutzen Sie hier die Gelegenheit und lassen sie sich von uns mit Herz und großem Fachwissen beraten. Wir freuen uns auf Sie. Füllen sie dazu einfach unser Kontaktformular aus und wir melden uns bei Ihnen zur Terminabsprache.',
+          text: 'Nutzen Sie die Gelegenheit und lassen Sie sich von uns mit Herz und Fachwissen beraten. Wir freuen uns auf Sie. Füllen Sie dazu einfach unser Kontaktformular aus und wir melden uns bei Ihnen zur Terminabsprache.',
         },
       },
       right: {
         question1: {
-          headline: 'Wie ist der Preis für das Reico Futter?',
-          text: 'Da für jede Katze das Futter individuell zusammengestellt wird, variieren auch die Preise. Wie viel Sie für Ihr Reico Futter ausgeben möchten, klären wir in einem kostenlosen Beratungsgespräch, bei dem wir Alter, Aktivität, Gesundheitsstatus, Größe, Gewicht, Rasse, Vorlieben der Katze und Ihre Wünsche erfahren. Dann schauen wir, dass wir das so zusammenstellen, dass es für Ihre Katze optimal und für Sie vom Tages- bzw. Monatspreis her passend ist. Die Preise sind überall gleich.',
+          headline: 'Wie sind die Preise für das Reico Futter?',
+          text: 'Da das Futter für jede Katze individuell zusammengestellt wird, variieren die Preise. In einem kostenlosen Beratungsgespräch klären wir das Alter, die Aktivität, den Gesundheitsstatus, die Größe, das Gewicht, die Rasse, die Vorlieben Ihrer Katze und Ihre Wünsche. Anschließend stellen wir das Futter so zusammen, dass es für Ihre Katze optimal und preislich für Sie akzeptabel ist. Die Preise sind überall gleich.',
         },
         question2: {
           headline: 'Welche Zahlungsmöglichkeiten gibt es bei Reico?',
-          text: 'Bei Reico können Sie ganz einfach mit PayPal, Kreditkarte oder Sofortüberweisung bezahlen. Gerne nehmen wir auch Ihr SEPA-Mandat entgegen. Das Lastschriftverfahren gilt als eines der sichersten Zahlsysteme für Endverbraucher. Für Neukunden bei der Erstbestellung bis 120 Euro begrenzt!',
+          text: 'Bei Reico können Sie einfach per PayPal, Kreditkarte oder Sofortüberweisung zahlen. Wir akzeptieren auch SEPA-Mandate. Das Lastschriftverfahren zählt zu den sichersten Zahlungsmethoden für Endverbraucher. Für Neukunden ist die Erstbestellung auf einen Betrag von 120 Euro begrenzt.',
         },
         question3: {
           headline:
-            'Warum funktioniert die Erstbestellung im Reico Onlineshop nicht?',
-          text: 'Wir möchten Fehlkäufe verhindern! Alles was Sie bei uns kaufen, soll für Ihre Katze und für Sie genau passend sein. Deshalb gehört eine gute kostenlose Beratung zu unserem Erstbesteller Service. Das spart Ihnen oftmals Geld und Ihre Katze wird es Ihnen danken. Nach dieser Beratung erhalten Sie entweder die gewünschte Bestellung als Warenkorb gemailt oder Sie lassen sich nach Anmeldung durch uns die Zugangsdaten geben und bestellen selber. Ab der zweiten Bestellung können Sie dann mit Ihren Zugangsdaten direkt über den Onlineshop bestellen. Für Beratungen stehen wir selbstverständlich weiterhin sehr gerne zur Verfügung.',
+            'Warum kann ich bei meiner Erstbestellung im Reico Onlineshop nicht bestellen?',
+          text: 'Wir möchten Fehlkäufe vermeiden! Alles, was Sie bei uns kaufen, sollte genau auf Ihre Katze und Sie abgestimmt sein. Deshalb gehört eine umfassende kostenlose Beratung zu unserem Service für Erstbesteller. Dies spart Ihnen oft Geld und Ihre Katze wird es Ihnen danken. Nach der Beratung erhalten Sie entweder die gewünschte Bestellung als Warenkorb per E-Mail oder Sie erhalten nach Ihrer Anmeldung die Zugangsdaten von uns und bestellen selbst. Ab der zweiten Bestellung können Sie dann mit Ihren Zugangsdaten direkt über den Onlineshop bestellen. Für Beratungen stehen wir Ihnen natürlich weiterhin gerne zur Verfügung.',
         },
         question4: {
           headline: 'Haben Sie weitere Fragen?',

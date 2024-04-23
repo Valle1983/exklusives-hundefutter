@@ -247,7 +247,7 @@
               :icon="
                 menuItem.label === 'Futter' ||
                 menuItem.label === 'Kräuter & Ergänzung'
-                  ? 'mdi-dog'
+                  ? 'mdi-cat'
                   : 'person_add'
               "
               :label="menuItem.label"
@@ -372,7 +372,7 @@ export default defineComponent({
       },
       {
         id: 1,
-        icon: 'pets',
+        icon: 'mdi-cat',
         label: 'Kräuter & Ergänzung',
         separator: false,
       },
@@ -414,7 +414,7 @@ export default defineComponent({
     const herbSupplementsList = [
       {
         id: 1,
-        icon: '',
+        icon: 'mdi-cat',
         to: '/kraeutermischung',
         label: 'Kräutermischung',
         separator: false,

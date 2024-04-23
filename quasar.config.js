@@ -52,7 +52,7 @@ module.exports = configure(function (ctx) {
     // https://github.com/quasarframework/quasar/tree/dev/extras
     extras: [
       // 'ionicons-v4',
-      // 'mdi-v7',
+      'mdi-v7',
       // 'fontawesome-v6',
       // 'eva-icons',
       // 'themify',
@@ -153,11 +153,12 @@ module.exports = configure(function (ctx) {
       manifest: {
         name: 'exklusives-katzenfutter',
         short_name: 'exklusives-katzenfutter',
-        description: '',
+        description:
+          'Reico Katzenfutter – gesunde Ernährung für Ihre Katze Gesundheit ist kein Zufall – Eine artgerechte Ernährung ändert alles! Reico entwickelt das Katzenfutter nach dem Vorbild der Natur und hat mit den Kräutermischungen und Ergänzungsfuttermitteln das Reico Vital-System kreiert. So wird jede Katze, ob jung oder alt, optimal und artgerecht versorgt. Das bietet das Futter: Natürliche Rohstoffe ohne überflüssige Zusätze, moderne Wissenschaft und mehr als 30 Jahre Erfahrung. Reico ist mehr als nur ein Katzenfutter. Erfahren Sie mehr über das Reico Vital-System und lassen Sie sich jetzt kostenlos beraten.',
         display: 'standalone',
         orientation: 'portrait',
         background_color: '#ffffff',
-        theme_color: '#027be3',
+        theme_color: '#384747',
         start_url: '/?homescreen=1',
         id: '/?homescreen=1',
         scope: '/',

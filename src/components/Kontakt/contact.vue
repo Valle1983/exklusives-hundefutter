@@ -116,10 +116,27 @@
                 :label="this.$t('kontakt.contact.checkBox')"
               />
               <br /><br />
-              <div
-                class=""
-                v-html="this.$t('kontakt.contact.contactFormularText')"
-              />
+              <div>
+                <p>
+                  Ich erkläre mich einverstanden, dass meine Daten aus dem
+                  Anmeldeformular zur Bearbeitung meiner Anfrage gesammelt und
+                  verarbeitet werden. Die Informationen werden nach der
+                  Bearbeitung meiner Anfrage gelöscht. Beachten Sie: Ihre
+                  Zustimmung kann jederzeit per E-Mail an
+                </p>
+                <p>
+                  <a class="text-dark" :href="`${emailContact}`"
+                    >kontakt@exklusives-katzenfutter.de</a
+                  >
+                  für die Zukunft widerrufen werden. Weitere Informationen zum
+                  Umgang mit Nutzerdaten finden Sie in unserer
+                  <a
+                    class="text-dark cursor-pointer"
+                    :href="`${link}/datenschutz`"
+                    ><b>Datenschutzerklärung</b></a
+                  >
+                </p>
+              </div>
             </q-card-section>
             <q-card-actions class="q-pa-md" style="height: 120px">
               <q-btn
@@ -185,126 +202,21 @@
 import contactInfo from 'components/Kontakt/contactInfo';
 import emailjs from '@emailjs/browser';
 import { defineComponent } from 'vue';
-import { email, emailContact, telegramToken, chatId } from '../../../appConfig';
+import {
+  email,
+  emailContact,
+  telegramToken,
+  chatId,
+  service_id,
+  template_id,
+  user_id,
+  link,
+} from '../../../appConfig';
 import { axios } from 'src/boot/axios';
-import { service_id, template_id, user_id, link } from '../../../appConfig';
-import { useMeta } from 'quasar';
 export default defineComponent({
   name: 'ContactFormular',
   components: { contactInfo },
   data() {
-    const logo = require('assets/Kontakt/imageBackground.jpg');
-    const metaData = {
-      // sets document title
-      title: this.$t('kontakt.contact.contactText'),
-      // optional; sets final title as "Index Page - My Website", useful for multiple level meta
-      titleTemplate: (title) => `${title}`,
-      // meta tags
-      meta: {
-        description: {
-          name: this.$t('kontakt.contact.contactText'),
-          content:
-            this.$t('kontakt.contact.consultingDateText') +
-            ' ' +
-            this.$t('kontakt.contact.foodDogConsultingText') +
-            ' ' +
-            this.$t('kontakt.contact.contactEveryDay') +
-            ' ' +
-            this.$t('kontakt.contact.sameConsulterText') +
-            ' ' +
-            this.$t('kontakt.contact.fillContactFormular'),
-        },
-        keywords: {
-          name:
-            this.$t('kontakt.contact.consultingDateText') +
-            ' ' +
-            this.$t('kontakt.contact.foodDogConsultingText') +
-            ' ' +
-            this.$t('kontakt.contact.contactEveryDay') +
-            ' ' +
-            this.$t('kontakt.contact.sameConsulterText') +
-            ' ' +
-            this.$t('kontakt.contact.fillContactFormular'),
-          content:
-            this.$t('kontakt.contact.consultingDateText') +
-            ' ' +
-            this.$t('kontakt.contact.foodDogConsultingText') +
-            ' ' +
-            this.$t('kontakt.contact.contactEveryDay') +
-            ' ' +
-            this.$t('kontakt.contact.sameConsulterText') +
-            ' ' +
-            this.$t('kontakt.contact.fillContactFormular'),
-        },
-        ogTitle: {
-          property: 'og:title',
-          content:
-            this.$t('kontakt.contact.consultingDateText') +
-            ' ' +
-            this.$t('kontakt.contact.foodDogConsultingText') +
-            ' ' +
-            this.$t('kontakt.contact.contactEveryDay') +
-            ' ' +
-            this.$t('kontakt.contact.sameConsulterText') +
-            ' ' +
-            this.$t('kontakt.contact.fillContactFormular'),
-        },
-        ogDescription: {
-          property: 'og:description',
-          content:
-            this.$t('kontakt.contact.consultingDateText') +
-            ' ' +
-            this.$t('kontakt.contact.foodDogConsultingText') +
-            ' ' +
-            this.$t('kontakt.contact.contactEveryDay') +
-            ' ' +
-            this.$t('kontakt.contact.sameConsulterText') +
-            ' ' +
-            this.$t('kontakt.contact.fillContactFormular'),
-        },
-        ogType: { property: 'og:type', content: window.location.href },
-        ogImage: { property: 'og:image', content: logo },
-        ogUrl: { property: 'og:url', content: window.location.href },
-        equiv: {
-          'http-equiv': 'Content-Type',
-          content: 'text/html; charset=UTF-8',
-        },
-      },
-
-      // CSS tags
-      link: {
-        material: {
-          rel: 'stylesheet',
-          href: 'https://fonts.googleapis.com/icon?family=Material+Icons',
-        },
-      },
-
-      // JS tags
-      script: {
-        ldJson: {
-          type: 'application/ld+json',
-          innerHTML: '{ "@context": "http://schema.org" }',
-        },
-      },
-
-      // <html> attributes
-      htmlAttr: {
-        'xmlns:cc': 'http://creativecommons.org/ns#', // generates <html xmlns:cc="http://creativecommons.org/ns#">,
-        empty: undefined, // generates <html empty>
-      },
-
-      // <body> attributes
-      bodyAttr: {
-        'action-scope': 'xyz', // generates <body action-scope="xyz">
-        empty: undefined, // generates <body empty>
-      },
-
-      // <noscript> tags
-      noscript: {
-        default: 'This is content for browsers with no JS (or disabled JS)',
-      },
-    };
-    useMeta(metaData);
     return {
       right: false,
       name: '',

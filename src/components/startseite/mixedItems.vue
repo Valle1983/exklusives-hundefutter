@@ -2,7 +2,7 @@
   <div class="q-pt-xl">
     <div class="row q-pt-xl q-pa-md justify-center items-center text-center">
       <div class="col-2" />
-      <div class="col-12 col-md-12 col-sm-12 col-xs-12 text-h4">
+      <div class="col-12 col-md-8 col-sm-10 col-xs-12 text-h4">
         <div
           class="text-dark"
           v-html="this.$t('startseite.mixedItems.title')"
