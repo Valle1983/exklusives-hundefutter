@@ -47,7 +47,7 @@ export default {
     infos: {
       glutenFree: 'Glutenfrei',
       lactoseFree: 'Laktosefrei',
-      mineralBalance: 'Mineralisches Gleichgewicht',
+      mineralBalance: 'Mineralisches <br> Gleichgewicht',
     },
     inhalsStoffe: {
       title: 'So viel Naturkraft steckt wirklich in Reico',

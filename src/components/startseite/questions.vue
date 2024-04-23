@@ -87,23 +87,23 @@ export default defineComponent({
     const rightQuestions = [
       {
         id: 1,
-        headline: this.$t('startseite.questions.rigth.question1.headline'),
-        text: this.$t('startseite.questions.rigth.question1.text'),
+        headline: this.$t('startseite.questions.right.question1.headline'),
+        text: this.$t('startseite.questions.right.question1.text'),
       },
       {
         id: 2,
-        headline: this.$t('startseite.questions.rigth.question2.headline'),
-        text: this.$t('startseite.questions.rigth.question2.text'),
+        headline: this.$t('startseite.questions.right.question2.headline'),
+        text: this.$t('startseite.questions.right.question2.text'),
       },
       {
         id: 3,
-        headline: this.$t('startseite.questions.rigth.question3.headline'),
-        text: this.$t('startseite.questions.rigth.question3.text'),
+        headline: this.$t('startseite.questions.right.question3.headline'),
+        text: this.$t('startseite.questions.right.question3.text'),
       },
       {
         id: 4,
-        headline: this.$t('startseite.questions.rigth.question4.headline'),
-        text: this.$t('startseite.questions.rigth.question4.text'),
+        headline: this.$t('startseite.questions.right.question4.headline'),
+        text: this.$t('startseite.questions.right.question4.text'),
       },
     ];
     return {

@@ -322,7 +322,7 @@ export default defineComponent({
   name: 'ContactFormular',
   components: { contactInfo },
   data() {
-    const logo = require('assets/Anmeldung/anastasiya-lobanovskaya.jpg');
+    const logo = require('assets/Anmeldung/imageBackground.jpg');
     const metaData = {
       // sets document title
       title: this.$t('anmeldung.contact.newReicoAccount'),

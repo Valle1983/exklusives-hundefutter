@@ -38,7 +38,7 @@ import { useMeta } from 'quasar';
 export default defineComponent({
   components: { bubleSeparatorOpen },
   data() {
-    const logo = require('../../assets/Startseite/BackgroundLogo.jpg');
+    const logo = require('../../assets/Startseite/defaultImageBackground.jpg');
     const metaData = {
       // sets document title
       title:

@@ -33,7 +33,7 @@ export default defineComponent({
       {
         id: 2,
         name: this.$t('menuList.contactSite'),
-        to: 'Contact',
+        to: 'kontakt',
       },
       {
         id: 3,

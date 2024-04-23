@@ -59,7 +59,7 @@ import { useMeta } from 'quasar';
 export default defineComponent({
   name: 'contactInfo',
   data() {
-    const logo = require('assets/Kontakt/sarah-chai.jpg');
+    const logo = require('assets/Kontakt/imageBackground.jpg');
     const metaData = {
       // sets document title
       title: this.$t('kontakt.contactInfo.title'),

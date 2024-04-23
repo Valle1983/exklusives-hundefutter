@@ -147,7 +147,7 @@
         </p>
         <div class="row q-pa-md">
           <div class="col-1 text-h6">
-            <q-icon name="check"></q-icon>
+            <q-icon name="check" />
           </div>
           <div class="col-11 text-h6">
             {{ this.$t('kontakt.contact.foodDogConsultingText') }}
@@ -155,7 +155,7 @@
         </div>
         <div class="row q-pa-md">
           <div class="col-1 text-h6">
-            <q-icon name="check"></q-icon>
+            <q-icon name="check" />
           </div>
           <div class="col-11 text-h6">
             {{ this.$t('kontakt.contact.contactEveryDay') }}
@@ -163,7 +163,7 @@
         </div>
         <div class="row q-pa-md">
           <div class="col-1 text-h6">
-            <q-icon name="check"></q-icon>
+            <q-icon name="check" />
           </div>
           <div class="col-11 text-h6">
             {{ this.$t('kontakt.contact.sameConsulterText') }}
@@ -171,7 +171,7 @@
         </div>
         <div class="row q-pa-md">
           <div class="col-1 text-h6">
-            <q-icon name="check"></q-icon>
+            <q-icon name="check" />
           </div>
           <div class="col-11 text-h6">
             {{ this.$t('kontakt.contact.fillContactFormular') }}
@@ -179,7 +179,7 @@
         </div>
         <contact-info />
       </div>
-      <div class="q-pa-md col-2"></div>
+      <div class="q-pa-md col-2" />
     </div>
     <br /><br /><br />
   </div>
@@ -196,7 +196,7 @@ export default defineComponent({
   name: 'ContactFormular',
   components: { contactInfo },
   data() {
-    const logo = require('assets/Kontakt/sarah-chai.jpg');
+    const logo = require('assets/Kontakt/imageBackground.jpg');
     const metaData = {
       // sets document title
       title: this.$t('kontakt.contact.contactText'),
@@ -314,7 +314,6 @@ export default defineComponent({
       phone: '',
       inputEmail: '',
       text: '',
-      regEmail: '',
       email,
       emailContact,
       link,
@@ -325,7 +324,7 @@ export default defineComponent({
       const emailPattern =
         /^(?=[a-zA-Z0-9@._%+-]{6,254}$)[a-zA-Z0-9._%+-]{1,64}@(?:[a-zA-Z0-9-]{1,63}\.){1,8}[a-zA-Z]{2,63}$/;
       return (
-        emailPattern.test(this.regEmail) ||
+        emailPattern.test(this.inputEmail) ||
         this.$t('kontakt.contact.reqziredEmail')
       );
     },

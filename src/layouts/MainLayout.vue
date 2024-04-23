@@ -8,58 +8,46 @@
         <q-carousel
           v-model="slide"
           :autoplay="autoplay"
-          @mouseenter="autoplay = false"
-          @mouseleave="autoplay = true"
           navigation
           infinite
           animated
           class="full-width"
+          transition-prev="slide-right"
+          transition-next="slide-left"
         >
-          <q-carousel-slide
-            v-if="isHome"
-            :name="1"
-            img-src="~assets/Startseite/partem-beliaikin.jpg"
-          />
-          <q-carousel-slide
-            v-if="isHome"
-            :name="2"
-            img-src="~assets/Startseite/helena-lopes-2.jpg"
-          />
+          <q-carousel-slide v-if="isHome" :name="1" :img-src="homeImage" />
+          <q-carousel-slide v-if="isHome" :name="2" :img-src="homeImage2" />
           <q-carousel-slide
             v-else-if="isNewCustomer"
             :name="1"
-            img-src="~assets/Anmeldung/anastasiya-lobanovskaya.jpg"
+            :img-src="newCustomerImage"
           />
           <q-carousel-slide
             v-else-if="isDatenschutz || isImpressum"
             :name="1"
-            img-src="~assets/Datenschutz/samson-katt.jpg"
+            :img-src="datenschutzImage"
           />
           <q-carousel-slide
-            v-else-if="isTrockenfutter"
+            v-else-if="isTrockenfutter || isNAssFutter"
             :name="1"
-            img-src="~assets/Futter/Trockenfutter/cottonbro.jpg"
-          />
-          <q-carousel-slide
-            v-else-if="isNAssFutter"
-            :name="1"
-            img-src="~assets/Futter/Trockenfutter/cottonbro.jpg"
+            :img-src="trockenfutterImage"
           />
           <q-carousel-slide
             v-else-if="isLeckerlies"
             :name="1"
-            img-src="~assets/Futter/Leckerlies/bill-emrich.jpg"
+            :img-src="leckerlieImage"
           />
           <q-carousel-slide
             v-else-if="isContact"
             :name="1"
-            img-src="~assets/Kontakt/sarah-chai.jpg"
+            :img-src="contactImage"
           />
           <q-carousel-slide
-            v-else
-            :name="1"
-            img-src="~assets/Startseite/BackgroundLogo.jpg"
+            v-else-if="isKraeutermischung"
+            name="1"
+            :img-src="kraeutermischungImage"
           />
+          <q-carousel-slide :name="1" :img-src="defaultImage" />
         </q-carousel>
       </template>
       <template v-slot:content="">
@@ -222,55 +210,6 @@
     <q-layout hidden @scroll="scrollHandler" />
 
     <q-drawer
-      v-model="left"
-      show-if-above
-      :width="200"
-      :breakpoint="400"
-      v-if="role !== 'user'"
-    >
-      <q-scroll-area
-        style="
-          height: calc(100% - 150px);
-          margin-top: 150px;
-          border-right: 1px solid #ddd;
-        "
-      >
-        <q-list padding>
-          <q-item clickable v-ripple>
-            <q-item-section avatar>
-              <q-icon name="inbox" />
-            </q-item-section>
-            <q-item-section> Inbox </q-item-section>
-          </q-item>
-
-          <q-item active clickable v-ripple>
-            <q-item-section avatar>
-              <q-icon name="star" />
-            </q-item-section>
-
-            <q-item-section> Star </q-item-section>
-          </q-item>
-
-          <q-item clickable v-ripple>
-            <q-item-section avatar>
-              <q-icon name="send" />
-            </q-item-section>
-
-            <q-item-section> Send </q-item-section>
-          </q-item>
-
-          <q-item clickable v-ripple>
-            <q-item-section avatar>
-              <q-icon name="drafts" />
-            </q-item-section>
-
-            <q-item-section> Drafts </q-item-section>
-          </q-item>
-        </q-list>
-      </q-scroll-area>
-    </q-drawer>
-
-    <q-drawer
       v-model="right"
       :width="250"
       behavior="mobile"
@@ -411,7 +350,7 @@ export default defineComponent({
       this.isMobile = false;
     }
   },
-  setup() {
+  data() {
     const leftDrawerOpen = ref(false);
     const logo = require('assets/icons/logo.svg');
     const instagram = require('assets/icons/instagram.svg');
@@ -540,19 +479,32 @@ export default defineComponent({
       role: 'user',
       isMobile: ref(false),
       slide: 1,
-      isHome: ref(true),
+      isHome: ref(false),
+      homeImage: require('assets/Startseite/imageBackground.jpg'),
+      homeImage2: require('assets/Startseite/imageBackground.jpg'),
       isContact: ref(false),
+      contactImage: require('assets/Kontakt/imageBackground.jpg'),
       isBeratung: ref(false),
+      beratungImage: require('assets/Kontakt/imageBackground.jpg'),
       isNewCustomer: ref(false),
+      newCustomerImage: require('assets/Anmeldung/imageBackground.jpg'),
       isDatenschutz: ref(false),
+      datenschutzImage: require('assets/Datenschutz/imageBackground.jpg'),
       isKraeutermischung: ref(false),
+      kraeutermischungImage: require('assets/Kraeuter/imageBackground.jpg'),
       isErgaenzung: ref(false),
       isTrockenfutter: ref(false),
+      trockenfutterImage: require('assets/Futter/Trockenfutter/imageBackground.jpg'),
       isNAssFutter: ref(false),
+      nassfutterImage: require('assets/Futter/Trockenfutter/imageBackground.jpg'),
       isWelpenFutter: ref(false),
       isLeckerlies: ref(false),
+      leckerlieImage: require('assets/Futter/Leckerlies/imageBackground.jpg'),
       isProdukt: ref(false),
       isImpressum: ref(false),
+      impressumImage: require('assets/Datenschutz/imageBackground.jpg'),
+      isDefault: ref(false),
+      defaultImage: require('assets/Startseite/defaultImageBackground.jpg'),
       rightList,
       herbSupplementsList,
       feedList,
@@ -563,6 +515,7 @@ export default defineComponent({
   },
   watch: {
     $route(to) {
+      this.isDefault = false;
       this.isHome = false;
       this.isContact = false;
       this.isBeratung = false;
@@ -599,7 +552,7 @@ export default defineComponent({
       } else if (to.fullPath === '/impressum') {
         this.isImpressum = true;
       } else {
-        this.isHome = true;
+        this.isDefault = true;
       }
     },
   },

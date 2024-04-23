@@ -36,7 +36,7 @@
             ></q-btn>
             <div
               class="text-h6 text-primary"
-              v-html="this.$t('food.inhalsStoffe.noGenecticIngredients')"
+              v-html="this.$t('food.inhalsStoffe.noGeneticIngredients')"
             />
           </q-card-section>
         </q-card>
@@ -54,7 +54,7 @@
             ></q-btn>
             <div
               class="text-h6 text-primary"
-              v-html="this.$t('food.inhalsStoffe.nonePreservatives')"
+              v-html="this.$t('food.inhalsStoffe.noPreservatives')"
             />
           </q-card-section>
         </q-card>
@@ -75,7 +75,9 @@
             <div
               class="text-h6 text-primary"
               v-html="
-                this.$t('food.inhalsStoffe.complettelyWihoutSlaugterhouseWaste')
+                this.$t(
+                  'food.inhalsStoffe.completelyWithoutSlaughterhouseWaste'
+                )
               "
             />
           </q-card-section>
@@ -138,9 +140,11 @@ export default defineComponent({
           content:
             this.$t('food.inhalsStoffe.highFreshMeatContent') +
             ' ' +
-            this.$t('food.inhalsStoffe.noGenecticIngredients') +
+            this.$t('food.inhalsStoffe.noGeneticIngredients') +
             ' ' +
-            this.$t('food.inhalsStoffe.complettelyWihoutSlaugterhouseWaste') +
+            this.$t('food.inhalsStoffe.noPreservatives') +
+            ' ' +
+            this.$t('food.inhalsStoffe.completelyWithoutSlaughterhouseWaste') +
             ' ' +
             this.$t('food.inhalsStoffe.naturalRawMaterials') +
             ' ' +
@@ -149,11 +153,13 @@ export default defineComponent({
         keywords: {
           name:
             this.$t('food.inhalsStoffe.highFreshMeatContent') +
-            ', ' +
-            this.$t('food.inhalsStoffe.noGenecticIngredients') +
-            ' ,' +
-            this.$t('food.inhalsStoffe.complettelyWihoutSlaugterhouseWaste') +
-            ' ,' +
+            ' ' +
+            this.$t('food.inhalsStoffe.noGeneticIngredients') +
+            ' ' +
+            this.$t('food.inhalsStoffe.noPreservatives') +
+            ' ' +
+            this.$t('food.inhalsStoffe.completelyWithoutSlaughterhouseWaste') +
+            ' ' +
             this.$t('food.inhalsStoffe.naturalRawMaterials') +
             ' ' +
             this.$t('food.inhalsStoffe.nutrientPreservingProcessing'),
@@ -168,9 +174,11 @@ export default defineComponent({
           content:
             this.$t('food.inhalsStoffe.highFreshMeatContent') +
             ' ' +
-            this.$t('food.inhalsStoffe.noGenecticIngredients') +
+            this.$t('food.inhalsStoffe.noGeneticIngredients') +
             ' ' +
-            this.$t('food.inhalsStoffe.complettelyWihoutSlaugterhouseWaste') +
+            this.$t('food.inhalsStoffe.noPreservatives') +
+            ' ' +
+            this.$t('food.inhalsStoffe.completelyWithoutSlaughterhouseWaste') +
             ' ' +
             this.$t('food.inhalsStoffe.naturalRawMaterials') +
             ' ' +
