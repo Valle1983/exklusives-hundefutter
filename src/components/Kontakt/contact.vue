@@ -49,10 +49,7 @@
                 :label="this.$t('kontakt.contact.email')"
                 :aria-label="this.$t('kontakt.contact.email')"
                 class="q-ma-md"
-                :rules="[
-                  (val) => !!val || this.$t('kontakt.contact.reqziredEmail'),
-                  isValidEmail(),
-                ]"
+                :rules="[isValidEmail]"
               >
                 <template v-slot:prepend>
                   <q-icon name="email" color="dark" />
@@ -324,7 +321,7 @@ export default defineComponent({
       const emailPattern =
         /^(?=[a-zA-Z0-9@._%+-]{6,254}$)[a-zA-Z0-9._%+-]{1,64}@(?:[a-zA-Z0-9-]{1,63}\.){1,8}[a-zA-Z]{2,63}$/;
       return (
-        emailPattern.test(this.inputEmail) ||
+        (emailPattern.test(this.inputEmail) && this.inputEmail.length > 0) ||
         this.$t('kontakt.contact.reqziredEmail')
       );
     },
@@ -399,6 +396,7 @@ export default defineComponent({
       this.name = '';
       this.inputEmail = '';
       this.message = '';
+      this.onReset();
     },
   },
 });

@@ -7,9 +7,9 @@ const telegramToken = '6752253468:AAHkpg0Nvf84946xWmViOEnv2-mPG-AJiGI';
 const chatId = '-1002140747480';
 
 // EmailJS
-const service_id = 'service_qzl6pio';
-const template_id = 'template_3ozizdh';
-const user_id = 'YoDwSlcZN_OvNp-YL';
+const service_id = 'service_o8k9n8q';
+const template_id = 'template_h0qd3c7';
+const user_id = 'zIFEyfLPk9Y0k8VbB';
 const EMAIL_JS_ID = 'user_3j7fixvUbKpSj7GrpOzZA';
 //
 const emailContact = 'mailto:kontakt@exklusives-katzenfutter.de';

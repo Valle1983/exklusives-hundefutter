@@ -33,7 +33,7 @@ export default defineComponent({
       {
         id: 2,
         name: this.$t('menuList.contactSite'),
-        to: 'kontakt',
+        to: 'Kontakt',
       },
       {
         id: 3,
@@ -50,10 +50,10 @@ export default defineComponent({
   },
 });
 </script>
-<style scoped>
+<style type="css" scoped>
 .q-item.q-router-link--active {
-  color: #61345e !important;
-  background-color: rgba(255, 255, 255, 0.445) !important;
+  color: $primary !important;
+  background-color: $primary !important;
   font-weight: bold;
   border-radius: 25px;
 }

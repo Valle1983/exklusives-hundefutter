@@ -23,7 +23,7 @@
           width="100%"
         ></q-img>
       </div>
-      <div class="col-2"></div>
+      <div class="col-2" />
     </div>
     <buble-separator-open />
   </div>
