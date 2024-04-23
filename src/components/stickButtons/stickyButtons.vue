@@ -12,6 +12,7 @@
       <q-fab-action
         @click="writeEmail"
         color="primary"
+        :title="emailContact"
         :aria-label="emailContact"
         rel="canonical"
         :href="emailContact"

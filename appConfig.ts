@@ -23,7 +23,7 @@ const telegramLink = 'https://t.me/exklusivesKatzenfutter';
 const tiktokLink = 'https://www.tiktok.com/@exklusives__katzenfutter';
 
 // Kontakt Info
-const name = 'Familie Apolinariv';
+const name = 'Familie Apolinarev';
 const street = 'Uhdenstr. 3';
 const location = '33100 Paderborn';
 const beraterNummer = 6096921;
