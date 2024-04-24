@@ -3,7 +3,7 @@ name: Deploy Quasar PWA to Hostinger
 on:
   push:
     branches:
-      - main # Setzen Sie den Branch auf Ihren bevorzugten Deployment-Branch
+      - master # Setzen Sie den Branch auf Ihren bevorzugten Deployment-Branch
 
 jobs:
   deploy:
