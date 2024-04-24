@@ -19,6 +19,6 @@ jobs:
       - name: Build Quasar PWA
         run: quasar build -m pwa
       - name: Deploy to Hostinger
-        run: rsync -avz --exclude '.git/' --exclude '.github/' --delete ./dist/pwa/ username@hostname:/path/to/project/
+        run: rsync -avz --exclude '.git/' --exclude '.github/' --delete ./dist/pwa/ git@github.com:Valle1983/exklusive-framework.git
         env:
           DEPLOY_KEY: ${{ secrets.DEPLOY_KEY }}
