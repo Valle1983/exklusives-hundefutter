@@ -1,18 +1,24 @@
-name: Docker Image CI
+name: Deploy Quasar PWA to Hostinger
 
 on:
   push:
-    branches: [ "master" ]
-  pull_request:
-    branches: [ "master" ]
+    branches:
+      - main
 
 jobs:
-
-  build:
-
+  build-and-deploy:
     runs-on: ubuntu-latest
-
     steps:
-    - uses: actions/checkout@v3
-    - name: Build the Docker image
-      run: docker build . --file Dockerfile --tag my-image-name:$(date +%s)
+      - uses: actions/checkout@v2
+      - name: Set up Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '16'
+      - name: Install dependencies
+        run: npm install
+      - name: Build Quasar PWA
+        run: quasar build -m pwa
+      - name: Deploy to Hostinger
+        run: rsync -avz --exclude '.git/' --exclude '.github/' --delete ./dist/pwa/ username@hostname:/path/to/project/
+        env:
+          DEPLOY_KEY: ${{ secrets.DEPLOY_KEY }}
