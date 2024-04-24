@@ -3,7 +3,7 @@ name: Deploy Quasar PWA to Hostinger
 on:
   push:
     branches:
-      - main
+      - master
 
 jobs:
   build-and-deploy:
