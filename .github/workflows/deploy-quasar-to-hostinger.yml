@@ -15,7 +15,7 @@ jobs:
       - name: Set up Node.js
         uses: actions/setup-node@v3
         with:
-          node-version: '16' # Stellen Sie sicher, dass dies mit Ihrer Quasar-Konfiguration übereinstimmt
+          node-version: '21' # Stellen Sie sicher, dass dies mit Ihrer Quasar-Konfiguration übereinstimmt
 
       - name: Install dependencies
         run: npm install
