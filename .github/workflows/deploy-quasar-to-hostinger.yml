@@ -1,0 +1,46 @@
+name: Deploy Quasar PWA to Hostinger
+
+on:
+  push:
+    branches:
+      - main # Setzen Sie den Branch auf Ihren bevorzugten Deployment-Branch
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '16' # Stellen Sie sicher, dass dies mit Ihrer Quasar-Konfiguration übereinstimmt
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Build Quasar PWA
+        run: quasar build -m pwa
+
+      - name: Deploy to Hostinger
+        uses: appleboy/scp-action@master
+        with:
+          host: ${{ secrets.HOSTINGER_HOST }}
+          username: ${{ secrets.HOSTINGER_USERNAME }}
+          key: ${{ secrets.HOSTINGER_SSH_KEY }}
+          port: 22
+          source: 'dist/pwa/*'
+          target: '/domains/exklusives-katzenfutter.de/public_html'
+          rm: true # Löscht alle Dateien im Zielverzeichnis vor dem Hochladen
+
+      - name: Notify Deployment Success
+        uses: actions/github-script@v5
+        with:
+          script: |
+            github.issues.createComment({
+              issue_number: context.issue.number,
+              owner: context.repo.owner,
+              repo: context.repo.name,
+              body: 'Deployment to Hostinger successful!'
+            })
