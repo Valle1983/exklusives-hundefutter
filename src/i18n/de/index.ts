@@ -111,6 +111,8 @@ export default {
   },
   menuList: {
     contactSite: 'Kontakt',
+    newCustomer: 'Neukundenbestellung',
+    customerLogin: 'Kunden Login',
     impressumSite: 'Impressum',
     datenschutzSite: 'Datenschutz',
   },

@@ -54,7 +54,7 @@ export default defineComponent({
   components: { Partner, MixedItems, Benefits, ContactFormular },
 
   data() {
-    const logo = require('assets/icons/logo.svg');
+    const logo = require('assets/icons/logo.png');
     const metaData = {
       // sets document title
       title: this.title,

@@ -165,7 +165,7 @@ export default defineComponent({
   components: {},
 
   data() {
-    const logo = require('assets/icons/logo.svg');
+    const logo = require('assets/icons/logo.png');
     const metaData = {
       // sets document title
       title: this.title,

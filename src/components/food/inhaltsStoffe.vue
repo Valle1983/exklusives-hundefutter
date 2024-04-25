@@ -127,7 +127,7 @@ import { defineComponent } from 'vue';
 import { useMeta } from 'quasar';
 export default defineComponent({
   data() {
-    const logo = require('assets/icons/logo.svg');
+    const logo = require('assets/icons/logo.png');
     const metaData = {
       // sets document title
       title: this.$t('food.inhalsStoffe.title'),

@@ -12,12 +12,13 @@
             <q-card-section>
               <div class="row text-left">
                 <div
-                  class="col-12 text-h5"
+                  class="col-12 text-h5 q-pb-md"
                   v-html="this.$t('footer.contactSubtext')"
                 />
+                <div class="col-12 text-body1">{{ reicoPartner }}</div>
                 <div class="col-12 text-body1">{{ name }}</div>
                 <div class="col-12 text-body1">{{ location }}</div>
-                <div class="row q-pt-xs q-pb-xs">
+                <div class="row q-pt-md q-pb-md">
                   <div class="q-pr-md">
                     <q-btn
                       :href="emailContact"
@@ -36,13 +37,15 @@
                     size="xs"
                   ></q-btn>
                 </div>
-                <div class="col-12 text-white q-pa-xs cursor text-weight-bold">
+                <div
+                  class="col-12 text-white q-pa-xs cursor text-weight-bold q-pb-xs"
+                >
                   <div
                     class="col-12 text-body1"
                     v-html="this.$t('footer.partnerReico')"
                   />
                   <div class="col-12 text-body1">
-                    {{ this.$t('footer.contactSubtext') }} {{ beraterNummer }}
+                    {{ this.$t('footer.customerNumber') }} {{ beraterNummer }}
                   </div>
                 </div>
               </div>
@@ -93,6 +96,7 @@ import menuList from '../menuList/menuList.vue';
 import SocialMediaBar from '../socialMediaBar/socialMediaBar.vue';
 import OpenMap from '../openMap/openMap.vue';
 import {
+  reicoPartner,
   name,
   location,
   email,
@@ -111,7 +115,7 @@ export default defineComponent({
   components: { menuList, SocialMediaBar, OpenMap },
   name: 'FooterC',
   data() {
-    const logo = require('assets/icons/exklusives-katzenfutter.png');
+    const logo = require('assets/icons/logo.png');
     const instagram = require('assets/icons/instagram.svg');
     const tictoc = require('assets/icons/tiktok.png');
     const telegram = require('assets/icons/telegram.svg');
@@ -182,6 +186,7 @@ export default defineComponent({
       telegram,
       currentYear,
       OpenMap,
+      reicoPartner,
       name,
       location,
       email,

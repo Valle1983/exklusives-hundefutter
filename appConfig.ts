@@ -22,6 +22,7 @@ const telegramLink = 'https://t.me/exklusivesHundefutterr';
 const tiktokLink = 'https://www.tiktok.com/@exklusives_hundefutter';
 
 // Kontakt Info
+const reicoPartner = 'Reico Vetriebspartner "Exklusives Hundefutter"';
 const name = 'Familie Unger';
 const street = 'Am HEssentuch. 11';
 const location = '32758 Detmold';
@@ -52,6 +53,7 @@ export {
   instagramLink,
   telegramLink,
   tiktokLink,
+  reicoPartner,
   name,
   location,
   beraterNummer,

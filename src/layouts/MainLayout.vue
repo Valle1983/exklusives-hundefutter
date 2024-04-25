@@ -357,7 +357,7 @@ export default defineComponent({
   },
   data() {
     const leftDrawerOpen = ref(false);
-    const logo = require('assets/icons/logo.svg');
+    const logo = require('assets/icons/logo.png');
     const instagram = require('assets/icons/instagram.svg');
     const tictoc = require('assets/icons/tiktok.png');
     const telegram = require('assets/icons/telegram.svg');

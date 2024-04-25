@@ -1,38 +1,36 @@
 <template>
   <infos />
-  <div class="bg-grey-2">
+  <div class="bg-grey-2 q-pa-md q-pb-lg">
     <div class="q-pt-md-lg q-pt-sm-lg q-pt-xs-xl">
       <div class="row justify-center items-center">
         <div class="col-md-2 col-xs-1 text-center">
           <q-btn
             v-if="showBackButton"
-            class="q-pa-sm"
-            flat
             round
-            color="primary"
+            flat
+            color="dark"
             @click="backProdukt()"
             icon="chevron_left"
-            size="md"
+            size="xl"
           ></q-btn>
           <q-btn
             v-if="showGoBackButton"
-            class="q-pa-sm"
-            flat
             round
-            color="primary"
+            flat
+            color="dark"
             @click="$router.go(-1)"
             icon="chevron_left"
-            size="md"
+            size="xl"
           ></q-btn>
         </div>
         <div class="col-md-8 col-xs-10">
           <div v-for="produkt in currentProducts" :key="produkt.id">
             <div
               class="row"
-              v-if="produkt.id === currentNumber.id"
+              v-if="produkt.id === currentNumber"
               style="max-height: 1250px"
             >
-              <div class="col-4 col-4 col-md-4 col-sm-12 col-xs-12">
+              <div class="col-md-4 col-sm-12 col-xs-12">
                 <q-img :src="produkt.image" />
                 <div class="row q-gutter-sm">
                   <img
@@ -55,7 +53,7 @@
                   />
                 </div>
               </div>
-              <div class="q-pa-md col-8 col-md-8 col-sm-12 col-xs-12">
+              <div class="q-pa-md col-md-8 col-sm-12 col-xs-12">
                 <div class="row">
                   <div class="col-12">
                     <div class="q-pt-md text-h4">{{ produkt.headline }}</div>
@@ -72,19 +70,18 @@
         <div class="col-md-2 col-xs-1 text-center">
           <q-btn
             v-if="showNextButton"
-            class="q-pa-sm"
-            flat
             round
-            color="primary"
+            flat
+            color="dark"
             @click="nextProuct()"
             icon="chevron_right"
-            size="md"
+            size="xl"
           ></q-btn>
         </div>
       </div>
-      <buble-separator-close-dark />
     </div>
   </div>
+  <buble-separator-close-dark />
 </template>
 
 <script>
@@ -110,34 +107,34 @@ export default {
     Infos,
   },
   mounted() {
-    this.currentNumber = this.productStore.getSelectedProduct;
+    this.currentNumber = this.$route.params.id;
 
     this.Leckerlie.forEach((m) => {
-      if (m.id === this.currentNumber.id) {
+      if (m.id === this.currentNumber) {
         this.currentProducts = this.Leckerlie;
       }
     });
 
     this.Welpenfutter.forEach((m) => {
-      if (m.id === this.currentNumber.id) {
+      if (m.id === this.currentNumber) {
         this.currentProducts = this.WelpWelpenfutterenfutter;
       }
     });
 
     this.WeetFood.forEach((w) => {
-      if (w.id === this.currentNumber.id) {
+      if (w.id === this.currentNumber) {
         this.currentProducts = this.WeetFood;
       }
     });
 
     this.DryFood.forEach((d) => {
-      if (d.id === this.currentNumber.id) {
+      if (d.id === this.currentNumber) {
         this.currentProducts = this.DryFood;
       }
     });
 
     this.Herbs.forEach((h) => {
-      if (h.id === this.currentNumber.id) {
+      if (h.id === this.currentNumber) {
         this.currentProducts = this.Herbs;
       }
     });
@@ -180,7 +177,7 @@ export default {
           this.showNextButton = true;
           this.site++;
           this.productStore.setSelectedProduct(this.currentProducts[this.site]);
-          this.currentNumber = this.productStore.getSelectedProduct;
+          this.currentNumber = this.productStore.getSelectedProduct.id;
         }
         if (this.site === this.currentProducts.length - 1) {
           this.showNextButton = false;
@@ -200,7 +197,7 @@ export default {
           this.showBackButton = true;
           this.site--;
           this.productStore.setSelectedProduct(this.currentProducts[this.site]);
-          this.currentNumber = this.productStore.getSelectedProduct;
+          this.currentNumber = this.productStore.getSelectedProduct.id;
         }
         if (this.site === 0) {
           this.showBackButton = false;

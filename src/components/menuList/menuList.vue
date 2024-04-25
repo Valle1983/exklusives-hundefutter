@@ -12,13 +12,17 @@
       :to="{ name: navigation.to }"
     >
       <q-item-section>
-        <q-item-label>{{ navigation.name }}</q-item-label>
+        <q-item-label v-if="navigation.id === 3" @click="goToReico()">{{
+          navigation.name
+        }}</q-item-label>
+        <q-item-label v-else>{{ navigation.name }}</q-item-label>
       </q-item-section>
     </q-item>
   </q-list>
 </template>
 <script lang="ts">
 import { defineComponent } from 'vue';
+import { openURL } from 'quasar';
 
 export default defineComponent({
   name: 'MenuList',
@@ -28,15 +32,30 @@ export default defineComponent({
       default: true,
     },
   },
+  methods: {
+    goToReico() {
+      openURL('https://reico-vital.com/de/anmeldung?back=my-account');
+    },
+  },
   data() {
     const navigationList = [
       {
-        id: 2,
+        id: 1,
         name: this.$t('menuList.contactSite'),
         to: 'Kontakt',
       },
       {
+        id: 2,
+        name: this.$t('menuList.newCustomer'),
+        to: 'NeuKunde',
+      },
+      {
         id: 3,
+        name: this.$t('menuList.customerLogin'),
+        to: 'https://reico-vital.com/de/anmeldung?back=my-accountsum',
+      },
+      {
+        id: 4,
         name: this.$t('menuList.impressumSite'),
         to: 'Impressum',
       },

@@ -1,5 +1,5 @@
 <template>
-  <div class="bg-grey-2">
+  <div class="bg-grey-2 q-pa-md q-pb-lg">
     <q-carousel
       v-model="slide"
       transition-prev="slide-right"
@@ -7,7 +7,7 @@
       swipeable
       animated
       :autoplay="autoplay"
-      control-color="primary"
+      control-color="dark"
       navigation
       arrows
       height="690px"
@@ -274,8 +274,8 @@
         </div>
       </q-carousel-slide>
     </q-carousel>
-    <buble-separator-close-dark />
   </div>
+  <buble-separator-close-dark />
 </template>
 
 <script>
@@ -315,7 +315,7 @@ export default defineComponent({
         .push({
           name: 'produkt',
           params: {
-            type: this.productStore.getSelectedProduct.type,
+            id: this.productStore.getSelectedProduct.id,
           },
         })
         .catch();
@@ -348,5 +348,8 @@ q-card:hover {
 }
 .button:hover {
   background-color: white;
+}
+.q-carousel__arrow .q-icon {
+  font-size: 40px;
 }
 </style>
