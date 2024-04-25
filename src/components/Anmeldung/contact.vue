@@ -274,7 +274,7 @@
                 </p>
                 <p>
                   <a class="text-dark" :href="`${emailContact}`"
-                    >kontakt@exklusives-katzenfutter.de</a
+                    >kontakt@exklusives-hundefutter.de</a
                   >
                   für die Zukunft widerrufen werden. Weitere Informationen zum
                   Umgang mit Nutzerdaten finden Sie in unserer

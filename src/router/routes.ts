@@ -39,8 +39,12 @@ const routes: RouteRecordRaw[] = [
         component: () => import('pages/Food/TrockenFutter.vue'),
       },
       {
-        path: '/meatzie',
-        component: () => import('pages/Food/Meatzie.vue'),
+        path: '/welpenfutter',
+        component: () => import('pages/Food/WelpenFutter.vue'),
+      },
+      {
+        path: '/leckerlies',
+        component: () => import('pages/Food/Leckerlie.vue'),
       },
       {
         path: '/kraeutermischung',

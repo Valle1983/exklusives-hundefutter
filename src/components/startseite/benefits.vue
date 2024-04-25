@@ -126,7 +126,7 @@ export default defineComponent({
       {
         id: 2,
         title: 'individuelle Beratung',
-        ponit1: 'Persönliche Beratung speziell auf Ihre Katze zugeschnitten',
+        ponit1: 'Persönliche Beratung speziell auf Ihren Hund zugeschnitten',
         ponit2: 'stets der gleiche Ansprechpartner',
         ponit3: 'täglich erreichbar auch am Wochenende sowie Feiertagen',
         imageTitle: '/icons/dog-background.svg',
@@ -135,7 +135,7 @@ export default defineComponent({
       {
         id: 3,
         title: 'direkte Lieferung',
-        ponit1: 'das Katzenfutter kommt pünktlich nach Hause',
+        ponit1: 'das Hundefutter kommt pünktlich nach Hause',
         ponit2:
           'Sie können Einzellieferungen bekommen oder auf Wunsch auch einen Lieferrhythmus vereinbaren',
         ponit3: 'transport bis vor die Haustür',

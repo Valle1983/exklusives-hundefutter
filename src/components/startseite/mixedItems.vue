@@ -1,14 +1,14 @@
 <template>
   <div class="q-pt-xl">
-    <div class="row q-pt-xl q-pa-md justify-center items-center text-center">
+    <div class="row q-pt-xl q-pa-md justify-center items-center">
       <div class="col-2" />
-      <div class="col-12 col-md-8 col-sm-10 col-xs-12 text-h4">
+      <div class="col-md-4 col-sm-10 col-xs-12 text-h4">
         <div
-          class="text-dark"
+          class="text-dark q-pb-md"
           v-html="this.$t('startseite.mixedItems.title')"
         />
         <div
-          class="text-h6 text-grey-8 text-weight"
+          class="text-h6 text-grey-8 text-weight q-pb-md"
           v-html="this.$t('startseite.mixedItems.subTitle')"
         />
         <div
@@ -33,10 +33,11 @@ import bubleSeparatorOpen from 'components/StyleTools/bubleSeparatorOpen';
 import { defineComponent } from 'vue';
 
 export default defineComponent({
+  props: {},
   components: { bubleSeparatorOpen },
   data() {
     return {
-      showPic: false,
+      showPic: true,
     };
   },
 });

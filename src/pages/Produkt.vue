@@ -96,7 +96,8 @@ import {
   productsTable,
   DryFood,
   WeetFood,
-  Meatzie,
+  Welpenfutter,
+  Leckerlie,
   Herbs,
 } from './products';
 import { useProductStore } from 'src/stores/example-store';
@@ -111,9 +112,15 @@ export default {
   mounted() {
     this.currentNumber = this.productStore.getSelectedProduct;
 
-    this.Meatzie.forEach((m) => {
+    this.Leckerlie.forEach((m) => {
       if (m.id === this.currentNumber.id) {
-        this.currentProducts = this.Meatzie;
+        this.currentProducts = this.Leckerlie;
+      }
+    });
+
+    this.Welpenfutter.forEach((m) => {
+      if (m.id === this.currentNumber.id) {
+        this.currentProducts = this.WelpWelpenfutterenfutter;
       }
     });
 
@@ -152,7 +159,8 @@ export default {
       showBackButton: ref(true),
       showGoBackButton: ref(false),
       DryFood,
-      Meatzie,
+      Welpenfutter,
+      Leckerlie,
       WeetFood,
       Herbs,
       currentProducts: [],

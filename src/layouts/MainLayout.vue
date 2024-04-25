@@ -40,7 +40,7 @@
             :img-src="trockenfutterImage"
           />
           <q-carousel-slide
-            v-else-if="isLeckerlies"
+            v-else-if="isLeckerlies || isWelpenFutter"
             :name="1"
             :img-src="leckerlieImage"
           />
@@ -252,7 +252,7 @@
               :icon="
                 menuItem.label === 'Futter' ||
                 menuItem.label === 'Kräuter & Ergänzung'
-                  ? 'mdi-cat'
+                  ? 'mdi-dog'
                   : 'person_add'
               "
               :label="menuItem.label"
@@ -314,9 +314,7 @@
         <div class="q-pa-md justify-center full-height full-width text-center">
           <q-img src="~assets/reico-2019.png" class="logo" />
         </div>
-        <p class="q-pt-md text-center">
-          © {{ currentYear }} Exklusives Katzenfutter
-        </p>
+        <p class="q-pt-md text-center">© {{ currentYear }} {{ website }}</p>
       </q-scroll-area>
     </q-drawer>
 
@@ -338,7 +336,7 @@ import FooterC from 'components/footer/Footer.vue';
 import { LocalStorage, date, openURL, Platform } from 'quasar';
 import CookieBanner from 'components/cookieBanner.vue';
 import StickyButtons from 'components/stickButtons/stickyButtons.vue';
-import { link } from '../../appConfig';
+import { link, website } from '../../appConfig';
 
 export default defineComponent({
   name: 'MainLayout',
@@ -377,7 +375,7 @@ export default defineComponent({
       },
       {
         id: 1,
-        icon: 'mdi-cat',
+        icon: 'mdi-dog',
         label: 'Kräuter & Ergänzung',
         separator: false,
       },
@@ -428,24 +426,31 @@ export default defineComponent({
 
     const feedList = [
       {
-        id: 1,
+        id: 0,
         icon: '',
         to: '/nassfutter',
         label: 'Nassfutter',
         separator: false,
       },
       {
-        id: 2,
+        id: 1,
         icon: '',
         to: '/trockenfutter',
         label: 'Trockenfutter',
         separator: true,
       },
       {
-        id: 4,
+        id: 2,
         icon: 'contact',
-        to: '/meatzie',
-        label: 'mEATzie',
+        to: '/welpenfutter',
+        label: 'Welpenfutter',
+        separator: false,
+      },
+      {
+        id: 3,
+        icon: 'contact',
+        to: '/leckerlies',
+        label: 'Leckerlies',
         separator: false,
       },
     ];
@@ -518,6 +523,7 @@ export default defineComponent({
       adviseList,
       drawer: ref(false),
       link,
+      website,
     };
   },
   watch: {
@@ -552,7 +558,7 @@ export default defineComponent({
         this.isNAssFutter = true;
       } else if (to.fullPath === '/welpenfutter') {
         this.isWelpenFutter = true;
-      } else if (to.fullPath === '/meatzie') {
+      } else if (to.fullPath === '/leckerlies') {
         this.isLeckerlies = true;
       } else if (to.fullPath === '/ergaenzungsmittel') {
         this.isErgaenzung = true;

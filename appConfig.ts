@@ -1,41 +1,42 @@
-// Instagram
 const accessToken =
-  'IGQWROSXlFdXRDSVpJUzhKeTBTSFVpU2JFNTB2NmdxOFZAfMm4yeVlrSUxMTHhRZAFBiQTJuSnV1eHFzSlp4WE9zOEIxSHRJME1oWVE1aXBWbi1XWmVmU1NnaUljR2JWN0FSOVJ1dHplbmtWVTUwdHdWakZASS3ZAmSDgZD';
+  'IGQWRNVWotTFFmMTRvQXZAfVUJsdVBwamdOa3hpcW1lUGJETF9UTE9XWXhya3NOYlZAKQURHc0g3dGdlNjZAqS1poTmVjSld5WXMwSmdjSnIxeEYxWlFLNzBKMFB5U2pKWG92MUtSMm1odUxIakZAhZAUlQZAEV4VXU0bEUZD';
 
 // Telegram
-const telegramToken = '6752253468:AAHkpg0Nvf84946xWmViOEnv2-mPG-AJiGI';
-const chatId = '-1002140747480';
+const telegramToken = '6481052067:AAE9iZ3b40Z9tk-jVvW7hpew6t0_ZHc6CV0';
+const chatId = '-1002066953332';
 
 // EmailJS
-const service_id = 'service_o8k9n8q';
-const template_id = 'template_h0qd3c7';
-const user_id = 'zIFEyfLPk9Y0k8VbB';
-const EMAIL_JS_ID = 'user_3j7fixvUbKpSj7GrpOzZA';
+// EmailJS
+const service_id = 'service_qzl6pio';
+const template_id = 'template_3ozizdh';
+const user_id = 'YoDwSlcZN_OvNp-YL';
 //
-const emailContact = 'mailto:kontakt@exklusives-katzenfutter.de';
-const email = 'kontakt@exklusives-katzenfutter.de';
-const mobileNumber = 'tel:+491794358033';
-const mobile = '+49 179 43 580 33';
+const emailContact = 'mailto:kontakt@exklusives-hundefutter.de';
+const email = 'kontakt@exklusives-hundefutter.de';
+const mobileNumber = 'tel:+4917622346563';
+const mobile = '+49 176 22 34 65 63';
 
 // Social Media
-const instagramLink = 'https://instagram.com/exklusives__katzenfutter';
-const telegramLink = 'https://t.me/exklusivesKatzenfutter';
-const tiktokLink = 'https://www.tiktok.com/@exklusives__katzenfutter';
+const instagramLink = 'https://instagram.com/exklusives_hundefutter';
+const telegramLink = 'https://t.me/exklusivesHundefutterr';
+const tiktokLink = 'https://www.tiktok.com/@exklusives_hundefutter';
 
 // Kontakt Info
-const name = 'Familie Apolinarev';
-const street = 'Uhdenstr. 3';
-const location = '33100 Paderborn';
+const name = 'Familie Unger';
+const street = 'Am HEssentuch. 11';
+const location = '32758 Detmold';
 const beraterNummer = 6096921;
 
 // Website name
-const website = 'Exklusives Katzenfutter';
-const link = 'https://exklusives-katzenfutter.de';
+const website = 'Exklusives Hundefutter';
+const link = 'https://exklusives-hundefutter.de';
 
 // Parner
 const partner1Link = 'https://emmy-toypoodle.de';
 const partner2Link = 'https://pader-boxer.com';
 const partner3Link = 'https://exklusives-hundefutter.de';
+const partner4Link = 'https://exklusives-katzenfutter.de';
+const partner5Link = 'https://laisy-malteser.de';
 
 export {
   accessToken,
@@ -44,7 +45,6 @@ export {
   service_id,
   template_id,
   user_id,
-  EMAIL_JS_ID,
   emailContact,
   email,
   mobileNumber,
@@ -60,4 +60,6 @@ export {
   partner1Link,
   partner2Link,
   partner3Link,
+  partner4Link,
+  partner5Link,
 };

@@ -18,7 +18,7 @@ export default {
       checkBoxText:
         'I agree that my information from the contact form will be collected and processed to respond to my request. The data will be deleted after your request has been processed. Note: You can revoke your consent at any time for the future by email to <a class="text-dark" href="' +
         emailContact +
-        '">kontakt@exklusives-katzenfutter.de</a>. Detailed information on the handling of user data can be found in our <a class="text-dark" href="' +
+        '">kontakt@exklusives-hundefutter.de</a>. Detailed information on the handling of user data can be found in our <a class="text-dark" href="' +
         link +
         '/datenschutz"><b>Privacy Policy</b></a>',
       submitButton: 'Send Message',

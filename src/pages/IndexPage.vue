@@ -20,21 +20,21 @@ export default defineComponent({
   props: {
     title: {
       type: String,
-      default: 'Ecklusives Katzenfutter | Reico Katzenfutter',
+      default: 'Ecklusives Hundefutter | Reico Hundefutter',
     },
     content: {
       type: String,
-      default: 'Ecklusives Katzenfutter | Reico Katzenfutter',
+      default: 'Ecklusives Hundefutter | Reico Hundefutter',
     },
     desctiption: {
       type: String,
       default:
-        'Reico Katzenfutter – gesunde Ernährung für Ihre Katze Gesundheit ist kein Zufall – Eine artgerechte Ernährung ändert alles! Reico entwickelt das Katzenfutter nach dem Vorbild der Natur und hat mit den Kräutermischungen und Ergänzungsfuttermitteln das Reico Vital-System kreiert. So wird jede Katze, ob jung oder alt, optimal und artgerecht versorgt. Das bietet das Futter: Natürliche Rohstoffe ohne überflüssige Zusätze, moderne Wissenschaft und mehr als 30 Jahre Erfahrung. Reico ist mehr als nur ein Katzenfutter. Erfahren Sie mehr über das Reico Vital-System und lassen Sie sich jetzt kostenlos beraten.',
+        'Reico Hundefutter – das gesunde Futter für Ihren Hund Gesundheit ist kein Zufall – Eine gesunde & artgerechte Ernährung ändert Alles! Reico hat das Hundefutter nach dem Vorbild der Natur entwickelt und mit den Kräutermischungen & Ergänzungsfuttermitteln, das Reico Vital-System erschaffen. Damit wird jeder Hund, ob Welpe, erwachsener Hund oder ältere Hunde, optimal und artgerecht versorgt. Das steckt im Hundefutter: Naturbelassene Rohstoffe ohne unnötige Zusätze, moderne Wissenschaft und über 30 Jahre Erfahrung. Reico ist mehr als nur ein Hundefutter. Lernen Sie das Reico Vital-System kennen und lassen Sie sich jetzt kostenlos beraten.',
     },
     desctiptionContent: {
       type: String,
       default:
-        'Reico Katzenfutter – gesunde Ernährung für Ihre Katze Gesundheit ist kein Zufall – Eine artgerechte Ernährung ändert alles! Reico entwickelt das Katzenfutter nach dem Vorbild der Natur und hat mit den Kräutermischungen und Ergänzungsfuttermitteln das Reico Vital-System kreiert. So wird jede Katze, ob jung oder alt, optimal und artgerecht versorgt. Das bietet das Futter: Natürliche Rohstoffe ohne überflüssige Zusätze, moderne Wissenschaft und mehr als 30 Jahre Erfahrung. Reico ist mehr als nur ein Katzenfutter. Erfahren Sie mehr über das Reico Vital-System und lassen Sie sich jetzt kostenlos beraten.',
+        'Reico Hundefutter – das gesunde Futter für Ihren Hund Gesundheit ist kein Zufall – Eine gesunde & artgerechte Ernährung ändert Alles! Reico hat das Hundefutter nach dem Vorbild der Natur entwickelt und mit den Kräutermischungen & Ergänzungsfuttermitteln, das Reico Vital-System erschaffen. Damit wird jeder Hund, ob Welpe, erwachsener Hund oder ältere Hunde, optimal und artgerecht versorgt. Das steckt im Hundefutter: Naturbelassene Rohstoffe ohne unnötige Zusätze, moderne Wissenschaft und über 30 Jahre Erfahrung. Reico ist mehr als nur ein Hundefutter. Lernen Sie das Reico Vital-System kennen und lassen Sie sich jetzt kostenlos beraten.',
     },
     keywords: {
       type: String,

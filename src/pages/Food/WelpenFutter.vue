@@ -2,7 +2,7 @@
   <div>
     <inhalts-stoffe />
     <infos />
-    <products :products="Meatzie" />
+    <products :products="Welpenfutter" />
   </div>
 </template>
 
@@ -11,10 +11,10 @@ import { defineComponent } from 'vue';
 import inhaltsStoffe from 'components/food/inhaltsStoffe';
 import infos from 'components/food/infos';
 import Products from 'components/Produkte/Products';
-import { Meatzie } from 'src/pages/products';
+import { Welpenfutter } from 'src/pages/products';
 export default defineComponent({
   watch: {},
-  name: 'Meatzie',
+  name: 'WelpenFutter',
   components: {
     inhaltsStoffe,
     infos,
@@ -22,7 +22,7 @@ export default defineComponent({
   },
   data() {
     return {
-      Meatzie,
+      Welpenfutter,
     };
   },
 });
