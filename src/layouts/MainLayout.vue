@@ -311,8 +311,12 @@
             </q-expansion-item>
           </template>
         </q-list>
-        <div class="q-pa-md justify-center full-height full-width text-center">
-          <q-img src="~assets/reico-2019.png" class="logo" />
+        <div class="q-pa-md justify-center text-center">
+          <q-img
+            src="~assets/icons/logo.png"
+            class="logo"
+            style="height: 180px"
+          />
         </div>
         <p class="q-pt-md text-center">© {{ currentYear }} {{ website }}</p>
       </q-scroll-area>

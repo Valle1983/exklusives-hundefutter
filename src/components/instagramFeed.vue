@@ -18,7 +18,7 @@
           round
           flat
           size="lg"
-          color="secondary"
+          color="primary"
           icon="navigate_before"
           aria-label="Previous"
           @click="handlePaginationPrev"
