@@ -51,6 +51,10 @@ const routes: RouteRecordRaw[] = [
         component: () => import('pages/Kraeuter/Kraeutermischung.vue'),
       },
       {
+        path: '/beratung',
+        component: () => import('pages/Futterberatung/Index.vue'),
+      },
+      {
         path: '/produkt/:id',
         component: () => import('pages/Produkt.vue'),
         name: 'produkt',

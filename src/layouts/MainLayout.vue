@@ -54,6 +54,11 @@
             name="1"
             :img-src="kraeutermischungImage"
           />
+          <q-carousel-slide
+            v-else-if="isBeratung"
+            :name="1"
+            img-src="~assets/Futterberatung/helena-lopes.jpg"
+          />
           <q-carousel-slide :name="1" :img-src="defaultImage" />
         </q-carousel>
       </template>
@@ -115,6 +120,16 @@
                   label="Startseite"
                   to="/"
                   aria-label="Startseite"
+                />
+                <q-btn
+                  no-caps
+                  size="lg"
+                  rounded
+                  flat
+                  label="Futterberatung"
+                  title="Futterberatung"
+                  to="/beratung"
+                  aria-label="Futterberatung"
                 />
                 <q-btn-dropdown
                   no-caps
@@ -379,38 +394,45 @@ export default defineComponent({
       },
       {
         id: 1,
+        icon: 'person',
+        to: '/beratung',
+        label: 'Futterberatung',
+        separator: false,
+      },
+      {
+        id: 2,
         icon: 'mdi-dog',
         label: 'Kräuter & Ergänzung',
         separator: false,
       },
       {
-        id: 2,
+        id: 3,
         icon: 'pets',
         label: 'Futter',
         separator: false,
       },
       {
-        id: 3,
+        id: 4,
         icon: 'invite',
         label: 'Anmeldung',
         separator: false,
       },
       {
-        id: 4,
+        id: 5,
         icon: 'alternate_email',
         to: 'kontakt',
         label: 'Kontakt',
         separator: false,
       },
       {
-        id: 5,
+        id: 6,
         icon: 'assignment',
         to: 'impressum',
         label: 'Impressum',
         separator: false,
       },
       {
-        id: 6,
+        id: 7,
         icon: 'assignment',
         to: 'datenschutz',
         label: 'Datenschutz',
@@ -550,6 +572,8 @@ export default defineComponent({
         this.isHome = true;
       } else if (to.fullPath === '/kontakt') {
         this.isContact = true;
+      } else if (to.fullPath === '/beratung') {
+        this.isBeratung = true;
       } else if (to.fullPath === '/neu-kunde') {
         this.isNewCustomer = true;
       } else if (to.fullPath === '/datenschutz') {
