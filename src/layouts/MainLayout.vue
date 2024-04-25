@@ -17,7 +17,12 @@
           transition-prev="slide-right"
           transition-next="slide-left"
         >
-          <q-carousel-slide v-if="isHome" :name="1" :img-src="homeImage" />
+          <q-carousel-slide
+            v-if="isHome"
+            :name="1"
+            lazy-load
+            :img-src="homeImage"
+          />
           <q-carousel-slide v-if="isHome" :name="2" :img-src="homeImage2" />
           <q-carousel-slide
             v-else-if="isNewCustomer"

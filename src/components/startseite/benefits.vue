@@ -126,7 +126,7 @@ export default defineComponent({
       {
         id: 2,
         title: 'individuelle Beratung',
-        ponit1: 'Persönliche Beratung speziell auf Ihren Hund zugeschnitten',
+        ponit1: 'Persönliche Beratung speziell auf Ihre Katze zugeschnitten',
         ponit2: 'stets der gleiche Ansprechpartner',
         ponit3: 'täglich erreichbar auch am Wochenende sowie Feiertagen',
         imageTitle: '/icons/dog-background.svg',
