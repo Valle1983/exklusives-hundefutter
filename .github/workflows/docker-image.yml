@@ -11,21 +11,24 @@ jobs:
 
     steps:
       - name: Checkout code
-        uses: actions/checkout@v4 # Aktualisiert auf v3
+        uses: actions/checkout@v4
 
       - name: Set up Node.js
-        uses: actions/setup-node@v4 # Aktualisiert auf v3
+        uses: actions/setup-node@v4
         with:
           node-version: '21'
 
       - name: Install dependencies
         run: npm install
 
+      - name: Install Quasar CLI
+        run: npm install -g @quasar/cli
+
       - name: Build Quasar PWA
         run: npm run build
 
       - name: Archive production artifacts
-        uses: actions/upload-artifact@v4 # Aktualisiert auf v3
+        uses: actions/upload-artifact@v4
         with:
           name: pwa-dist
           path: dist/pwa
@@ -36,7 +39,7 @@ jobs:
 
     steps:
       - name: Download production artifacts
-        uses: actions/download-artifact@v4 # Aktualisiert auf v3
+        uses: actions/download-artifact@v4
         with:
           name: pwa-dist
           path: dist/pwa
