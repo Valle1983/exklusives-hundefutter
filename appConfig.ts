@@ -18,7 +18,7 @@ const mobile = '+49 176 22 34 65 63';
 
 // Social Media
 const instagramLink = 'https://instagram.com/exklusives_hundefutter';
-const telegramLink = 'https://t.me/exklusivesHundefutterr';
+const telegramLink = 'https://t.me/exklusivesHundefutter';
 const tiktokLink = 'https://www.tiktok.com/@exklusives_hundefutter';
 
 // Kontakt Info
