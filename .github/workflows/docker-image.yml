@@ -1,18 +1,54 @@
-name: Docker Image CI
+name: Build and Deploy PWA
 
 on:
   push:
-    branches: [ "master" ]
-  pull_request:
-    branches: [ "master" ]
+    branches:
+      - master
 
 jobs:
-
   build:
-
     runs-on: ubuntu-latest
 
     steps:
-    - uses: actions/checkout@v3
-    - name: Build the Docker image
-      run: docker build . --file Dockerfile --tag my-image-name:$(date +%s)
+      - name: Checkout code
+        uses: actions/checkout@v4 # Aktualisiert auf v3
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4 # Aktualisiert auf v3
+        with:
+          node-version: '18'
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Build Quasar PWA
+        run: npm run build
+
+      - name: Archive production artifacts
+        uses: actions/upload-artifact@v4 # Aktualisiert auf v3
+        with:
+          name: pwa-dist
+          path: dist/pwa
+
+  deploy:
+    runs-on: ubuntu-latest
+    needs: build
+
+    steps:
+      - name: Download production artifacts
+        uses: actions/download-artifact@v4 # Aktualisiert auf v3
+        with:
+          name: pwa-dist
+          path: dist/pwa
+
+      - name: Copy files via SCP
+        env:
+          SCP_TARGET_HOST: ${{ secrets.SERVER_HOST }}
+          SCP_TARGET_PORT: ${{ secrets.SERVER_PORT }}
+          SCP_TARGET_USER: ${{ secrets.SERVER_USER }}
+          SCP_TARGET_PASSWORD: ${{ secrets.SERVER_PASSWORD }}
+          SCP_TARGET_PATH: domains/exklusives-hundefutter/public_html/
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y sshpass rsync
+          sshpass -p "$SCP_TARGET_PASSWORD" rsync -avz --delete -e "ssh -o StrictHostKeyChecking=no -p $SCP_TARGET_PORT" dist/pwa/ $SCP_TARGET_USER@$SCP_TARGET_HOST:$SCP_TARGET_PATH
