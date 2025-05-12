@@ -47,7 +47,7 @@ jobs:
           SCP_TARGET_PORT: ${{ secrets.SERVER_PORT }}
           SCP_TARGET_USER: ${{ secrets.SERVER_USER }}
           SCP_TARGET_PASSWORD: ${{ secrets.SERVER_PASSWORD }}
-          SCP_TARGET_PATH: domains/exklusives-hundefutter/public_html/
+          SCP_TARGET_PATH: domains/exklusives-hundefutter.de/public_html/
         run: |
           sudo apt-get update
           sudo apt-get install -y sshpass rsync
