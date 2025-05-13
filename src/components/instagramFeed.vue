@@ -1,6 +1,6 @@
 <template>
   <div class="instagram-section">
-    <h2 class="text-center text-h5 text-weight-bold q-mb-lg">
+    <h2 class="text-center text-h5 text-white text-weight-bold q-mb-lg">
       Unsere Instagram-Seite
     </h2>
 
