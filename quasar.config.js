@@ -164,7 +164,7 @@ export default configure(function (ctx) {
         start_url: '/?homescreen=1',
         id: '/?homescreen=1',
         scope: '/',
-        display_override: ['fullscreen', 'minimal-ui'],
+        //display_override: ['fullscreen', 'minimal-ui'],
         icons: [
           {
             src: 'icons/icon-128x128.png',
