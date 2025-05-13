@@ -17,7 +17,7 @@
       >
         <q-card
           class="my-card carousel-cards rounded-borders no-box-shadow no-border"
-          style="min-height: 405px; max-height: 620px"
+          style="min-height: 305px; max-height: 420px"
         >
           <q-img
             :src="card.imageTitle"
@@ -92,7 +92,8 @@
     <br /><br /><br />
     <instagram-feed
       :accessToken="accessToken"
-      :count="this.$q.screen.lt.sm ? 1 : 4"
+      :appSecret="appSecret"
+      :count="100"
       :pagination="true"
       :caption="false"
     />
@@ -103,7 +104,7 @@
 <script>
 import questions from 'components/startseite/questions';
 import bubleSeparatorClose from 'components/StyleTools/bubleSeparatorClose';
-import { accessToken } from '../../../appConfig';
+import { accessToken, appSecret } from '../../../appConfig';
 import InstagramFeed from 'src/components/instagramFeed.vue';
 import { defineComponent } from 'vue';
 

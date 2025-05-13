@@ -39,17 +39,6 @@
         >
         </q-img>
       </div>
-      <div class="q-pt-xl col-3 col-md-3 col-sm-12 col-xs-12">
-        <q-img
-          alt="exklusives-hundefutter"
-          :src="exkluusivesKatzenfutter"
-          @click="gotToLoExclusviesKatzenfutter"
-          height="120px"
-          width="140px"
-          class="q-img-info cursor-pointer"
-        >
-        </q-img>
-      </div>
     </div>
   </div>
 </template>

@@ -1,88 +1,55 @@
 <template>
-  <div class="bg-dark text-white">
-    <div v-if="isLoading" class="q-pa-xl text-center">
-      <q-spinner color="primary" size="50px" />
-      <div class="q-mt-md">
-        {{ $t('instagramFeed.loading') || 'Lade Instagram-Beiträge...' }}
-      </div>
-    </div>
+  <div class="instagram-section">
+    <h2 class="text-center text-h5 text-weight-bold q-mb-lg">
+      Unsere Instagram-Seite
+    </h2>
 
-    <div v-else-if="hasError" class="q-pa-xl text-center text-negative">
-      <p>Fehler beim Laden des Instagram-Feeds.</p>
-    </div>
-
-    <div
-      v-else-if="instagramData?.data?.length > 0"
-      class="q-pt-xl q-pb-xl text-h4 text-center"
+    <q-carousel
+      v-model="slideIndex"
+      animated
+      navigation="false"
+      arrows
+      height="auto"
+      class="instagram-slider"
     >
-      {{ $t('instagramFeed.title') || 'Instagram Feed' }}
-    </div>
-
-    <div
-      v-if="!isLoading && instagramData?.data?.length"
-      class="row bg-dark justify-center items-start q-pa-md q-gutter-md"
-    >
-      <div
-        v-if="usePagination && paginationPrevUrl"
-        class="col-auto flex flex-center"
+      <q-carousel-slide
+        v-for="(item, index) in instagramData?.data || []"
+        :key="item.id"
+        :name="index"
+        class="carousel-slide q-pa-lg"
       >
-        <q-btn
-          round
-          flat
-          size="lg"
-          icon="navigate_before"
-          color="primary"
-          aria-label="Previous"
-          @click="handlePaginationPrev"
-        />
-      </div>
+        <div class="row-wrap">
+          <!-- Medien (9:16) -->
+          <div class="media-wrapper">
+            <q-img
+              v-if="
+                item.media_type === 'IMAGE' ||
+                item.media_type === 'CAROUSEL_ALBUM'
+              "
+              :src="item.media_url"
+              :alt="item.caption"
+              class="media-content"
+            />
+            <video
+              v-else
+              controls
+              :poster="item.thumbnail_url"
+              class="media-content"
+            >
+              <source :src="item.media_url" type="video/mp4" />
+            </video>
+          </div>
 
-      <div
-        v-for="image in instagramData.data"
-        :key="image.id"
-        class="col-xs-12 col-sm-6 col-md-3"
-      >
-        <q-img
-          v-if="
-            image.media_type === 'IMAGE' ||
-            image.media_type === 'CAROUSEL_ALBUM'
-          "
-          :src="image.media_url"
-          :alt="image.caption"
-          class="instagram-gallery-image"
-        />
-        <video
-          v-else
-          controls
-          width="100%"
-          class="q-mt-sm shadow-10 rounded-borders"
-          :poster="image.thumbnail_url"
-        >
-          <source :src="image.media_url" type="video/mp4" />
-        </video>
-        <div
-          v-if="showCaption && image.caption"
-          class="q-mt-sm instagram-caption"
-        >
-          {{ image.caption }}
+          <!-- Text -->
+          <div class="caption-box">
+            <div class="caption-title">Beitrag</div>
+            <div class="caption-text">
+              {{ item.caption || 'Keine Beschreibung verfügbar.' }}
+            </div>
+          </div>
         </div>
-      </div>
-
-      <div
-        v-if="usePagination && paginationNextUrl"
-        class="col-auto flex flex-center"
-      >
-        <q-btn
-          round
-          flat
-          size="lg"
-          icon="navigate_next"
-          color="primary"
-          aria-label="Next"
-          @click="handlePaginationNext"
-        />
-      </div>
-    </div>
+      </q-carousel-slide>
+    </q-carousel>
   </div>
 </template>
 
@@ -99,63 +66,100 @@ const props = defineProps({
     type: Number,
     default: 6,
   },
-  pagination: {
-    type: Boolean,
-    default: true,
-  },
-  caption: {
-    type: Boolean,
-    default: false,
-  },
 });
 
-const isLoading = ref(true);
-const hasError = ref(false);
 const instagramData = ref(null);
-const usePagination = ref(props.pagination);
-const showCaption = ref(props.caption);
-const paginationNextUrl = ref('');
-const paginationPrevUrl = ref('');
+const slideIndex = ref(0);
 
-const fetchInstaData = async (url) => {
-  isLoading.value = true;
-  hasError.value = false;
-
+const fetchInstaData = async () => {
   try {
+    const url = `https://graph.instagram.com/me/media?fields=id,media_type,media_url,thumbnail_url,caption&limit=${props.count}&access_token=${props.accessToken}`;
     const response = await axios.get(url);
     instagramData.value = response.data;
-
-    paginationNextUrl.value = response.data?.paging?.next || '';
-    paginationPrevUrl.value = response.data?.paging?.previous || '';
   } catch (err) {
-    hasError.value = true;
-  } finally {
-    isLoading.value = false;
+    console.error('Instagram Feed Fehler:', err);
   }
 };
 
-onMounted(() => {
-  const baseUrl = `https://graph.instagram.com/me/media?fields=id,media_type,media_url,thumbnail_url,caption&limit=${props.count}&access_token=${props.accessToken}`;
-  fetchInstaData(baseUrl);
-});
-
-const handlePaginationNext = () => {
-  if (paginationNextUrl.value) fetchInstaData(paginationNextUrl.value);
-};
-
-const handlePaginationPrev = () => {
-  if (paginationPrevUrl.value) fetchInstaData(paginationPrevUrl.value);
-};
+onMounted(fetchInstaData);
 </script>
 
-<style scoped>
-.instagram-gallery-image {
-  height: 300px;
-  object-fit: cover;
-  border-radius: 12px;
+<style lang="scss" scoped>
+@import '../css/quasar.variables.scss';
+.instagram-section {
+  background: $dark;
+  color: black;
+  padding: 40px 20px;
 }
-.instagram-caption {
-  color: #fff;
-  font-size: 0.9rem;
+
+.instagram-slider {
+  max-width: 1440px;
+  background: $dark;
+  margin: 0 auto;
+}
+
+.carousel-slide {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 25px;
+}
+
+.row-wrap {
+  display: flex;
+  gap: 40px;
+  align-items: center;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.media-wrapper {
+  width: 230px;
+  height: 460px;
+  border-radius: 20px;
+  overflow: hidden;
+  flex-shrink: 0;
+  background-color: $dark;
+}
+
+.media-content {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 20px;
+}
+
+.caption-box {
+  max-width: 600px;
+  background: transparent;
+  color: white;
+  font-size: 1rem;
+  padding: 10px 20px;
+  line-height: 1.5;
+}
+
+.caption-title {
+  font-weight: 700;
+  font-size: 1.2rem;
+  margin-bottom: 10px;
+}
+.q-carousel__navigation {
+  display: none !important;
+}
+
+/* 📱 Mobil-Optimierung */
+@media (max-width: 768px) {
+  .row-wrap {
+    flex-direction: column;
+  }
+
+  .media-wrapper {
+    width: 180px;
+    height: 360px;
+  }
+
+  .caption-box {
+    text-align: center;
+  }
 }
 </style>
