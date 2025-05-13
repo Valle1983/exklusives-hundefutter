@@ -10,7 +10,7 @@
 
 /* eslint-disable @typescript-eslint/no-var-requires */
 
-const { configure } = require('quasar/wrappers');
+import { configure } from 'quasar/wrappers';
 
 const paths = [
   { path: '/kontakt' },
@@ -26,7 +26,7 @@ const paths = [
   { path: '/datenschutz' },
 ];
 
-module.exports = configure(function (ctx) {
+export default configure(function (ctx) {
   return {
     // https://v2.quasar.dev/quasar-cli-webpack/supporting-ts
     supportTS: {
@@ -154,7 +154,7 @@ module.exports = configure(function (ctx) {
 
       manifest: {
         name: 'exklusives-hundefutter',
-        short_name: 'Ecklusives Hundefutter | Reico Hundefutterr',
+        short_name: 'Exklusives Hundefutter | Reico Hundefutter',
         description:
           'Reico Hundefutter – das gesunde Futter für Ihren Hund Gesundheit ist kein Zufall – Eine gesunde & artgerechte Ernährung ändert Alles! Reico hat das Hundefutter nach dem Vorbild der Natur entwickelt und mit den Kräutermischungen & Ergänzungsfuttermitteln, das Reico Vital-System erschaffen. Damit wird jeder Hund, ob Welpe, erwachsener Hund oder ältere Hunde, optimal und artgerecht versorgt. Das steckt im Hundefutter: Naturbelassene Rohstoffe ohne unnötige Zusätze, moderne Wissenschaft und über 30 Jahre Erfahrung. Reico ist mehr als nur ein Hundefutter. Lernen Sie das Reico Vital-System kennen und lassen Sie sich jetzt kostenlos beraten.',
         display: 'standalone',

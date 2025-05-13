@@ -1,169 +1,161 @@
 <template>
-  <div
-    v-if="instagramData?.data.length > 0"
-    class="bg-dark q-pt-xl q-pb-xl text-white text-h4 text-center justify-center items center"
-  >
-    {{ $t('instagramFeed.title') }}
-  </div>
-  <div
-    v-if="!isLoading"
-    class="bg-dark row justify-center items-center text-center q-pb-xl q-pa-md"
-  >
+  <div class="bg-dark text-white">
+    <div v-if="isLoading" class="q-pa-xl text-center">
+      <q-spinner color="primary" size="50px" />
+      <div class="q-mt-md">
+        {{ $t('instagramFeed.loading') || 'Lade Instagram-Beiträge...' }}
+      </div>
+    </div>
+
+    <div v-else-if="hasError" class="q-pa-xl text-center text-negative">
+      <p>Fehler beim Laden des Instagram-Feeds.</p>
+    </div>
+
     <div
-      v-if="usePagination"
-      class="col-md-4 col-xs-2 justify-center items-center text-center"
+      v-else-if="instagramData?.data?.length > 0"
+      class="q-pt-xl q-pb-xl text-h4 text-center"
     >
-      <div v-if="paginationPrevUrl">
+      {{ $t('instagramFeed.title') || 'Instagram Feed' }}
+    </div>
+
+    <div
+      v-if="!isLoading && instagramData?.data?.length"
+      class="row bg-dark justify-center items-start q-pa-md q-gutter-md"
+    >
+      <div
+        v-if="usePagination && paginationPrevUrl"
+        class="col-auto flex flex-center"
+      >
         <q-btn
           round
           flat
           size="lg"
-          color="primary"
           icon="navigate_before"
+          color="primary"
           aria-label="Previous"
           @click="handlePaginationPrev"
         />
       </div>
-    </div>
-    <div
-      v-for="image in instagramData.data"
-      :key="image.id"
-      class="col-md-1 col-xs-8 justify-center text-center items-center q-pa-xs"
-    >
-      <q-img
-        v-if="
-          image.media_type === 'IMAGE' || image.media_type === 'CAROUSEL_ALBUM'
-        "
-        :src="image.media_url"
-        :alt="image.caption"
+
+      <div
+        v-for="image in instagramData.data"
         :key="image.id"
-        class="instagram-gallery-image"
-      />
-      <video
-        v-else
-        controls
-        width="100%"
-        height="100%"
-        style="border-radius: 25px"
-        class="bg-primary shadow-10 justify-center text-center items-center q-pa-xs"
-        :poster="image.thumbnail_url"
+        class="col-xs-12 col-sm-6 col-md-3"
       >
-        <source :src="image.media_url" type="video/mp4" />
-      </video>
-      <span v-if="showCaption" class="instagram-caption">{{
-        image.caption
-      }}</span>
-    </div>
-    <div
-      v-if="usePagination"
-      class="col-md-4 col-xs-2 justify-center items-center text-center q-pa-md"
-    >
-      <div v-if="paginationNextUrl">
+        <q-img
+          v-if="
+            image.media_type === 'IMAGE' ||
+            image.media_type === 'CAROUSEL_ALBUM'
+          "
+          :src="image.media_url"
+          :alt="image.caption"
+          class="instagram-gallery-image"
+        />
+        <video
+          v-else
+          controls
+          width="100%"
+          class="q-mt-sm shadow-10 rounded-borders"
+          :poster="image.thumbnail_url"
+        >
+          <source :src="image.media_url" type="video/mp4" />
+        </video>
+        <div
+          v-if="showCaption && image.caption"
+          class="q-mt-sm instagram-caption"
+        >
+          {{ image.caption }}
+        </div>
+      </div>
+
+      <div
+        v-if="usePagination && paginationNextUrl"
+        class="col-auto flex flex-center"
+      >
         <q-btn
           round
           flat
           size="lg"
           icon="navigate_next"
           color="primary"
-          aria-label="next"
+          aria-label="Next"
           @click="handlePaginationNext"
         />
       </div>
     </div>
   </div>
-  <div class="q-pb-xl bg-grey-2" />
 </template>
+
 <script setup>
 import { ref, onMounted } from 'vue';
 import axios from 'axios';
 
 const props = defineProps({
-  accessToken: String,
-  count: Number,
-  pagination: Boolean,
-  caption: Boolean,
+  accessToken: {
+    type: String,
+    required: true,
+  },
+  count: {
+    type: Number,
+    default: 6,
+  },
+  pagination: {
+    type: Boolean,
+    default: true,
+  },
+  caption: {
+    type: Boolean,
+    default: false,
+  },
 });
 
 const isLoading = ref(true);
 const hasError = ref(false);
 const instagramData = ref(null);
-const usePagination = ref(true);
-const showCaption = ref(false);
+const usePagination = ref(props.pagination);
+const showCaption = ref(props.caption);
 const paginationNextUrl = ref('');
 const paginationPrevUrl = ref('');
 
-const fetchInstaData = (url) => {
-  axios
-    .get(url)
-    .then((response) => {
-      if (response.hasOwnProperty('error')) {
-        isLoading.value = false;
-        hasError.value = true;
-      } else {
-        instagramData.value = response.data;
-        if (response.data !== null) {
-          paginationNextUrl.value = response.data.paging.next;
-          paginationPrevUrl.value = response.data.paging.previous;
-        }
-        isLoading.value = false;
-      }
-    })
-    .then(() => {
-      if (props.pagination) {
-        usePagination.value = props.pagination;
-      }
-      if (props.caption) {
-        showCaption.value = props.caption;
-      }
-    })
-    .catch(() => {
-      hasError.value = true;
-      isLoading.value = false;
-    });
+const fetchInstaData = async (url) => {
+  isLoading.value = true;
+  hasError.value = false;
+
+  try {
+    const response = await axios.get(url);
+    instagramData.value = response.data;
+
+    paginationNextUrl.value = response.data?.paging?.next || '';
+    paginationPrevUrl.value = response.data?.paging?.previous || '';
+  } catch (err) {
+    hasError.value = true;
+  } finally {
+    isLoading.value = false;
+  }
 };
 
 onMounted(() => {
-  const url = `https://graph.instagram.com/me/media?fields=media_count,media_type,permalink,media_url,thumbnail_url,caption&limit=${props.count}&access_token=${props.accessToken}`;
-  fetchInstaData(url);
+  const baseUrl = `https://graph.instagram.com/me/media?fields=id,media_type,media_url,thumbnail_url,caption&limit=${props.count}&access_token=${props.accessToken}`;
+  fetchInstaData(baseUrl);
 });
 
 const handlePaginationNext = () => {
-  fetchInstaData(paginationNextUrl.value);
+  if (paginationNextUrl.value) fetchInstaData(paginationNextUrl.value);
 };
 
 const handlePaginationPrev = () => {
-  fetchInstaData(paginationPrevUrl.value);
+  if (paginationPrevUrl.value) fetchInstaData(paginationPrevUrl.value);
 };
 </script>
 
 <style scoped>
-.instagram-wrapper {
-  margin: 0 auto;
-  padding: 0 2rem;
-}
-.instagram-gallery {
-  display: flex;
-  flex-wrap: wrap;
-  margin: -1rem, -1rem;
-  padding-bottom: 3rem;
-}
-.instagram-gallery-item {
-  position: relative;
-  flex: 1 0 22rem;
-  margin: 1rem;
-  color: #fff;
-  cursor: pointer;
-}
 .instagram-gallery-image {
-  height: 40vh;
+  height: 300px;
   object-fit: cover;
+  border-radius: 12px;
 }
 .instagram-caption {
-  color: black;
-  margin-top: -3px;
-}
-.video:hover {
-  background-color: #deaada;
-  border-radius: 100px;
+  color: #fff;
+  font-size: 0.9rem;
 }
 </style>
