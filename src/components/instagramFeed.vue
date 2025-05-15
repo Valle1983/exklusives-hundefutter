@@ -11,6 +11,11 @@
       arrows
       height="auto"
       class="instagram-slider"
+      :autoplay="autoplay"
+      transition-prev="slide-right"
+      transition-next="slide-left"
+      @mouseenter="autoplay = false"
+      @mouseleave="autoplay = true"
     >
       <q-carousel-slide
         v-for="(item, index) in instagramData?.data || []"
@@ -80,6 +85,8 @@ const fetchInstaData = async () => {
     console.error('Instagram Feed Fehler:', err);
   }
 };
+
+const autoplay = ref(true);
 
 onMounted(fetchInstaData);
 </script>
